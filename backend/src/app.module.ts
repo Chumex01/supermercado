@@ -14,9 +14,9 @@ import { SolicitudesCompraModule } from './solicitudes-compra/solicitudes-compra
 import { DetallesSolicitudCompraModule } from './detalles-solicitud-compra/detalles-solicitud-compra.module';
 import { OrdenesCompraModule } from './ordenes-compra/ordenes-compra.module';
 import { DetalleOrdenCompraModule } from './detalle-orden-compra/detalle-orden-compra.module';
-import { LotesModule } from './lotes/lotes.module';
+import { LoteModule } from './lotes/lotes.module';
 import { VentasModule } from './ventas/ventas.module';
-import { DetalleVentasModule } from './detalle-ventas/detalle-ventas.module';
+import { DetalleVentaModule } from './detalle-ventas/detalle-ventas.module';
 import { StockModule } from './stock/stock.module';
 
 @Module({
@@ -47,10 +47,10 @@ import { StockModule } from './stock/stock.module';
     DetallesSolicitudCompraModule,
     OrdenesCompraModule,
     DetalleOrdenCompraModule,
-    LotesModule,
+    LoteModule,
     StockModule,
     VentasModule,
-    DetalleVentasModule,
+    DetalleVentaModule,
   ],
   // controllers: [AppController],
   // providers: [AppService],
