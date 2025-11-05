@@ -7,7 +7,7 @@ import { CreateSucursalDto } from './dto/create-sucursal.dto';
 export class SucursalesController {
   constructor(private readonly sucursalesService: SucursalesService) {}
 
-  @Post()
+  @Post('CrearSucursal')
   @ApiOperation({ summary: 'Crear un nuevo usuario' })
   async crearUsuario(@Body() createSucursalDto: CreateSucursalDto) {
     const sucursal =

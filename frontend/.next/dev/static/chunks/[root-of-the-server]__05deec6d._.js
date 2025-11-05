@@ -667,7 +667,7 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 // interface Usuario {
-//   id: number;
+id: number;
 //   correo: string;
 //   fecha_creacion: string;
 // }

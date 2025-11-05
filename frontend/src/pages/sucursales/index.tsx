@@ -1,10 +1,8 @@
-// src/pages/usuarios/index.tsx
 "use client";
 
 import { useEffect, useState } from "react";
 import { api } from "@/lib/api";
-import UsuariosTable from "@/components/usuarios/UsuarioTable";
-import UsuarioForm from "@/components/usuarios/usuarioForm";
+import SucursalForm from "@/components/sucursales/sucursalForm";
 import {
   Button,
   Box,
@@ -15,12 +13,16 @@ import {
 } from "@mui/material";
 import Navbar from "@/components/forms/Navbar";
 import router from "next/router";
+import SucursalesTable from "@/components/sucursales/SucursalTable";
 
-// interface Usuario {
-//   id: number;
-//   correo: string;
-//   fecha_creacion: string;
-// }
+interface Sucursal {
+  id: number;
+  nombre: string;
+  direccion: string;
+  telefono: string;
+  estado: string;
+  fecha_creacion: string;
+}
 
 const modalStyle = {
   position: "absolute",
@@ -35,39 +37,39 @@ const modalStyle = {
 };
 
 export default function SucursalesPage() {
-//   const [usuarios, setUsuarios] = useState<Usuario[]>([]);
-//   const [loading, setLoading] = useState(true);
+  const [sucursales, setSucursales] = useState<Sucursal[]>([]);
+  const [loading, setLoading] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
-//   const [showForm, setShowForm] = useState(false);
+  const [showForm, setShowForm] = useState(false);
 
-//   useEffect(() => {
-//     cargarUsuarios();
-//   }, []);
+  useEffect(() => {
+    cargarSucursales();
+  }, []);
 
-//   const cargarUsuarios = async () => {
-//     setLoading(true);
-//     try {
-//       const res = await api.get("/usuarios/ListarUsuario");
-//       setUsuarios(res.data);
-//     } catch (err) {
-//       console.error(err);
-//       alert("Error al cargar usuarios");
-//     } finally {
-//       setLoading(false);
-//     }
-//   };
+  const cargarSucursales = async () => {
+    setLoading(true);
+    try {
+      const res = await api.get("/sucursales/ListarSucursal");
+      setSucursales(res.data);
+    } catch (err) {
+      console.error(err);
+      alert("Error al cargar sucursales");
+    } finally {
+      setLoading(false);
+    }
+  };
 
-//   const crearUsuarios = async (correo: string, contrasena: string) => {
-//     try {
-//       await api.post("/usuarios", { correo, contrasena });
-//       alert("Usuario creado con éxito ✅");
-//       cargarUsuarios();
-//       setShowForm(false);
-//     } catch (err) {
-//       console.error(err);
-//       alert("Error al crear usuario ❌");
-//     }
-//   };
+  const crearSucursales = async (nombre: string, direccion: string, telefono: string) => {
+    try {
+      await api.post("/sucursales/CrearSucursal", { nombre, direccion, telefono });
+      alert("Sucursal creada con éxito ✅");
+      cargarSucursales();
+      setShowForm(false);
+    } catch (err) {
+      console.error(err);
+      alert("Error al crear sucursal ❌");
+    }
+  };
 
   const handleOpenModal = () => {
     setModalOpen(true);
@@ -77,10 +79,10 @@ export default function SucursalesPage() {
     setModalOpen(false);
   };
 
-//   const handleCreateUser = () => {
-//     setModalOpen(false); // Cierra el modal
-//     setShowForm(true); // Abre el formulario
-//   };
+  const handleCreateUser = () => {
+    setModalOpen(false); // Cierra el modal
+    setShowForm(true); // Abre el formulario
+  };
 
   return (
     <>
@@ -95,16 +97,21 @@ export default function SucursalesPage() {
           Otros apartados
         </Button>
 
-        {/* <Button variant="contained" onClick={handleCreateUser} sx={{ mb: 2 }} >
-          Crear Nuevo Usuario
-        </Button> */}
+        <Button variant="contained" onClick={handleCreateUser} sx={{ mb: 2 }} >
+          Crear Nueva Sucursal
+        </Button>
 
-        {/* Formulario de usuario (fuera del modal) */}
-        {/* <UsuarioForm
+        {/* Formulario de sucursal (fuera del modal) */}
+        {/* <SucursalForm
           open={showForm}
           onClose={() => setShowForm(false)}
-          onCreate={crearUsuarios}
+          onCreate={crearSucursales}
         /> */}
+        <SucursalForm
+          open={showForm}
+          onClose={() => setShowForm(false)}
+          onCreate={crearSucursales}
+        />
 
         {/* Modal principal con botones */}
         <Modal
@@ -144,7 +151,7 @@ export default function SucursalesPage() {
           </Box>
         </Modal>
 
-        {/* {loading ? <CircularProgress /> : <UsuariosTable usuarios={usuarios} />} */}
+        {loading ? <CircularProgress /> : <SucursalesTable sucursales={sucursales} />}
       </Box>
     </>
   );

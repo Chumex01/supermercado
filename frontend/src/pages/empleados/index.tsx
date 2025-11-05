@@ -3,8 +3,6 @@
 
 import { useEffect, useState } from "react";
 import { api } from "@/lib/api";
-import UsuariosTable from "@/components/usuarios/UsuarioTable";
-import UsuarioForm from "@/components/usuarios/usuarioForm";
 import {
   Button,
   Box,
@@ -15,12 +13,27 @@ import {
 } from "@mui/material";
 import Navbar from "@/components/forms/Navbar";
 import router from "next/router";
+import EmpleadoTable from "@/components/empleados/EmpleadoTable";
+import EmpleadoForm from "@/components/empleados/empleadoForm";
 
-// interface Usuario {
-//   id: number;
-//   correo: string;
-//   fecha_creacion: string;
-// }
+interface Empleado {
+  id: number;
+  nombres: string;
+  apellidos: string;
+  documento_identidad: string;
+  telefono: string;
+  cargo: string;
+  fecha_contratacion: string;
+  estado: string;
+  usuario: {
+    id: number;
+    correo: string;
+  };
+  sucursal: {
+    id: number;
+    nombre: string;
+  };
+}
 
 const modalStyle = {
   position: "absolute",
@@ -35,39 +48,39 @@ const modalStyle = {
 };
 
 export default function EmpleadosPage() {
-//   const [usuarios, setUsuarios] = useState<Usuario[]>([]);
-//   const [loading, setLoading] = useState(true);
+  const [empleados, setEmpleados] = useState<Empleado[]>([]);
+  const [loading, setLoading] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
-//   const [showForm, setShowForm] = useState(false);
+  const [showForm, setShowForm] = useState(false);
 
-//   useEffect(() => {
-//     cargarUsuarios();
-//   }, []);
+  useEffect(() => {
+    cargarEmpleados();
+  }, []);
 
-//   const cargarUsuarios = async () => {
-//     setLoading(true);
-//     try {
-//       const res = await api.get("/usuarios/ListarUsuario");
-//       setUsuarios(res.data);
-//     } catch (err) {
-//       console.error(err);
-//       alert("Error al cargar usuarios");
-//     } finally {
-//       setLoading(false);
-//     }
-//   };
+  const cargarEmpleados = async () => {
+    setLoading(true);
+    try {
+      const res = await api.get("/empleados/ListarEmpleados");
+      setEmpleados(res.data.data);
+    } catch (err) {
+      console.error(err);
+      alert("Error al cargar empleados");
+    } finally {
+      setLoading(false);
+    }
+  };
 
-//   const crearUsuarios = async (correo: string, contrasena: string) => {
-//     try {
-//       await api.post("/usuarios", { correo, contrasena });
-//       alert("Usuario creado con éxito ✅");
-//       cargarUsuarios();
-//       setShowForm(false);
-//     } catch (err) {
-//       console.error(err);
-//       alert("Error al crear usuario ❌");
-//     }
-//   };
+const crearEmpleado = async (data: any) => {
+  try {
+    const res = await api.post("/empleados/CrearEmpleado", data);
+    alert("Empleado creado exitosamente");
+    console.log(res.data);
+    cargarEmpleados(); // refresca la tabla
+  } catch (err: any) {
+    console.error(err);
+    alert("Error al crear empleado");
+  }
+};
 
   const handleOpenModal = () => {
     setModalOpen(true);
@@ -77,10 +90,10 @@ export default function EmpleadosPage() {
     setModalOpen(false);
   };
 
-//   const handleCreateUser = () => {
-//     setModalOpen(false); // Cierra el modal
-//     setShowForm(true); // Abre el formulario
-//   };
+  const handleCreateUser = () => {
+    setModalOpen(false); // Cierra el modal
+    setShowForm(true); // Abre el formulario
+  };
 
   return (
     <>
@@ -95,16 +108,16 @@ export default function EmpleadosPage() {
           Otros apartados
         </Button>
 
-        {/* <Button variant="contained" onClick={handleCreateUser} sx={{ mb: 2 }} >
-          Crear Nuevo Usuario
-        </Button> */}
+        <Button variant="contained" onClick={handleCreateUser} sx={{ mb: 2 }} >
+          Crear Nuevo Empleado
+        </Button>
 
         {/* Formulario de usuario (fuera del modal) */}
-        {/* <UsuarioForm
+        <EmpleadoForm
           open={showForm}
           onClose={() => setShowForm(false)}
-          onCreate={crearUsuarios}
-        /> */}
+          onCreate={crearEmpleado}
+        />
 
         {/* Modal principal con botones */}
         <Modal
@@ -144,8 +157,12 @@ export default function EmpleadosPage() {
           </Box>
         </Modal>
 
-        {/* {loading ? <CircularProgress /> : <UsuariosTable usuarios={usuarios} />} */}
+        {loading ? <CircularProgress /> : <EmpleadoTable empleados={empleados} />}
       </Box>
     </>
   );
 }
+function obtenerEmpleados() {
+  throw new Error("Function not implemented.");
+}
+

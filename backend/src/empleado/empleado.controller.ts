@@ -8,7 +8,7 @@ import { CreateEmpleadoDto } from './dto/create-empleado.dto';
 export class EmpleadoController {
   constructor(private readonly empleadoService: EmpleadoService) {}
 
-  @Post()
+  @Post('CrearEmpleado')
   @ApiOperation({ summary: 'Crear un nuevo empleado' })
   async crearEmpleado(@Body() createEmpleadoDto: CreateEmpleadoDto) {
     const empleadoCreado =
@@ -21,7 +21,7 @@ export class EmpleadoController {
     };
   }
 
-  @Get()
+  @Get('ListarEmpleados')
   @ApiOperation({ summary: 'Listar todos los empleados' })
   async listarEmpleados() {
     const empleados = await this.empleadoService.getEmpleados();

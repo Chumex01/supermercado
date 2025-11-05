@@ -237,7 +237,7 @@ var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
 ;
 ;
 // interface Usuario {
-//   id: number;
+id: number;
 //   correo: string;
 //   fecha_creacion: string;
 // }
