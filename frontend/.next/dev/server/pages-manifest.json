@@ -2,10 +2,8 @@
   "/": "pages/index.js",
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
-  "/_error": "pages/_error.js",
   "/empleados": "pages/empleados.js",
   "/home": "pages/home.js",
-  "/login": "pages/login.js",
   "/sucursales": "pages/sucursales.js",
   "/usuarios": "pages/usuarios.js"
 }

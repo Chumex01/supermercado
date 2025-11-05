@@ -268,10 +268,6 @@
 @layer components;
 
 @layer utilities {
-  .collapse {
-    visibility: collapse;
-  }
-
   .absolute {
     position: absolute;
   }
