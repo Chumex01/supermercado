@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/MyPC/OneDrive/Desktop/SuperMercado/frontend/src/pages/empleados/index.tsx"],"sourcesContent":["export default function SucursalesPage() {\r\n    return <div>Empleados</div>;\r\n}"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACpB,qBAAO,qKAAC;kBAAI;;;;;;AAChB","debugId":null}}]
+}
