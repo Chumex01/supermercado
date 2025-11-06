@@ -7,7 +7,7 @@ import { ProveedoresService } from './proveedores.service';
 export class ProveedoresController {
   constructor(private readonly proveedoresService: ProveedoresService) {}
 
-  @Post()
+  @Post('CrearProveedor')
   @ApiOperation({ summary: 'Crear proveedor' })
   async createProveedor(@Body() dtoProveedor: CreateProveedorDto) {
     const proveedor =
@@ -19,7 +19,7 @@ export class ProveedoresController {
     };
   }
 
-  @Get()
+  @Get('ListarProveedor')
   @ApiOperation({ summary: 'Obtener proveedores' })
   getProveedores() {
     return this.proveedoresService.getProveedores();

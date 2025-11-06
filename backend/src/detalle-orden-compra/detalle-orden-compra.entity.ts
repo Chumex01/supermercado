@@ -1,4 +1,3 @@
-// src/compras/detalle-orden-compra.entity.ts
 import {
   Entity,
   PrimaryGeneratedColumn,
@@ -15,7 +14,7 @@ export class DetalleOrdenCompra {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ManyToOne(() => OrdenCompra, (orden) => orden.id, { onDelete: 'CASCADE' })
+  @ManyToOne(() => OrdenCompra, { onDelete: 'CASCADE' })
   @JoinColumn({ name: 'orden_compra_id' })
   orden_compra: OrdenCompra;
 

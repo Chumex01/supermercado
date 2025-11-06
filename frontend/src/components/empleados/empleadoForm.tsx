@@ -16,7 +16,7 @@ import { api } from "@/lib/api";
 interface Props {
   open: boolean;
   onClose: () => void;
-  onCreate: (data: any) => void;
+  onCreate: (data: unknown) => void;
 }
 
 interface Usuario {

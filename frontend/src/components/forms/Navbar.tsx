@@ -30,10 +30,10 @@ export default function Navbar() {
           <Button size="small" sx={{ mr: 2 }} color="inherit" variant="outlined" onClick={() => router.push("/usuarios")}>
             Seguridad y Acceso
           </Button>
-          <Button size="small" sx={{ mr: 2 }} color="inherit" variant="outlined" onClick={() => router.push("/productos")}>
+          <Button size="small" sx={{ mr: 2 }} color="inherit" variant="outlined" onClick={() => router.push("/categorias")}>
             Catálogo
           </Button>
-          <Button size="small" sx={{ mr: 2 }} color="inherit" variant="outlined" onClick={() => router.push("/productos")}>
+          <Button size="small" sx={{ mr: 2 }} color="inherit" variant="outlined" onClick={() => router.push("/compras")}>
             Módulo de Compras
           </Button>
           <Button size="small" sx={{ mr: 2 }} color="inherit" variant="outlined" onClick={() => router.push("/productos")}>

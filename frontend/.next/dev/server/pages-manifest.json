@@ -1,9 +1,9 @@
 {
-  "/": "pages/index.js",
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
-  "/empleados": "pages/empleados.js",
-  "/home": "pages/home.js",
-  "/sucursales": "pages/sucursales.js",
-  "/usuarios": "pages/usuarios.js"
+  "/_error": "pages/_error.js",
+  "/categorias": "pages/categorias.js",
+  "/compras": "pages/compras.js",
+  "/productos": "pages/productos.js",
+  "/proveedores": "pages/proveedores.js"
 }

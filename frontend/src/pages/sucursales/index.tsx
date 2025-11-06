@@ -102,11 +102,6 @@ export default function SucursalesPage() {
         </Button>
 
         {/* Formulario de sucursal (fuera del modal) */}
-        {/* <SucursalForm
-          open={showForm}
-          onClose={() => setShowForm(false)}
-          onCreate={crearSucursales}
-        /> */}
         <SucursalForm
           open={showForm}
           onClose={() => setShowForm(false)}
