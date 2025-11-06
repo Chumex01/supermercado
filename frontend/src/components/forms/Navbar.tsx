@@ -36,7 +36,7 @@ export default function Navbar() {
           <Button size="small" sx={{ mr: 2 }} color="inherit" variant="outlined" onClick={() => router.push("/compras")}>
             Módulo de Compras
           </Button>
-          <Button size="small" sx={{ mr: 2 }} color="inherit" variant="outlined" onClick={() => router.push("/productos")}>
+          <Button size="small" sx={{ mr: 2 }} color="inherit" variant="outlined" onClick={() => router.push("/lotes")}>
             Inventario
           </Button>
           <Button size="small" sx={{ mr: 2 }} color="inherit" variant="outlined" onClick={() => router.push("/productos")}>

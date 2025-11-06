@@ -1,18 +1,6 @@
 self.__BUILD_MANIFEST = {
-  "/_error": [
-    "static/chunks/pages/_error.js"
-  ],
-  "/categorias": [
-    "static/chunks/pages/categorias.js"
-  ],
-  "/compras": [
-    "static/chunks/pages/compras.js"
-  ],
-  "/productos": [
-    "static/chunks/pages/productos.js"
-  ],
-  "/proveedores": [
-    "static/chunks/pages/proveedores.js"
+  "/lotes": [
+    "static/chunks/pages/lotes.js"
   ],
   "__rewrites": {
     "afterFiles": [],
@@ -24,9 +12,9 @@ self.__BUILD_MANIFEST = {
     "/_app",
     "/_error",
     "/categorias",
-    "/compras",
     "/empleados",
     "/home",
+    "/lotes",
     "/productos",
     "/proveedores",
     "/sucursales",
