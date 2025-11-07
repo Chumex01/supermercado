@@ -1,6 +1,27 @@
 self.__BUILD_MANIFEST = {
-  "/lotes": [
-    "static/chunks/pages/lotes.js"
+  "/": [
+    "static/chunks/pages/index.js"
+  ],
+  "/categorias": [
+    "static/chunks/pages/categorias.js"
+  ],
+  "/empleados": [
+    "static/chunks/pages/empleados.js"
+  ],
+  "/home": [
+    "static/chunks/pages/home.js"
+  ],
+  "/productos": [
+    "static/chunks/pages/productos.js"
+  ],
+  "/proveedores": [
+    "static/chunks/pages/proveedores.js"
+  ],
+  "/sucursales": [
+    "static/chunks/pages/sucursales.js"
+  ],
+  "/usuarios": [
+    "static/chunks/pages/usuarios.js"
   ],
   "__rewrites": {
     "afterFiles": [],

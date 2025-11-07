@@ -10,11 +10,10 @@ import {
   Unique,
 } from 'typeorm';
 import { Sucursal } from '../sucursales/sucursal.entity';
-import { Producto } from '../productos/producto.entity';
 import { Lote } from '../lotes/lote.entity';
 
 @Entity('stock')
-@Unique(['sucursal', 'producto', 'lote'])
+@Unique(['sucursal', 'lote'])
 export class Stock {
   @PrimaryGeneratedColumn()
   id: number;
@@ -22,10 +21,6 @@ export class Stock {
   @ManyToOne(() => Sucursal, { onDelete: 'CASCADE' })
   @JoinColumn({ name: 'sucursal_id' })
   sucursal: Sucursal;
-
-  @ManyToOne(() => Producto, { onDelete: 'CASCADE' })
-  @JoinColumn({ name: 'producto_id' })
-  producto: Producto;
 
   @ManyToOne(() => Lote, { onDelete: 'CASCADE' })
   @JoinColumn({ name: 'lote_id' })

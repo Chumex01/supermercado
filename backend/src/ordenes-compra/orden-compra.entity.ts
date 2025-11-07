@@ -6,6 +6,8 @@ import {
   ManyToOne,
   JoinColumn,
   CreateDateColumn,
+  BeforeInsert,
+  BeforeUpdate,
 
   //   UpdateDateColumn,
 } from 'typeorm';
@@ -13,10 +15,9 @@ import { SolicitudCompra } from '../solicitudes-compra/solicitud-compra.entity';
 import { Proveedor } from '../proveedores/proveedor.entity';
 
 export enum EstadoOrdenCompra {
-  PENDIENTE = 'pendiente',
-  PARCIAL = 'parcial',
-  COMPLETADA = 'completada',
-  CANCELADA = 'cancelada',
+  PENDIENTE = 'Pendiente',
+  COMPLETADA = 'Completada',
+  CANCELADA = 'Cancelada',
 }
 
 @Entity('ordenes_compra')
@@ -25,12 +26,15 @@ export class OrdenCompra {
   id: number;
 
   @ManyToOne(() => SolicitudCompra, { onDelete: 'CASCADE' })
-  @JoinColumn({ name: 'solicitud_compra_id' })
-  solicitud_compra: SolicitudCompra;
+  @JoinColumn({ name: 'solicitud_id' })
+  solicitud_id: SolicitudCompra;
 
   @ManyToOne(() => Proveedor, { onDelete: 'CASCADE' })
   @JoinColumn({ name: 'proveedor_id' })
-  proveedor: Proveedor;
+  proveedor_id: Proveedor;
+
+  @Column({ type: 'varchar', length: 100 })
+  nombre_orden: string;
 
   @Column({
     type: 'enum',
@@ -40,8 +44,20 @@ export class OrdenCompra {
   estado: EstadoOrdenCompra;
 
   @Column({ type: 'decimal', precision: 10, scale: 2, default: 0 })
+  precio_unitario: number;
+
+  @Column({ type: 'decimal', precision: 10, scale: 2, default: 0 })
+  cantidad_ordenada: number; // ← Duplicada de la solicitud
+
+  @Column({ type: 'decimal', precision: 10, scale: 2, default: 0 })
   total: number;
 
   @CreateDateColumn({ type: 'timestamp' })
   fecha_orden: Date;
+
+  @BeforeInsert()
+  @BeforeUpdate()
+  calculateTotal() {
+    this.total = this.cantidad_ordenada * this.precio_unitario;
+  }
 }

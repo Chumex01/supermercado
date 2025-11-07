@@ -16,15 +16,15 @@ export class OrdenesCompraService {
   async createOrdenCompra(dto: CreateOrdenCompraDto) {
     const ordenCompra = this.ordenCompraRepository.create({
       ...dto,
-      solicitud_compra: { id: dto.solicitud_compra_id } as SolicitudCompra,
-      proveedor: { id: dto.proveedor_id } as Proveedor,
+      solicitud_id: { id: dto.solicitud_id } as SolicitudCompra,
+      proveedor_id: { id: dto.proveedor_id } as Proveedor,
     });
     return this.ordenCompraRepository.save(ordenCompra);
   }
 
   async getOrdenesCompra() {
     return this.ordenCompraRepository.find({
-      relations: ['solicitud_compra', 'proveedor'],
+      relations: ['solicitud_id', 'proveedor_id'],
     });
   }
 }

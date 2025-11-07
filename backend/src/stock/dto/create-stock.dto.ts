@@ -1,16 +1,22 @@
 import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
 
-export class CreateDetalleSolicitudCompraDto {
+export class CreateStockDto {
   @IsNotEmpty()
   @IsNumber()
-  cantidad_solicitada: number;
+  cantidad_disponible: number;
+  @IsNotEmpty()
+  @IsNumber()
+  cantidad_minima: number;
   @IsNotEmpty()
   @IsString()
-  justificacion: string;
+  ubicacion: string;
   @IsNotEmpty()
   @IsNumber()
-  solicitud_compra_id: number;
+  sucursal_id: number;
   @IsNotEmpty()
   @IsNumber()
   producto_id: number;
+  @IsNotEmpty()
+  @IsNumber()
+  lote_id: number;
 }

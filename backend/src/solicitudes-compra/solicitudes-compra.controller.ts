@@ -22,8 +22,9 @@ export class SolicitudesCompraController {
     return {
       message: 'Solicitud de compra creada exitosamente',
       id_creado: solicitudCompra.id,
-      empleado_solicitante_id: createSolicitudCompraDto.empleado_solicitante_id,
+      empleado_id: createSolicitudCompraDto.empleado_id,
       sucursal_id: createSolicitudCompraDto.sucursal_id,
+      producto_id: createSolicitudCompraDto.producto_id,
     };
   }
 

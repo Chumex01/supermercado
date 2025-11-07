@@ -11,9 +11,9 @@ import { CategoriaModule } from './categorias/categorias.module';
 import { ProveedoresModule } from './proveedores/proveedores.module';
 import { ProductosModule } from './productos/productos.module';
 import { SolicitudesCompraModule } from './solicitudes-compra/solicitudes-compra.module';
-import { DetallesSolicitudCompraModule } from './detalles-solicitud-compra/detalles-solicitud-compra.module';
+// import { DetallesSolicitudCompraModule } from './detalles-solicitud-compra/detalles-solicitud-compra.module';
 import { OrdenesCompraModule } from './ordenes-compra/ordenes-compra.module';
-import { DetalleOrdenCompraModule } from './detalle-orden-compra/detalle-orden-compra.module';
+// import { DetalleOrdenCompraModule } from './detalle-orden-compra/detalle-orden-compra.module';
 import { LoteModule } from './lotes/lotes.module';
 import { VentasModule } from './ventas/ventas.module';
 import { DetalleVentaModule } from './detalle-ventas/detalle-ventas.module';
@@ -44,9 +44,9 @@ import { StockModule } from './stock/stock.module';
     ProveedoresModule,
     ProductosModule,
     SolicitudesCompraModule,
-    DetallesSolicitudCompraModule,
+    // DetallesSolicitudCompraModule,
     OrdenesCompraModule,
-    DetalleOrdenCompraModule,
+    // DetalleOrdenCompraModule,
     LoteModule,
     StockModule,
     VentasModule,

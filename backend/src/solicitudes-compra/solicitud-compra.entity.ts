@@ -9,11 +9,12 @@ import {
 } from 'typeorm';
 import { Empleado } from '../empleado/empleado.entity';
 import { Sucursal } from '../sucursales/sucursal.entity';
+import { Producto } from '../productos/producto.entity';
 
 export enum EstadoSolicitud {
-  PENDIENTE = 'pendiente',
-  APROBADA = 'aprobada',
-  RECHAZADA = 'rechazada',
+  PENDIENTE = 'Pendiente',
+  APROBADA = 'Aprobada',
+  RECHAZADA = 'Rechazada',
 }
 
 @Entity('solicitudes_compra')
@@ -22,12 +23,25 @@ export class SolicitudCompra {
   id: number;
 
   @ManyToOne(() => Empleado, { onDelete: 'CASCADE' })
-  @JoinColumn({ name: 'empleado_solicitante_id' })
-  empleado_solicitante: Empleado;
+  @JoinColumn({ name: 'empleado_id' })
+  empleado_id: Empleado;
+
+  @ManyToOne(() => Producto, { onDelete: 'CASCADE' })
+  @JoinColumn({ name: 'producto_id' })
+  producto_id: Producto;
 
   @ManyToOne(() => Sucursal, { onDelete: 'CASCADE' })
   @JoinColumn({ name: 'sucursal_id' })
   sucursal: Sucursal;
+
+  @Column({ type: 'varchar', length: 100 })
+  nombre_solicitud: string;
+
+  @Column({ type: 'decimal', precision: 10, scale: 2 })
+  cantidad_solicitada: number;
+
+  @Column({ type: 'text', nullable: true })
+  justificacion: string;
 
   @Column({
     type: 'enum',
@@ -36,12 +50,6 @@ export class SolicitudCompra {
   })
   estado: EstadoSolicitud;
 
-  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
-  fecha_solicitud: Date;
-
-  @Column({ type: 'text', nullable: true })
-  observaciones: string;
-
   @CreateDateColumn({ type: 'timestamp' })
-  fecha_creacion: Date;
+  fecha_solicitud: Date;
 }

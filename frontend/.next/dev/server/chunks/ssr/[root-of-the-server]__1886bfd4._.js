@@ -413,7 +413,7 @@ function Navbar() {
                             },
                             color: "inherit",
                             variant: "outlined",
-                            onClick: ()=>router.push("/productos"),
+                            onClick: ()=>router.push("/categorias"),
                             children: "Catálogo"
                         }, void 0, false, {
                             fileName: "[project]/src/components/forms/Navbar.tsx",
@@ -427,7 +427,7 @@ function Navbar() {
                             },
                             color: "inherit",
                             variant: "outlined",
-                            onClick: ()=>router.push("/productos"),
+                            onClick: ()=>router.push("/compras"),
                             children: "Módulo de Compras"
                         }, void 0, false, {
                             fileName: "[project]/src/components/forms/Navbar.tsx",
@@ -441,7 +441,7 @@ function Navbar() {
                             },
                             color: "inherit",
                             variant: "outlined",
-                            onClick: ()=>router.push("/productos"),
+                            onClick: ()=>router.push("/lotes"),
                             children: "Inventario"
                         }, void 0, false, {
                             fileName: "[project]/src/components/forms/Navbar.tsx",

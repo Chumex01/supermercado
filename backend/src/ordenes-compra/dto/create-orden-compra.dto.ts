@@ -1,13 +1,19 @@
-import { IsNotEmpty, IsNumber } from 'class-validator';
+import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
 
 export class CreateOrdenCompraDto {
   @IsNotEmpty()
   @IsNumber()
-  total: number;
-  @IsNotEmpty()
-  @IsNumber()
-  solicitud_compra_id: number;
+  solicitud_id: number;
   @IsNotEmpty()
   @IsNumber()
   proveedor_id: number;
+  @IsNotEmpty()
+  @IsString()
+  nombre_orden: string;
+  @IsNotEmpty()
+  @IsNumber()
+  cantidad_ordenada: number;
+  @IsNotEmpty()
+  @IsNumber()
+  precio_unitario: number;
 }

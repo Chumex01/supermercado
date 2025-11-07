@@ -54,7 +54,7 @@ const cargarDatos = async () => {
   try {
     const [categoriasRes, proveedoresRes] = await Promise.all([
       api.get("/categorias/ListarCategorias"),  // 👈 cuidado con mayúsculas/minúsculas
-      api.get("/proveedores/ListarProveedores"),
+      api.get("/proveedores/ListarProveedor"),
     ]);
 
     // ✅ Verificamos si hay data en diferentes formatos
@@ -77,21 +77,20 @@ const cargarDatos = async () => {
 
 const handleSubmit = () => {
   const payload = {
-    ...form,
-    categoria_id: Number(form.categoria_id),
-    proveedor_id: Number(form.proveedor_id),
     codigo_barras: form.codigo_barras || null,
-    nombre: form.nombre || null,
+    nombre: form.nombre,
     descripcion: form.descripcion || null,
-    precio_venta: form.precio_venta || null,
-    unidad_medida: form.unidad_medida || null,
-    // fecha_contratacion: form.fecha_contratacion.split("T")[0] || form.fecha_contratacion, // formato ISO válido
+    precio_venta: Number(form.precio_venta),
+    unidad_medida: form.unidad_medida,
+    categoriaId: Number(form.categoria_id),      // ← Cambiado a categoriaId
+    proveedorId: Number(form.proveedor_id),      // ← Cambiado a proveedorId
   };
 
-  console.log("Payload a enviar:", payload); // 👈 para verificar
+  console.log("Payload a enviar:", payload);
 
   onCreate(payload);
 
+  // Reset form
   setForm({
     categoria_id: "",
     proveedor_id: "",
