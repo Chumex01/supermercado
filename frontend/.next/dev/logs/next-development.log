@@ -1,3 +1,17 @@
-[00:00:08.345] Server  LOG      ✓ Ready in 6.1s
-[00:00:40.331] Server  LOG      ○ Compiling / ...
-[00:01:22.139] Server  ERROR   PageNotFoundError: Cannot find module for page: /productos
+[00:00:04.178] Server  LOG      ✓ Ready in 2.9s
+[00:00:07.257] Server  LOG      ○ Compiling /lotes ...
+[00:00:11.421] Browser ERROR   %o
+
+%s
+
+%s
+ {} The above error occurred in the <LoteTable> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:00:26.492] Server  LOG      ✓ Compiled in 58ms
+[00:00:57.890] Server  LOG      ✓ Compiled in 55ms
+[00:01:08.993] Server  LOG      ✓ Compiled in 57ms
+[00:17:36.842] Server  LOG      ○ Compiling /productos ...
+[00:17:41.039] Server  ERROR    ⨯ SyntaxError: Expected property name or '}' in JSON at position 102 (line 7 column 1)
+[00:17:41.234] Server  ERROR    ⨯ SyntaxError: Expected property name or '}' in JSON at position 102 (line 7 column 1)
+[00:17:42.324] Server  ERROR   SyntaxError: Expected property name or '}' in JSON at position 102 (line 7 column 1)
+[00:17:42.480] Server  ERROR    ⨯ SyntaxError: Expected property name or '}' in JSON at position 102 (line 7 column 1)
+[00:17:42.543] Server  ERROR   SyntaxError: Expected property name or '}' in JSON at position 102 (line 7 column 1)

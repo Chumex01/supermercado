@@ -9,7 +9,7 @@ import { ProductosService } from './productos.service';
 export class ProductosController {
   constructor(private readonly productosService: ProductosService) {}
 
-  @Post()
+  @Post('CrearProducto')
   @ApiOperation({ summary: 'Crear un nuevo producto' })
   async crearProducto(@Body() createProductoDto: CreateProductoDto) {
     const productoCreado =
@@ -21,7 +21,7 @@ export class ProductosController {
     };
   }
 
-  @Get()
+  @Get('ListarProductos')
   @ApiOperation({ summary: 'Listar todos los productos' })
   async listarProductos() {
     const productos = await this.productosService.getProductos();

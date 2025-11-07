@@ -7,7 +7,7 @@ import { CreateCategoriaDto } from './dto/create-categoria.dto';
 export class CategoriasController {
   constructor(private readonly categoriasService: CategoriasService) {}
 
-  @Post()
+  @Post('CrearCategoria')
   @ApiOperation({ summary: 'Crear una categoria' })
   async createCategoria(@Body() createCategoriaDto: CreateCategoriaDto) {
     const categoria =
@@ -19,7 +19,7 @@ export class CategoriasController {
     };
   }
 
-  @Get()
+  @Get('ListarCategorias')
   @ApiOperation({ summary: 'Obtener todas las categorias' })
   listarCategorias() {
     return this.categoriasService.getCategorias();

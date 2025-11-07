@@ -5,6 +5,7 @@
   "/_error": "pages/_error.js",
   "/empleados": "pages/empleados.js",
   "/home": "pages/home.js",
+  "/productos": "pages/productos.js",
   "/sucursales": "pages/sucursales.js",
   "/usuarios": "pages/usuarios.js"
 }

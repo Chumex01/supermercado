@@ -70,13 +70,13 @@ export default function EmpleadosPage() {
     }
   };
 
-const crearEmpleado = async (data: any) => {
+const crearEmpleado = async (data: unknown) => {
   try {
     const res = await api.post("/empleados/CrearEmpleado", data);
     alert("Empleado creado exitosamente");
     console.log(res.data);
     cargarEmpleados(); // refresca la tabla
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error(err);
     alert("Error al crear empleado");
   }
@@ -161,8 +161,5 @@ const crearEmpleado = async (data: any) => {
       </Box>
     </>
   );
-}
-function obtenerEmpleados() {
-  throw new Error("Function not implemented.");
 }
 

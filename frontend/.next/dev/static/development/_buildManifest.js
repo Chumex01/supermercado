@@ -11,6 +11,9 @@ self.__BUILD_MANIFEST = {
   "/home": [
     "static/chunks/pages/home.js"
   ],
+  "/productos": [
+    "static/chunks/pages/productos.js"
+  ],
   "/sucursales": [
     "static/chunks/pages/sucursales.js"
   ],
@@ -26,8 +29,12 @@ self.__BUILD_MANIFEST = {
     "/",
     "/_app",
     "/_error",
+    "/categorias",
     "/empleados",
     "/home",
+    "/lotes",
+    "/productos",
+    "/proveedores",
     "/sucursales",
     "/usuarios"
   ]
