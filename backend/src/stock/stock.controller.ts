@@ -8,7 +8,7 @@ import { CreateStockDto } from './dto/create-stock.dto';
 export class StockController {
   constructor(private readonly stockService: StockService) {}
 
-  @Post()
+  @Post('CrearStock')
   @ApiOperation({ summary: 'Crear nuevo Stock' })
   async crearStock(@Body() CreateStockDto: CreateStockDto) {
     const stockCreado = await this.stockService.createStock(CreateStockDto);
@@ -19,7 +19,7 @@ export class StockController {
     };
   }
 
-  @Get()
+  @Get('ListarStocks')
   @ApiOperation({ summary: 'Listar todos los stocks' })
   async listarStock() {
     const stocks = await this.stockService.getStocks();

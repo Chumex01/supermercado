@@ -25,7 +25,7 @@ export class StockService {
 
   async getStocks() {
     return this.stockRepository.find({
-      relations: ['sucursal', 'producto', 'lote'],
+      relations: ['sucursal', 'lote'],
     });
   }
 }

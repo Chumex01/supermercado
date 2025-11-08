@@ -59,28 +59,35 @@ export default function LoteForm({ open, onClose, onCreate }: Props) {
     }
   }, [open]);
 
-  const cargarDatos = async () => {
-    setLoading(true);
-    try {
-      // Ajusta estas rutas según tu API
-      const [ordenesRes, productosRes] = await Promise.all([
-        api.get("/ordenes-compra/ListarOrdenesCompra"), // Ajusta la ruta
-        api.get("/productos/ListarProductos"), // Ajusta la ruta
-      ]);
+const cargarDatos = async () => {
+  setLoading(true);
+  try {
+    const [ordenesRes, productosRes] = await Promise.all([
+      api.get("/ordenes-compra/ListarOrdenesCompra"),
+      api.get("/productos/ListarProductos"),
+    ]);
 
-      setOrdenesCompra(
-        ordenesRes.data.data || ordenesRes.data || []
-      );
-      setProductos(
-        productosRes.data.data || productosRes.data || []
-      );
-    } catch (err) {
-      console.error(err);
-      alert("Error al cargar órdenes de compra o productos");
-    } finally {
-      setLoading(false);
-    }
-  };
+    // ✅ Estructura CORRECTA basada en tu API
+    setOrdenesCompra(
+      ordenesRes.data.ordenesCompra || // ← Esta es la clave
+      ordenesRes.data.data || 
+      ordenesRes.data || 
+      []
+    );
+    
+    setProductos(
+      productosRes.data.data || // ← Los productos probablemente vienen en .data
+      productosRes.data || 
+      []
+    );
+
+  } catch (err) {
+    console.error(err);
+    alert("Error al cargar órdenes de compra o productos");
+  } finally {
+    setLoading(false);
+  }
+};
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;

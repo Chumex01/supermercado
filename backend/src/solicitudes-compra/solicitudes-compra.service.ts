@@ -26,7 +26,7 @@ export class SolicitudesCompraService {
 
   async getSolicitudesCompra() {
     return this.solicitudCompraRepository.find({
-      relations: ['empleado_id', 'sucursal_id', 'producto_id'],
+      relations: ['empleado_id', 'sucursal', 'producto_id'],
     });
   }
 }

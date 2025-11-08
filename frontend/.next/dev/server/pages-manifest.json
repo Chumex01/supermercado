@@ -2,18 +2,9 @@
   "/": "pages/index.js",
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
-<<<<<<< HEAD
-  "/categorias": "pages/categorias.js",
-  "/empleados": "pages/empleados.js",
-  "/home": "pages/home.js",
-  "/productos": "pages/productos.js",
-  "/proveedores": "pages/proveedores.js",
-=======
   "/_error": "pages/_error.js",
-  "/empleados": "pages/empleados.js",
+  "/categorias": "pages/categorias.js",
   "/home": "pages/home.js",
-  "/productos": "pages/productos.js",
->>>>>>> 4c7c210f302be6a5a84d56c5e24a577d0a1c97fd
-  "/sucursales": "pages/sucursales.js",
-  "/usuarios": "pages/usuarios.js"
+  "/lotes": "pages/lotes.js",
+  "/stock": "pages/stock.js"
 }

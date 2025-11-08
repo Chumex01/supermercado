@@ -7,7 +7,7 @@ import { OrdenesCompraService } from './ordenes-compra.service';
 export class OrdenesCompraController {
   constructor(private readonly ordenesCompraService: OrdenesCompraService) {}
 
-  @Post()
+  @Post('CrearOrdenCompra')
   @ApiOperation({ summary: 'Crea una orden de compra' })
   async createOrdenCompra(@Body() createOrdenCompraDto: CreateOrdenCompraDto) {
     const ordenCompra =
@@ -19,7 +19,7 @@ export class OrdenesCompraController {
     };
   }
 
-  @Get()
+  @Get('ListarOrdenesCompra')
   @ApiOperation({ summary: 'Obtiene todas las ordenes de compra' })
   async getOrdenesCompra() {
     const ordenesCompra = await this.ordenesCompraService.getOrdenesCompra();

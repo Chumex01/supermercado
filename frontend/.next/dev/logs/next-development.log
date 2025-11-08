@@ -1,19 +1,37 @@
-
-[00:00:04.178] Server  LOG      ✓ Ready in 2.9s
-[00:00:07.257] Server  LOG      ○ Compiling /lotes ...
-[00:00:11.421] Browser ERROR   %o
+[00:00:02.883] Server  LOG      ✓ Ready in 2s
+[00:00:59.326] Browser ERROR   {"code":"ERR_BAD_REQUEST","config":{"adapter":["xhr","http","fetch"],"allowAbsoluteUrls":true,"baseURL":"http://localhost:3000","env":{},"headers":{"Accept":"application/json, text/plain, */*","Content-Type":"application/json"},"maxBodyLength":-1,"maxContentLength":-1,"method":"get","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"/ordenes-compra/ListarOrdenesCompra","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 404","name":"AxiosError","stack":"AxiosError: Request failed with status code 404\n    at settle (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:1954:16)\n    at XMLHttpRequest.onloadend (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:2469:167)\n    at Axios.request (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:3273:49)\n    at async Promise.all (index 0)\n    at async cargarDatos (http://localhost:3001/_next/static/chunks/%5Broot-of-the-server%5D__126c8b15._.js:985:48)","status":404}
+[00:21:44.179] Server  ERROR   PageNotFoundError: Cannot find module for page: /compras
+[00:21:44.297] Browser ERROR   {}
+[00:21:44.426] Browser ERROR   unhandledRejection: Error: The default export is not a React Component in page: "/compras"
+[00:22:00.023] Browser ERROR   {"code":"ERR_BAD_REQUEST","config":{"adapter":["xhr","http","fetch"],"allowAbsoluteUrls":true,"baseURL":"http://localhost:3000","env":{},"headers":{"Accept":"application/json, text/plain, */*","Content-Type":"application/json"},"maxBodyLength":-1,"maxContentLength":-1,"method":"get","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"/ordenes-compra/ListarOrdenesCompra","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 404","name":"AxiosError","stack":"AxiosError: Request failed with status code 404\n    at settle (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:1954:16)\n    at XMLHttpRequest.onloadend (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:2469:167)\n    at Axios.request (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:3273:49)\n    at async Promise.all (index 0)\n    at async cargarDatos (http://localhost:3001/_next/static/chunks/%5Broot-of-the-server%5D__126c8b15._.js:985:48)","status":404}
+[00:26:02.786] Browser ERROR   %o
 
 %s
 
 %s
- {} The above error occurred in the <LoteTable> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
-[00:00:26.492] Server  LOG      ✓ Compiled in 58ms
-[00:00:57.890] Server  LOG      ✓ Compiled in 55ms
-[00:01:08.993] Server  LOG      ✓ Compiled in 57ms
-[00:17:36.842] Server  LOG      ○ Compiling /productos ...
-[00:17:41.039] Server  ERROR    ⨯ SyntaxError: Expected property name or '}' in JSON at position 102 (line 7 column 1)
-[00:17:41.234] Server  ERROR    ⨯ SyntaxError: Expected property name or '}' in JSON at position 102 (line 7 column 1)
-[00:17:42.324] Server  ERROR   SyntaxError: Expected property name or '}' in JSON at position 102 (line 7 column 1)
-[00:17:42.480] Server  ERROR    ⨯ SyntaxError: Expected property name or '}' in JSON at position 102 (line 7 column 1)
-[00:17:42.543] Server  ERROR   SyntaxError: Expected property name or '}' in JSON at position 102 (line 7 column 1)
+ {} The above error occurred in the <LoteForm> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:28:41.573] Browser ERROR   %o
 
+%s
+
+%s
+ {} The above error occurred in the <LoteForm> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:34:44.286] Browser ERROR   %o
+
+%s
+
+%s
+ {} The above error occurred in the <LoteForm> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:37:24.648] Server  LOG      ✓ Compiled in 35ms
+[00:37:51.660] Server  LOG      ✓ Compiled in 31ms
+[00:38:45.276] Browser LOG     Payload a enviar: {"cantidad_recibida":14,"costo_unitario":120,"fecha_vencimiento":"2025-11-21","numero_lote":"3","orden_compra_id":1,"producto_id":1}
+[00:38:45.276] Browser LOG     {"datos":{"cantidad_recibida":14,"costo_unitario":120,"estado":"activo","fecha_creacion":"2025-11-08T00:58:25.661Z","fecha_recepcion":"2025-11-08T00:58:25.000Z","fecha_vencimiento":"2025-11-21","id":3,"numero_lote":"3","orden_compra":{"id":1},"producto":{"id":1}},"lote_id":3,"message":"Lote creado existosamente"}
+[00:38:59.903] Server  ERROR   PageNotFoundError: Cannot find module for page: /stock
+[01:02:56.768] Server  LOG      ✓ Compiled in 29ms
+[01:03:07.686] Server  LOG      ✓ Compiled in 38ms
+[01:04:04.199] Browser LOG     Payload a enviar: {"cantidad_disponible":4,"cantidad_minima":5,"lote_id":2,"sucursal_id":1,"ubicacion":"Pasillo 1, Estante 2"}
+[01:04:04.199] Browser LOG     {"datos":{"cantidad_disponible":4,"cantidad_minima":"5.00","fecha_actualizacion":"2025-11-08T01:23:44.407Z","fecha_creacion":"2025-11-08T01:23:44.407Z","id":2,"lote":{"id":2},"sucursal":{"id":1},"ubicacion":"Pasillo 1, Estante 2"},"message":"Stock creado exitosamente","stock_id":2}
+[01:04:32.741] Server  LOG      ✓ Compiled in 33ms
+[01:04:49.043] Server  LOG      ✓ Compiled in 31ms
+[01:06:06.676] Server  LOG      ✓ Compiled in 37ms
+[01:06:08.843] Server  LOG      ✓ Compiled in 31ms
