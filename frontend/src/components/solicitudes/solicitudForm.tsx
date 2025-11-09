@@ -21,7 +21,8 @@ interface Props {
 
 interface Empleado {
   id: number;
-  nombre: string;
+  nombres: string;
+  apellidos: string;
 }
 
 interface Producto {
@@ -101,7 +102,7 @@ export default function SolicitudForm({ open, onClose, onCreate }: Props) {
       sucursal_id: Number(form.sucursal_id),
       nombre_solicitud: String(form.nombre_solicitud),
       cantidad_solicitada: Number(form.cantidad_solicitada),
-      justificacion: Number(form.justificacion),
+      justificacion: String(form.justificacion),
     };
 
     console.log("Payload a enviar:", payload);
@@ -130,7 +131,7 @@ export default function SolicitudForm({ open, onClose, onCreate }: Props) {
             >
               {empleados.map((empleado) => (
                 <MenuItem key={empleado.id} value={empleado.id}>
-                  {empleado.nombre}
+                  {empleado.nombres } {empleado.apellidos}
                 </MenuItem>
               ))}
             </TextField>

@@ -14,6 +14,9 @@ self.__BUILD_MANIFEST = {
   "/lotes": [
     "static/chunks/pages/lotes.js"
   ],
+  "/ordenes": [
+    "static/chunks/pages/ordenes.js"
+  ],
   "/solicitudes": [
     "static/chunks/pages/solicitudes.js"
   ],
@@ -36,6 +39,7 @@ self.__BUILD_MANIFEST = {
     "/empleados",
     "/home",
     "/lotes",
+    "/ordenes",
     "/productos",
     "/proveedores",
     "/solicitudes",

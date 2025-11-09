@@ -1,7 +1,8 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
-import { ApiOperation } from '@nestjs/swagger';
+import { Body, Controller, Get, Param, Patch, Post } from '@nestjs/common';
+import { ApiOperation, ApiParam } from '@nestjs/swagger';
 import { CreateOrdenCompraDto } from './dto/create-orden-compra.dto';
 import { OrdenesCompraService } from './ordenes-compra.service';
+import { UpdateOrdenEstadoDto } from './dto/update-orden-estado.dto';
 
 @Controller('ordenes-compra')
 export class OrdenesCompraController {
@@ -26,6 +27,27 @@ export class OrdenesCompraController {
     return {
       message: 'Ordenes de compra obtenidas exitosamente',
       ordenesCompra,
+    };
+  }
+
+  @Patch(':id/estado')
+  @ApiOperation({ summary: 'Actualizar estado de una orden de compra' })
+  @ApiParam({
+    name: 'id',
+    type: Number,
+    description: 'ID de la orden de compra',
+  })
+  async updateOrdenEstado(
+    @Param('id') id: number,
+    @Body() updateOrdenEstadoDto: UpdateOrdenEstadoDto,
+  ) {
+    const ordenActualizada = await this.ordenesCompraService.updateOrdenEstado(
+      id,
+      updateOrdenEstadoDto,
+    );
+    return {
+      message: 'Estado de orden actualizado exitosamente',
+      orden: ordenActualizada,
     };
   }
 }

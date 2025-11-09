@@ -1,7 +1,14 @@
 import SolicitudForm from "@/components/solicitudes/solicitudForm";
 import Navbar from "@/components/forms/Navbar";
 import { api } from "@/lib/api";
-import { Box, Typography, Button, Modal, Stack, CircularProgress } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Button,
+  Modal,
+  Stack,
+  CircularProgress,
+} from "@mui/material";
 import router from "next/router";
 import { useEffect, useState } from "react";
 import SolicitudTable from "@/components/solicitudes/SolicitudTable";
@@ -18,9 +25,9 @@ interface Solicitud {
     nombre: string;
   };
   sucursal: {
-      id: number;
-      nombre: string;
-  }
+    id: number;
+    nombre: string;
+  };
   nombre_solicitud: string;
   cantidad_solicitada: number;
   justificacion: string;
@@ -66,7 +73,7 @@ export default function SolicitudesPage() {
 
   const crearSolicitud = async (data: unknown) => {
     try {
-      const res = await api.post("/solicitudes-compra/CrearSolicitud", data);
+      const res = await api.post("/solicitudes-compra/CrearSolicitudCompra", data);
       alert("Solicitud creado exitosamente");
       console.log(res.data);
       cargarSolicitudes(); // refresca la tabla
@@ -99,11 +106,15 @@ export default function SolicitudesPage() {
           Solicitudes
         </Typography>
 
-        <Button variant="contained" onClick={handleOpenModal} sx={{ mb: 2, mr: 2 }}>
+        <Button
+          variant="contained"
+          onClick={handleOpenModal}
+          sx={{ mb: 2, mr: 2 }}
+        >
           Otros apartados
         </Button>
 
-        <Button variant="contained" onClick={handleCreateLote} sx={{ mb: 2 }} >
+        <Button variant="contained" onClick={handleCreateLote} sx={{ mb: 2 }}>
           Crear Nueva Solicitud
         </Button>
 
@@ -145,7 +156,14 @@ export default function SolicitudesPage() {
           </Box>
         </Modal>
 
-        {loading ? <CircularProgress /> : <SolicitudTable solicitudes={solicitudes} />}
+        {loading ? (
+          <CircularProgress />
+        ) : (
+          <SolicitudTable
+            solicitudes={solicitudes}
+            onSolicitudUpdate={cargarSolicitudes} // ← Agregar esta prop
+          />
+        )}
       </Box>
     </>
   );

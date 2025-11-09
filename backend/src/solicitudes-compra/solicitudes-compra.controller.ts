@@ -1,7 +1,8 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Patch, Post } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { CreateSolicitudCompraDto } from './dto/create-solicitudes-compra.dto';
 import { SolicitudesCompraService } from './solicitudes-compra.service';
+import { UpdateSolicitudEstadoDto } from './dto/update-solicitud-estado.dto';
 
 @ApiTags('solicitudes-compra')
 @Controller('solicitudes-compra')
@@ -36,6 +37,24 @@ export class SolicitudesCompraController {
     return {
       message: 'Solicitudes de compra obtenidas exitosamente',
       solicitudesCompra,
+    };
+  }
+
+  // ✅ AGREGAR ESTE NUEVO ENDPOINT
+  @Patch(':id/estado')
+  @ApiOperation({ summary: 'Actualizar estado de una solicitud' })
+  async updateSolicitudEstado(
+    @Param('id') id: number,
+    @Body() updateSolicitudEstadoDto: UpdateSolicitudEstadoDto,
+  ) {
+    const solicitudActualizada =
+      await this.solicitudesCompraService.updateEstado(
+        +id,
+        updateSolicitudEstadoDto.estado,
+      );
+    return {
+      message: 'Estado de solicitud actualizado exitosamente',
+      datos: solicitudActualizada,
     };
   }
 }

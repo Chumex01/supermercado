@@ -1,7 +1,7 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { SolicitudCompra } from './solicitud-compra.entity';
+import { EstadoSolicitud, SolicitudCompra } from './solicitud-compra.entity';
 import { Empleado } from '../empleado/empleado.entity';
 import { Sucursal } from '../sucursales/sucursal.entity';
 import { CreateSolicitudCompraDto } from './dto/create-solicitudes-compra.dto';
@@ -26,6 +26,27 @@ export class SolicitudesCompraService {
 
   async getSolicitudesCompra() {
     return this.solicitudCompraRepository.find({
+      relations: ['empleado_id', 'sucursal', 'producto_id'],
+    });
+  }
+
+  // ✅ AGREGAR ESTE NUEVO MÉTODO
+  async updateEstado(id: number, estado: EstadoSolicitud) {
+    // Verificar que la solicitud existe
+    const solicitudExistente = await this.solicitudCompraRepository.findOne({
+      where: { id },
+    });
+
+    if (!solicitudExistente) {
+      throw new NotFoundException(`Solicitud con ID ${id} no encontrada`);
+    }
+
+    // Actualizar solo el estado
+    await this.solicitudCompraRepository.update(id, { estado });
+
+    // Devolver la solicitud actualizada con relaciones
+    return this.solicitudCompraRepository.findOne({
+      where: { id },
       relations: ['empleado_id', 'sucursal', 'producto_id'],
     });
   }
