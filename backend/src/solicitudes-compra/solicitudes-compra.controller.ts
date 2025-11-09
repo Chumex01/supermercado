@@ -10,7 +10,7 @@ export class SolicitudesCompraController {
     private readonly solicitudesCompraService: SolicitudesCompraService,
   ) {}
 
-  @Post()
+  @Post('CrearSolicitudCompra')
   @ApiOperation({ summary: 'Crear una solicitud de compra' })
   async createSolicitudCompra(
     @Body() createSolicitudCompraDto: CreateSolicitudCompraDto,
@@ -28,7 +28,7 @@ export class SolicitudesCompraController {
     };
   }
 
-  @Get()
+  @Get('ListarSolicitudesCompra')
   @ApiOperation({ summary: 'Obtener todas las solicitudes de compra' })
   async getSolicitudesCompra() {
     const solicitudesCompra =

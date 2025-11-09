@@ -6,5 +6,7 @@
   "/categorias": "pages/categorias.js",
   "/home": "pages/home.js",
   "/lotes": "pages/lotes.js",
-  "/stock": "pages/stock.js"
+  "/solicitudes": "pages/solicitudes.js",
+  "/stock": "pages/stock.js",
+  "/usuarios": "pages/usuarios.js"
 }

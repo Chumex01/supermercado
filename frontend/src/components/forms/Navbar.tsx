@@ -33,13 +33,13 @@ export default function Navbar() {
           <Button size="small" sx={{ mr: 2 }} color="inherit" variant="outlined" onClick={() => router.push("/categorias")}>
             Catálogo
           </Button>
-          <Button size="small" sx={{ mr: 2 }} color="inherit" variant="outlined" onClick={() => router.push("/compras")}>
+          <Button size="small" sx={{ mr: 2 }} color="inherit" variant="outlined" onClick={() => router.push("/solicitudes")}>
             Módulo de Compras
           </Button>
-          <Button size="small" sx={{ mr: 2 }} color="inherit" variant="outlined" onClick={() => router.push("/lotes")}>
+          <Button size="small" sx={{ mr: 2 }} color="inherit" variant="outlined" onClick={() => router.push("/stock")}>
             Inventario
           </Button>
-          <Button size="small" sx={{ mr: 2 }} color="inherit" variant="outlined" onClick={() => router.push("/productos")}>
+          <Button size="small" sx={{ mr: 2 }} color="inherit" variant="outlined" onClick={() => router.push("/ventas")}>
             Módulo de Ventas
           </Button>
           <Button size="small" sx={{ mr: 2 }} color="error" variant="contained" onClick={handleLogout}>

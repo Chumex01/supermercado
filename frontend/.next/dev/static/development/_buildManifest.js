@@ -14,8 +14,14 @@ self.__BUILD_MANIFEST = {
   "/lotes": [
     "static/chunks/pages/lotes.js"
   ],
+  "/solicitudes": [
+    "static/chunks/pages/solicitudes.js"
+  ],
   "/stock": [
     "static/chunks/pages/stock.js"
+  ],
+  "/usuarios": [
+    "static/chunks/pages/usuarios.js"
   ],
   "__rewrites": {
     "afterFiles": [],
@@ -32,6 +38,7 @@ self.__BUILD_MANIFEST = {
     "/lotes",
     "/productos",
     "/proveedores",
+    "/solicitudes",
     "/stock",
     "/sucursales",
     "/usuarios"

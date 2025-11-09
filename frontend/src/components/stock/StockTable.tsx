@@ -39,18 +39,6 @@ interface Props {
 }
 
 export default function StockTable({ stocks }: Props) {
-  const getStockStatusColor = (
-    cantidadDisponible: number,
-    cantidadMinima: number
-  ) => {
-    if (cantidadDisponible === 0) {
-      return "error"; // Sin stock
-    } else if (cantidadDisponible <= cantidadMinima) {
-      return "warning"; // Stock bajo
-    } else {
-      return "success"; // Stock normal
-    }
-  };
   const getStockStatusText = (
     cantidadDisponible: number,
     cantidadMinima: number
@@ -146,12 +134,6 @@ export default function StockTable({ stocks }: Props) {
                     stock.cantidad_disponible,
                     stock.cantidad_minima
                   )}
-                  color={
-                    getStockStatusColor(
-                      stock.cantidad_disponible,
-                      stock.cantidad_minima
-                    ) as any
-                  }
                   size="small"
                 />
               </TableCell>

@@ -1,37 +1,59 @@
-[00:00:02.883] Server  LOG      ✓ Ready in 2s
-[00:00:59.326] Browser ERROR   {"code":"ERR_BAD_REQUEST","config":{"adapter":["xhr","http","fetch"],"allowAbsoluteUrls":true,"baseURL":"http://localhost:3000","env":{},"headers":{"Accept":"application/json, text/plain, */*","Content-Type":"application/json"},"maxBodyLength":-1,"maxContentLength":-1,"method":"get","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"/ordenes-compra/ListarOrdenesCompra","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 404","name":"AxiosError","stack":"AxiosError: Request failed with status code 404\n    at settle (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:1954:16)\n    at XMLHttpRequest.onloadend (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:2469:167)\n    at Axios.request (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:3273:49)\n    at async Promise.all (index 0)\n    at async cargarDatos (http://localhost:3001/_next/static/chunks/%5Broot-of-the-server%5D__126c8b15._.js:985:48)","status":404}
-[00:21:44.179] Server  ERROR   PageNotFoundError: Cannot find module for page: /compras
-[00:21:44.297] Browser ERROR   {}
-[00:21:44.426] Browser ERROR   unhandledRejection: Error: The default export is not a React Component in page: "/compras"
-[00:22:00.023] Browser ERROR   {"code":"ERR_BAD_REQUEST","config":{"adapter":["xhr","http","fetch"],"allowAbsoluteUrls":true,"baseURL":"http://localhost:3000","env":{},"headers":{"Accept":"application/json, text/plain, */*","Content-Type":"application/json"},"maxBodyLength":-1,"maxContentLength":-1,"method":"get","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"/ordenes-compra/ListarOrdenesCompra","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 404","name":"AxiosError","stack":"AxiosError: Request failed with status code 404\n    at settle (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:1954:16)\n    at XMLHttpRequest.onloadend (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:2469:167)\n    at Axios.request (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:3273:49)\n    at async Promise.all (index 0)\n    at async cargarDatos (http://localhost:3001/_next/static/chunks/%5Broot-of-the-server%5D__126c8b15._.js:985:48)","status":404}
-[00:26:02.786] Browser ERROR   %o
+[00:00:02.517] Server  LOG      ✓ Ready in 1807ms
+[00:01:06.392] Browser ERROR   {}
+[00:01:06.528] Browser ERROR   unhandledRejection: Error: The default export is not a React Component in page: "/solicitudes"
+[00:01:12.093] Server  ERROR   PageNotFoundError: Cannot find module for page: /ventas
+[00:05:25.500] Server  LOG      ✓ Compiled in 102ms
+[00:26:36.583] Server  LOG      ✓ Compiled in 67ms
+[00:52:58.062] Server  LOG      ✓ Compiled in 32ms
+[01:01:49.267] Server  LOG      ✓ Compiled in 58ms
+[01:03:51.640] Server  LOG      ✓ Compiled in 34ms
+[01:13:59.042] Server  LOG      ✓ Compiled in 94ms
+[01:14:00.027] Browser ERROR   %o
 
 %s
 
 %s
- {} The above error occurred in the <LoteForm> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
-[00:28:41.573] Browser ERROR   %o
+ {} The above error occurred in the <SolicitudTable> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[01:14:02.832] Browser ERROR   %o
 
 %s
 
 %s
- {} The above error occurred in the <LoteForm> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
-[00:34:44.286] Browser ERROR   %o
+ {} The above error occurred in the <SolicitudTable> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[01:14:59.721] Browser ERROR   %o
 
 %s
 
 %s
- {} The above error occurred in the <LoteForm> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
-[00:37:24.648] Server  LOG      ✓ Compiled in 35ms
-[00:37:51.660] Server  LOG      ✓ Compiled in 31ms
-[00:38:45.276] Browser LOG     Payload a enviar: {"cantidad_recibida":14,"costo_unitario":120,"fecha_vencimiento":"2025-11-21","numero_lote":"3","orden_compra_id":1,"producto_id":1}
-[00:38:45.276] Browser LOG     {"datos":{"cantidad_recibida":14,"costo_unitario":120,"estado":"activo","fecha_creacion":"2025-11-08T00:58:25.661Z","fecha_recepcion":"2025-11-08T00:58:25.000Z","fecha_vencimiento":"2025-11-21","id":3,"numero_lote":"3","orden_compra":{"id":1},"producto":{"id":1}},"lote_id":3,"message":"Lote creado existosamente"}
-[00:38:59.903] Server  ERROR   PageNotFoundError: Cannot find module for page: /stock
-[01:02:56.768] Server  LOG      ✓ Compiled in 29ms
-[01:03:07.686] Server  LOG      ✓ Compiled in 38ms
-[01:04:04.199] Browser LOG     Payload a enviar: {"cantidad_disponible":4,"cantidad_minima":5,"lote_id":2,"sucursal_id":1,"ubicacion":"Pasillo 1, Estante 2"}
-[01:04:04.199] Browser LOG     {"datos":{"cantidad_disponible":4,"cantidad_minima":"5.00","fecha_actualizacion":"2025-11-08T01:23:44.407Z","fecha_creacion":"2025-11-08T01:23:44.407Z","id":2,"lote":{"id":2},"sucursal":{"id":1},"ubicacion":"Pasillo 1, Estante 2"},"message":"Stock creado exitosamente","stock_id":2}
-[01:04:32.741] Server  LOG      ✓ Compiled in 33ms
-[01:04:49.043] Server  LOG      ✓ Compiled in 31ms
-[01:06:06.676] Server  LOG      ✓ Compiled in 37ms
-[01:06:08.843] Server  LOG      ✓ Compiled in 31ms
+ {} The above error occurred in the <SolicitudTable> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[01:16:25.338] Server  LOG      ✓ Compiled in 38ms
+[01:17:08.848] Server  LOG      ✓ Compiled in 42ms
+[01:17:09.029] Browser ERROR   %o
+
+%s
+
+%s
+ {} The above error occurred in the <SolicitudTable> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[01:17:11.569] Browser ERROR   %o
+
+%s
+
+%s
+ {} The above error occurred in the <SolicitudTable> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[01:17:15.706] Server  LOG      ✓ Compiled in 35ms
+[01:18:07.740] Server  LOG      ✓ Compiled in 87ms
+[01:18:14.877] Server  LOG      ✓ Compiled in 86ms
+[01:25:24.640] Browser ERROR   {"code":"ERR_BAD_RESPONSE","config":{"adapter":["xhr","http","fetch"],"allowAbsoluteUrls":true,"baseURL":"http://localhost:3000","env":{},"headers":{"Accept":"application/json, text/plain, */*","Content-Type":"application/json"},"maxBodyLength":-1,"maxContentLength":-1,"method":"get","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"/productos/ListarProducto","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 500","name":"AxiosError","stack":"AxiosError: Request failed with status code 500\n    at settle (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:1954:16)\n    at XMLHttpRequest.onloadend (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:2469:167)\n    at Axios.request (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:3273:49)\n    at async Promise.all (index 0)\n    at async cargarDatos (http://localhost:3001/_next/static/chunks/%5Broot-of-the-server%5D__6a9f87b8._.js:547:51)","status":500}
+[01:25:39.207] Server  LOG      ✓ Compiled in 47ms
+[01:26:15.960] Server  LOG      ✓ Compiled in 40ms
+[01:26:29.707] Server  LOG      ✓ Compiled in 40ms
+[01:26:58.764] Server  LOG      ✓ Compiled in 45ms
+[01:28:38.817] Server  LOG      ✓ Compiled in 43ms
+[01:29:07.430] Server  LOG      ✓ Compiled in 41ms
+[01:29:13.056] Browser ERROR   {"code":"ERR_BAD_REQUEST","config":{"adapter":["xhr","http","fetch"],"allowAbsoluteUrls":true,"baseURL":"http://localhost:3000","env":{},"headers":{"Accept":"application/json, text/plain, */*","Content-Type":"application/json"},"maxBodyLength":-1,"maxContentLength":-1,"method":"get","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"/empleados/ListarEmpleado","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 404","name":"AxiosError","stack":"AxiosError: Request failed with status code 404\n    at settle (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:1954:16)\n    at XMLHttpRequest.onloadend (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:2469:167)\n    at Axios.request (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:3273:49)\n    at async Promise.all (index 0)\n    at async cargarDatos (http://localhost:3001/_next/static/chunks/%5Broot-of-the-server%5D__6a9f87b8._.js:550:65)","status":404}
+[01:29:35.759] Server  LOG      ✓ Compiled in 42ms
+[01:30:31.413] Server  LOG      ✓ Compiled in 100ms
+[01:31:51.608] Server  LOG      ✓ Compiled in 37ms
+[01:32:30.253] Server  LOG      ✓ Compiled in 48ms
+[01:32:34.587] Server  LOG      ✓ Compiled in 45ms
+[01:33:29.009] Server  LOG      ✓ Compiled in 36ms
