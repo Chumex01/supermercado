@@ -16,7 +16,6 @@ import { OrdenesCompraModule } from './ordenes-compra/ordenes-compra.module';
 // import { DetalleOrdenCompraModule } from './detalle-orden-compra/detalle-orden-compra.module';
 import { LoteModule } from './lotes/lotes.module';
 import { VentasModule } from './ventas/ventas.module';
-import { DetalleVentaModule } from './detalle-ventas/detalle-ventas.module';
 import { StockModule } from './stock/stock.module';
 
 @Module({
@@ -50,7 +49,6 @@ import { StockModule } from './stock/stock.module';
     LoteModule,
     StockModule,
     VentasModule,
-    DetalleVentaModule,
   ],
   // controllers: [AppController],
   // providers: [AppService],
