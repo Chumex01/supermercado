@@ -4,7 +4,6 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Stock } from './stock.entity';
 import { Sucursal } from '../sucursales/sucursal.entity';
-// import { Producto } from '../productos/producto.entity';
 import { Lote } from '../lotes/lote.entity';
 
 @Injectable()
@@ -25,7 +24,13 @@ export class StockService {
 
   async getStocks() {
     return this.stockRepository.find({
-      relations: ['sucursal', 'lote'],
+      relations: [
+        'sucursal', 
+        'lote', 
+        'lote.producto', // ← AÑADE ESTO
+        'lote.producto.categoria', // ← OPCIONAL
+        'lote.producto.proveedor' // ← OPCIONAL
+      ],
     });
   }
 }

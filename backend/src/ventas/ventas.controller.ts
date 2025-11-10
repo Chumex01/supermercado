@@ -26,7 +26,7 @@ import { EstadoVenta, Venta } from './venta.entity';
 export class VentasController {
   constructor(private readonly ventasService: VentasService) {}
 
-  @Post()
+  @Post('CrearVentas')
   @ApiOperation({
     summary: 'Crear una nueva venta',
     description: 'Crea una nueva venta y actualiza el stock automáticamente',
@@ -52,7 +52,7 @@ export class VentasController {
     };
   }
 
-  @Get()
+  @Get('ListarVentas')
   @ApiOperation({
     summary: 'Obtener todas las ventas',
     description:
