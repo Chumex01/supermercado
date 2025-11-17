@@ -74,6 +74,10 @@ export default function LoginForm() {
       <Button type="submit" variant="contained" fullWidth disabled={loading}>
         {loading ? "Ingresando..." : "Entrar"}
       </Button>
+
+      <Button size="small"  color="inherit" variant="outlined" onClick={() => router.push("/register")}>
+            Registrarse
+          </Button>
     </Box>
   );
 }

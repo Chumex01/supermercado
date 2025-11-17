@@ -3,8 +3,8 @@
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
+  "/empleados": "pages/empleados.js",
   "/home": "pages/home.js",
-  "/lotes": "pages/lotes.js",
-  "/stock": "pages/stock.js",
-  "/ventas": "pages/ventas.js"
+  "/register": "pages/register.js",
+  "/usuarios": "pages/usuarios.js"
 }
