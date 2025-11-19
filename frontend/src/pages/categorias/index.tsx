@@ -4,14 +4,16 @@ import CategoriaTable from "@/components/categorias/CategoriaTable";
 import Navbar from "@/components/forms/Navbar";
 import { api } from "@/lib/api";
 import { Box, Typography, Button, Modal, Stack, CircularProgress } from "@mui/material";
-import router from "next/router";
+// import router from "next/router";
+import router, { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import Cookies from "js-cookie";
 
 interface Categoria {
-    id: number;
-    nombre: string;
-    descripcion: string;
-    estado: string;
+  id: number;
+  nombre: string;
+  descripcion: string;
+  estado: string;
 }
 
 const modalStyle = {
@@ -27,58 +29,64 @@ const modalStyle = {
 };
 
 export default function CategoriasPage() {
-    const [categorias, setCategorias] = useState<Categoria[]>([]);
-      const [loading, setLoading] = useState(true);
-      const [modalOpen, setModalOpen] = useState(false);
-      const [showForm, setShowForm] = useState(false);
+  const [categorias, setCategorias] = useState<Categoria[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [showForm, setShowForm] = useState(false);
+  const router = useRouter();
 
-      useEffect(() => {
-        cargarCategorias();
-      }, []);
-    
-      const cargarCategorias = async () => {
-        setLoading(true);
-        try {
-          const res = await api.get("/categorias/ListarCategorias");
-          setCategorias(res.data);
-        } catch (err) {
-          console.error(err);
-          alert("Error al cargar categorias");
-        } finally {
-          setLoading(false);
-        }
-      };
+  useEffect(() => {
+    const id = Cookies.get("usuario_id");
+    if (!id) router.push("/login"); // redirige si no está logueado
+  }, [router]);
 
-      const crearCategorias = async (nombre: string, descripcion: string) => {
-        try {
-          await api.post("/categorias/CrearCategoria", { nombre, descripcion });
-          alert("Categoria creada con éxito ✅");
-          cargarCategorias();
-          setShowForm(false);
-        } catch (err) {
-          console.error(err);
-          alert("Error al crear categoria");
-        }
-      };
+  useEffect(() => {
+    cargarCategorias();
+  }, []);
 
-      const handleOpenModal = () => {
-        setModalOpen(true);
-      };
+  const cargarCategorias = async () => {
+    setLoading(true);
+    try {
+      const res = await api.get("/categorias/ListarCategorias");
+      setCategorias(res.data);
+    } catch (err) {
+      console.error(err);
+      alert("Error al cargar categorias");
+    } finally {
+      setLoading(false);
+    }
+  };
 
-      const handleModalClose = () => {
-        setModalOpen(false);
-      };
+  const crearCategorias = async (nombre: string, descripcion: string) => {
+    try {
+      await api.post("/categorias/CrearCategoria", { nombre, descripcion });
+      alert("Categoria creada con éxito ✅");
+      cargarCategorias();
+      setShowForm(false);
+    } catch (err) {
+      console.error(err);
+      alert("Error al crear categoria");
+    }
+  };
 
-      const handleCreateUser = () => {
-        setModalOpen(false); // Cierra el modal
-        setShowForm(true); // Abre el formulario
-      };
+  const handleOpenModal = () => {
+    setModalOpen(true);
+  };
 
-      return (
-        <>
-        <Navbar />
+  const handleModalClose = () => {
+    setModalOpen(false);
+  };
 
-              <Box sx={{ p: 3 }}>
+  const handleCreateUser = () => {
+    setModalOpen(false); // Cierra el modal
+    setShowForm(true); // Abre el formulario
+  };
+
+  return (
+    <>
+      <Navbar />
+
+      <Box sx={{ p: 3 }}>
         <Typography variant="h4" gutterBottom>
           Categorias
         </Typography>
@@ -138,7 +146,7 @@ export default function CategoriasPage() {
 
         {loading ? <CircularProgress /> : <CategoriaTable categorias={categorias} />}
       </Box>
-        </>
-      )
+    </>
+  )
 }
 

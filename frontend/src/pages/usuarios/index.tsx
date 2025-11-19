@@ -14,7 +14,8 @@ import {
   Stack,
 } from "@mui/material";
 import Navbar from "@/components/forms/Navbar";
-import router from "next/router";
+import router, { useRouter } from "next/router";
+import Cookies from "js-cookie";
 
 interface Usuario {
   id: number;
@@ -39,6 +40,12 @@ export default function UsuariosPage() {
   const [loading, setLoading] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
   const [showForm, setShowForm] = useState(false);
+    const router = useRouter();
+  
+    useEffect(() => {
+      const id = Cookies.get("usuario_id");
+      if (!id) router.push("/login"); // redirige si no está logueado
+    }, [router]);
 
   useEffect(() => {
     cargarUsuarios();

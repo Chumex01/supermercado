@@ -9,9 +9,11 @@ import {
   Stack,
   CircularProgress,
 } from "@mui/material";
-import router from "next/router";
+// import router from "next/router";
 import { useEffect, useState } from "react";
 import SolicitudTable from "@/components/solicitudes/SolicitudTable";
+import router, { useRouter } from "next/router";
+import Cookies from "js-cookie";
 
 interface Solicitud {
   id: number;
@@ -52,6 +54,12 @@ export default function SolicitudesPage() {
   const [loading, setLoading] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
   const [showForm, setShowForm] = useState(false);
+      const router = useRouter();
+    
+      useEffect(() => {
+        const id = Cookies.get("usuario_id");
+        if (!id) router.push("/login"); // redirige si no está logueado
+      }, [router]);
 
   useEffect(() => {
     cargarSolicitudes();

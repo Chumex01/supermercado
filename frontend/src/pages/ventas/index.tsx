@@ -3,8 +3,10 @@ import VentaForm from "@/components/ventas/ventaForm";
 import VentaTable from "@/components/ventas/VentaTable";
 import { api } from "@/lib/api";
 import { Box, Typography, Button, Modal, Stack, CircularProgress } from "@mui/material";
-import router from "next/router";
+// import router from "next/router";
 import { useEffect, useState } from "react";
+import router, { useRouter } from "next/router";
+import Cookies from "js-cookie";
 
 interface Venta {
   id: number;
@@ -58,6 +60,12 @@ export default function VentasPage() {
     const [loading, setLoading] = useState(true);
     const [modalOpen, setModalOpen] = useState(false);
     const [showForm, setShowForm] = useState(false);
+        const router = useRouter();
+      
+        useEffect(() => {
+          const id = Cookies.get("usuario_id");
+          if (!id) router.push("/login"); // redirige si no está logueado
+        }, [router]);
 
     useEffect(() => {
         cargarVentas();
@@ -146,7 +154,7 @@ export default function VentasPage() {
                         <Stack spacing={2} sx={{ mt: 2 }}>
                             <Button
                                 variant="contained"
-                                onClick={() => router.push("/lotes")}
+                                onClick={() => router.push("/reportes")}
                                 fullWidth
                             >
                                 Reportes

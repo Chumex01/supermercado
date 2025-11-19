@@ -53,14 +53,13 @@ const cargarDatos = async () => {
   setLoading(true);
   try {
     const [usuariosRes, sucursalesRes] = await Promise.all([
-      api.get("/usuarios/ListarUsuario"),  // 👈 cuidado con mayúsculas/minúsculas
+      api.get("/usuarios/ultimo"),  // 👈 cuidado con mayúsculas/minúsculas
       api.get("/sucursales/ListarSucursal"),
     ]);
 
     // ✅ Verificamos si hay data en diferentes formatos
-    setUsuarios(
-      usuariosRes.data.data || usuariosRes.data || []
-    );
+    setUsuarios([usuariosRes.data]);
+
     setSucursales(
       sucursalesRes.data.data || sucursalesRes.data || []
     );

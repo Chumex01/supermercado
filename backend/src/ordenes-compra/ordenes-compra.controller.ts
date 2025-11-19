@@ -50,4 +50,15 @@ export class OrdenesCompraController {
       orden: ordenActualizada,
     };
   }
+
+  @Get('ultimo')
+@ApiOperation({ summary: 'Obtener la última orden de compra registrada' })
+async obtenerUltimaOrden() {
+  const orden = await this.ordenesCompraService.getUltimaOrdenCompra();
+  return {
+    message: 'Última orden de compra obtenida correctamente',
+    data: orden,
+  };
+}
+
 }

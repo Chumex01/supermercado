@@ -48,4 +48,15 @@ export class OrdenesCompraService {
 
     return await this.ordenCompraRepository.save(orden);
   }
+
+  async getUltimaOrdenCompra() {
+  const ordenes = await this.ordenCompraRepository.find({
+    order: { id: 'DESC' },
+    take: 1,
+    relations: ['solicitud_id', 'proveedor_id'], // relaciones necesarias
+  });
+
+  return ordenes[0] ?? null;
+}
+
 }

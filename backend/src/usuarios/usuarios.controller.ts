@@ -5,7 +5,7 @@ import { CreateUsuarioDto } from './dto/create-usuario.dto';
 
 @Controller('usuarios')
 export class UsuariosController {
-  constructor(private readonly usuariosService: UsuariosService) {}
+  constructor(private readonly usuariosService: UsuariosService) { }
 
   @Post()
   @ApiOperation({ summary: 'Crear un nuevo usuario' })
@@ -23,4 +23,11 @@ export class UsuariosController {
   listarUsuario() {
     return this.usuariosService.getUsuarios();
   }
+
+  @Get('ultimo')
+  @ApiOperation({ summary: 'Obtener el último usuario registrado' })
+  getUltimoUsuario() {
+    return this.usuariosService.getUltimoUsuario();
+  }
+
 }

@@ -3,8 +3,10 @@ import StockForm from "@/components/stock/stockForm";
 import StockTable from "@/components/stock/StockTable";
 import { api } from "@/lib/api";
 import { Box, Typography, Button, Modal, Stack, CircularProgress } from "@mui/material";
-import router from "next/router";
+// import router from "next/router";
 import { useEffect, useState } from "react";
+import router, { useRouter } from "next/router";
+import Cookies from "js-cookie";
 
 interface Stock {
   id: number;
@@ -44,6 +46,12 @@ export default function StockPage() {
   const [loading, setLoading] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
   const [showForm, setShowForm] = useState(false);
+      const router = useRouter();
+    
+      useEffect(() => {
+        const id = Cookies.get("usuario_id");
+        if (!id) router.push("/login"); // redirige si no está logueado
+      }, [router]);
 
   useEffect(() => {
     cargarStocks();
@@ -103,7 +111,7 @@ export default function StockPage() {
         </Button>
 
         <Button variant="contained" onClick={handleCreateLote} sx={{ mb: 2 }} >
-          Crear Nuevo registro de Lote
+          Crear Nuevo registro de Stock
         </Button>
 
         {/* Formulario de lote */}

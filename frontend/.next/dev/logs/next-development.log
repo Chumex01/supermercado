@@ -1,57 +1,890 @@
-[00:00:08.395] Server  LOG      ✓ Ready in 6s
-[00:01:43.843] Server  LOG      ○ Compiling /_error ...
-[00:01:52.776] Server  ERROR   PageNotFoundError: Cannot find module for page: /login
-[00:02:00.087] Server  ERROR   PageNotFoundError: Cannot find module for page: /login
-[00:02:19.571] Server  LOG      ○ Compiling / ...
-[00:02:29.081] Server  ERROR   PageNotFoundError: Cannot find module for page: /login
-[00:03:32.399] Server  LOG      ✓ Compiled in 346ms
-[00:04:13.672] Server  LOG      ✓ Compiled in 260ms
-[00:05:20.976] Server  LOG      ✓ Compiled in 126ms
-[00:08:53.088] Server  LOG      ✓ Compiled in 141ms
-[00:09:09.816] Server  LOG      ✓ Compiled in 107ms
-[00:09:17.847] Server  LOG      ✓ Compiled in 102ms
-[00:10:18.025] Server  LOG      ✓ Compiled in 732ms
-[00:12:59.538] Server  LOG      ✓ Compiled in 122ms
-[00:12:59.895] Browser ERROR   %o
+[00:00:05.825] Server  LOG      ✓ Ready in 4.1s
+[00:00:10.005] Server  LOG      ○ Compiling /usuarios ...
+[00:00:30.558] Server  ERROR   PageNotFoundError: Cannot find module for page: /login
+[00:07:54.055] Server  LOG      ✓ Compiled in 970ms
+[00:07:54.508] Browser ERROR   %o
 
 %s
 
 %s
- {} The above error occurred in the <RegisterPage> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
-[00:14:22.681] Server  LOG      ✓ Compiled in 180ms
-[00:14:22.868] Browser ERROR   %o
+ {} The above error occurred in the <CategoriasPage> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:08:42.352] Server  ERROR   ReferenceError: useRouter is not defined
+[00:08:42.379] Server  ERROR    ⨯ ReferenceError: useRouter is not defined
+[00:08:42.399] Server  ERROR    ⨯ ReferenceError: useRouter is not defined
+[00:08:44.821] Browser ERROR   uncaughtError: ReferenceError: useRouter is not defined
+[00:09:09.725] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:09:10.306] Server  ERROR   ReferenceError: useRouter is not defined
+[00:09:10.323] Server  ERROR    ⨯ ReferenceError: useRouter is not defined
+[00:09:10.345] Server  ERROR    ⨯ ReferenceError: useRouter is not defined
+[00:09:10.354] Server  LOG      ✓ Compiled in 257ms
+[00:09:10.780] Browser ERROR   uncaughtError: ReferenceError: useRouter is not defined
+[00:09:28.383] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:09:28.928] Server  ERROR   ReferenceError: useRouter is not defined
+[00:09:28.944] Server  ERROR    ⨯ ReferenceError: useRouter is not defined
+[00:09:28.953] Server  ERROR    ⨯ ReferenceError: useRouter is not defined
+[00:09:28.960] Server  LOG      ✓ Compiled in 292ms
+[00:09:29.758] Browser ERROR   uncaughtError: ReferenceError: useRouter is not defined
+[00:09:46.459] Server  LOG      ✓ Compiled in 180ms
+[00:09:49.856] Browser ERROR   ./src/pages/categorias/index.tsx:8:8
+Ecmascript file had an error
+   6 | import { Box, Typography, Button, Modal, Stack, CircularProgress } from "@mui/material";
+   7 | import router from "next/router";
+>  8 | import router, { useRouter } from "next/router";
+     |        ^^^^^^
+   9 | import { useEffect, useState } from "react";
+  10 | import Cookies from "js-cookie";
+  11 |
+
+the name `router` is defined multiple times
+[00:09:50.240] Browser ERROR   uncaughtError: Error: ./src/pages/categorias/index.tsx:8:8
+Ecmascript file had an error
+   6 | import { Box, Typography, Button, Modal, Stack, CircularProgress } from "@mui/material";
+   7 | import router from "next/router";
+>  8 | import router, { useRouter } from "next/router";
+     |        ^^^^^^
+   9 | import { useEffect, useState } from "react";
+  10 | import Cookies from "js-cookie";
+  11 |
+
+the name `router` is defined multiple times
+
+
+[00:09:50.451] Browser ERROR   ./src/pages/categorias/index.tsx:8:8
+Ecmascript file had an error
+   6 | import { Box, Typography, Button, Modal, Stack, CircularProgress } from "@mui/material";
+   7 | import router from "next/router";
+>  8 | import router, { useRouter } from "next/router";
+     |        ^^^^^^
+   9 | import { useEffect, useState } from "react";
+  10 | import Cookies from "js-cookie";
+  11 |
+
+the name `router` is defined multiple times
+[00:09:50.451] Browser ERROR   ./src/pages/categorias/index.tsx:8:8
+Ecmascript file had an error
+   6 | import { Box, Typography, Button, Modal, Stack, CircularProgress } from "@mui/material";
+   7 | import router from "next/router";
+>  8 | import router, { useRouter } from "next/router";
+     |        ^^^^^^
+   9 | import { useEffect, useState } from "react";
+  10 | import Cookies from "js-cookie";
+  11 |
+
+the name `router` is defined multiple times
+[00:10:00.283] Server  LOG      ✓ Compiled in 223ms
+[00:10:00.667] Browser ERROR   ./src/pages/categorias/index.tsx:8:8
+Ecmascript file had an error
+   6 | import { Box, Typography, Button, Modal, Stack, CircularProgress } from "@mui/material";
+   7 | import router from "next/router";
+>  8 | import router, { useRouter } from "next/router";
+     |        ^^^^^^
+   9 | import { useEffect, useState } from "react";
+  10 | import Cookies from "js-cookie";
+  11 |
+
+the name `router` is defined multiple times
+[00:10:03.007] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:10:03.832] Server  ERROR   PageNotFoundError: Cannot find module for page: /login
+[00:10:13.818] Server  ERROR   PageNotFoundError: Cannot find module for page: /login
+[00:11:40.654] Server  ERROR   PageNotFoundError: Cannot find module for page: /login
+[00:12:28.955] Server  ERROR   PageNotFoundError: Cannot find module for page: /login
+[00:12:34.917] Server  ERROR   PageNotFoundError: Cannot find module for page: /login
+[00:13:50.404] Server  ERROR   PageNotFoundError: Cannot find module for page: /login
+[00:18:29.644] Server  LOG      ✓ Compiled in 237ms
+[00:18:45.626] Browser ERROR   {"code":"ERR_BAD_RESPONSE","config":{"adapter":["xhr","http","fetch"],"allowAbsoluteUrls":true,"baseURL":"http://localhost:3000","env":{},"headers":{"Accept":"application/json, text/plain, */*","Content-Type":"application/json"},"maxBodyLength":-1,"maxContentLength":-1,"method":"get","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"/usuarios/ultimo","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 500","name":"AxiosError","stack":"AxiosError: Request failed with status code 500\n    at settle (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:1954:16)\n    at XMLHttpRequest.onloadend (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:2469:167)\n    at Axios.request (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:3273:49)\n    at async cargarUsuarios (http://localhost:3001/_next/static/chunks/%5Broot-of-the-server%5D__d0e79d9b._.js:1002:25)","status":500}
+[00:18:45.626] Browser ERROR   {"code":"ERR_BAD_RESPONSE","config":{"adapter":["xhr","http","fetch"],"allowAbsoluteUrls":true,"baseURL":"http://localhost:3000","env":{},"headers":{"Accept":"application/json, text/plain, */*","Content-Type":"application/json"},"maxBodyLength":-1,"maxContentLength":-1,"method":"get","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"/usuarios/ultimo","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 500","name":"AxiosError","stack":"AxiosError: Request failed with status code 500\n    at settle (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:1954:16)\n    at XMLHttpRequest.onloadend (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:2469:167)\n    at Axios.request (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:3273:49)\n    at async cargarUsuarios (http://localhost:3001/_next/static/chunks/%5Broot-of-the-server%5D__d0e79d9b._.js:1002:25)","status":500}
+[00:18:50.508] Server  LOG      ✓ Compiled in 245ms
+[00:19:56.404] Server  LOG      ✓ Compiled in 159ms
+[00:20:07.528] Browser ERROR   {"code":"ERR_BAD_RESPONSE","config":{"adapter":["xhr","http","fetch"],"allowAbsoluteUrls":true,"baseURL":"http://localhost:3000","env":{},"headers":{"Accept":"application/json, text/plain, */*","Content-Type":"application/json"},"maxBodyLength":-1,"maxContentLength":-1,"method":"get","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"/usuarios/ultimo","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 500","name":"AxiosError","stack":"AxiosError: Request failed with status code 500\n    at settle (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:1954:16)\n    at XMLHttpRequest.onloadend (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:2469:167)\n    at Axios.request (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:3273:49)\n    at async Promise.all (index 0)\n    at async cargarDatos (http://localhost:3001/_next/static/chunks/%5Broot-of-the-server%5D__7a861a3f._.js?id=%255Bproject%255D%252Fsrc%252Fcomponents%252Fempleados%252FempleadoForm.tsx+%255Bclient%255D+%2528ecmascript%2529:50:50)","status":500}
+[00:22:30.355] Browser ERROR   %o
 
 %s
 
 %s
- {} The above error occurred in the <RegisterPage> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
-[00:14:41.839] Server  LOG      ✓ Compiled in 128ms
-[00:15:00.892] Server  LOG      ✓ Compiled in 204ms
-[00:15:40.602] Server  LOG      ✓ Compiled in 114ms
-[00:15:40.874] Browser ERROR   %o
+ {} The above error occurred in the <EmpleadoForm> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:25:47.999] Server  LOG      ✓ Compiled in 360ms
+[00:27:14.044] Browser LOG     📋 Todas las solicitudes: {"message":"Solicitudes de compra obtenidas exitosamente","solicitudesCompra":[{"cantidad_solicitada":"10.00","empleado_id":{"apellidos":"Ramírez","cargo":"cajero","documento_identidad":"12345678","estado":"activo","fecha_contratacion":"2025-03-10","id":2,"nombres":"Carlos","telefono":"71234567"},"estado":"Aprobada","fecha_solicitud":"2025-11-10T00:55:17.318Z","id":1,"justificacion":"Ya se acabó todo","nombre_solicitud":"Solicitud de Fernet","producto_id":{"codigo_barras":"1234567890123","descripcion":"Bebida Argentina","estado":"activo","fecha_actualizacion":"2025-11-07T13:34:33.911Z","fecha_creacion":"2025-11-07T13:34:33.911Z","id":1,"nombre":"Fernet","precio_venta":"120.00","unidad_medida":"litro"},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"}}]}
+[00:27:14.045] Browser LOG     ⏳ Solicitudes pendientes: []
+[00:27:14.045] Browser LOG     📋 Todas las solicitudes: {"message":"Solicitudes de compra obtenidas exitosamente","solicitudesCompra":[{"cantidad_solicitada":"10.00","empleado_id":{"apellidos":"Ramírez","cargo":"cajero","documento_identidad":"12345678","estado":"activo","fecha_contratacion":"2025-03-10","id":2,"nombres":"Carlos","telefono":"71234567"},"estado":"Aprobada","fecha_solicitud":"2025-11-10T00:55:17.318Z","id":1,"justificacion":"Ya se acabó todo","nombre_solicitud":"Solicitud de Fernet","producto_id":{"codigo_barras":"1234567890123","descripcion":"Bebida Argentina","estado":"activo","fecha_actualizacion":"2025-11-07T13:34:33.911Z","fecha_creacion":"2025-11-07T13:34:33.911Z","id":1,"nombre":"Fernet","precio_venta":"120.00","unidad_medida":"litro"},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"}}]}
+[00:27:14.045] Browser LOG     ⏳ Solicitudes pendientes: []
+[00:27:14.045] Browser LOG     📦 Respuesta completa de la API: {"message":"Ordenes de compra obtenidas exitosamente","ordenesCompra":[{"cantidad_ordenada":"10.00","estado":"Completada","fecha_orden":"2025-11-10T00:55:50.942Z","id":1,"nombre_orden":"Orden para Fernet","precio_unitario":"500.00","proveedor_id":{"correo":"proveedor1@gmail.com","direccion":"Direccion 1","estado":"activo","id":1,"nombre":"Proveedor 1","telefono":"8574125"},"solicitud_id":{"cantidad_solicitada":"10.00","estado":"Aprobada","fecha_solicitud":"2025-11-10T00:55:17.318Z","id":1,"justificacion":"Ya se acabó todo","nombre_solicitud":"Solicitud de Fernet"},"total":"5000.00"}]}
+[00:27:14.045] Browser LOG     📦 Respuesta completa de la API: {"message":"Ordenes de compra obtenidas exitosamente","ordenesCompra":[{"cantidad_ordenada":"10.00","estado":"Completada","fecha_orden":"2025-11-10T00:55:50.942Z","id":1,"nombre_orden":"Orden para Fernet","precio_unitario":"500.00","proveedor_id":{"correo":"proveedor1@gmail.com","direccion":"Direccion 1","estado":"activo","id":1,"nombre":"Proveedor 1","telefono":"8574125"},"solicitud_id":{"cantidad_solicitada":"10.00","estado":"Aprobada","fecha_solicitud":"2025-11-10T00:55:17.318Z","id":1,"justificacion":"Ya se acabó todo","nombre_solicitud":"Solicitud de Fernet"},"total":"5000.00"}]}
+[00:27:43.639] Browser LOG     Payload a enviar: {"cantidad_solicitada":3,"empleado_id":2,"justificacion":"Ya no hay","nombre_solicitud":"Pedido de Ace","producto_id":3,"sucursal_id":1}
+[00:27:45.715] Browser LOG     {"empleado_id":2,"id_creado":2,"message":"Solicitud de compra creada exitosamente","producto_id":3,"sucursal_id":1}
+[00:27:52.670] Browser LOG     📦 Respuesta completa de la API: {"message":"Ordenes de compra obtenidas exitosamente","ordenesCompra":[{"cantidad_ordenada":"10.00","estado":"Completada","fecha_orden":"2025-11-10T00:55:50.942Z","id":1,"nombre_orden":"Orden para Fernet","precio_unitario":"500.00","proveedor_id":{"correo":"proveedor1@gmail.com","direccion":"Direccion 1","estado":"activo","id":1,"nombre":"Proveedor 1","telefono":"8574125"},"solicitud_id":{"cantidad_solicitada":"10.00","estado":"Aprobada","fecha_solicitud":"2025-11-10T00:55:17.318Z","id":1,"justificacion":"Ya se acabó todo","nombre_solicitud":"Solicitud de Fernet"},"total":"5000.00"}]}
+[00:27:52.670] Browser LOG     📋 Todas las solicitudes: {"message":"Solicitudes de compra obtenidas exitosamente","solicitudesCompra":[{"cantidad_solicitada":"10.00","empleado_id":{"apellidos":"Ramírez","cargo":"cajero","documento_identidad":"12345678","estado":"activo","fecha_contratacion":"2025-03-10","id":2,"nombres":"Carlos","telefono":"71234567"},"estado":"Aprobada","fecha_solicitud":"2025-11-10T00:55:17.318Z","id":1,"justificacion":"Ya se acabó todo","nombre_solicitud":"Solicitud de Fernet","producto_id":{"codigo_barras":"1234567890123","descripcion":"Bebida Argentina","estado":"activo","fecha_actualizacion":"2025-11-07T13:34:33.911Z","fecha_creacion":"2025-11-07T13:34:33.911Z","id":1,"nombre":"Fernet","precio_venta":"120.00","unidad_medida":"litro"},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"}},{"cantidad_solicitada":"3.00","empleado_id":{"apellidos":"Ramírez","cargo":"cajero","documento_identidad":"12345678","estado":"activo","fecha_contratacion":"2025-03-10","id":2,"nombres":"Carlos","telefono":"71234567"},"estado":"Pendiente","fecha_solicitud":"2025-11-19T19:15:25.905Z","id":2,"justificacion":"Ya no hay","nombre_solicitud":"Pedido de Ace","producto_id":{"codigo_barras":"158429845289","descripcion":"limpia","estado":"activo","fecha_actualizacion":"2025-11-07T14:28:18.508Z","fecha_creacion":"2025-11-07T14:28:18.508Z","id":3,"nombre":"Ace","precio_venta":"80.00","unidad_medida":"kg"},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"}}]}
+[00:27:52.670] Browser LOG     ⏳ Solicitudes pendientes: [{"cantidad_solicitada":"3.00","empleado_id":{"apellidos":"Ramírez","cargo":"cajero","documento_identidad":"12345678","estado":"activo","fecha_contratacion":"2025-03-10","id":2,"nombres":"Carlos","telefono":"71234567"},"estado":"Pendiente","fecha_solicitud":"2025-11-19T19:15:25.905Z","id":2,"justificacion":"Ya no hay","nombre_solicitud":"Pedido de Ace","producto_id":{"codigo_barras":"158429845289","descripcion":"limpia","estado":"activo","fecha_actualizacion":"2025-11-07T14:28:18.508Z","fecha_creacion":"2025-11-07T14:28:18.508Z","id":3,"nombre":"Ace","precio_venta":"80.00","unidad_medida":"kg"},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"}}]
+[00:27:52.670] Browser LOG     📦 Respuesta completa de la API: {"message":"Ordenes de compra obtenidas exitosamente","ordenesCompra":[{"cantidad_ordenada":"10.00","estado":"Completada","fecha_orden":"2025-11-10T00:55:50.942Z","id":1,"nombre_orden":"Orden para Fernet","precio_unitario":"500.00","proveedor_id":{"correo":"proveedor1@gmail.com","direccion":"Direccion 1","estado":"activo","id":1,"nombre":"Proveedor 1","telefono":"8574125"},"solicitud_id":{"cantidad_solicitada":"10.00","estado":"Aprobada","fecha_solicitud":"2025-11-10T00:55:17.318Z","id":1,"justificacion":"Ya se acabó todo","nombre_solicitud":"Solicitud de Fernet"},"total":"5000.00"}]}
+[00:27:52.670] Browser LOG     📋 Todas las solicitudes: {"message":"Solicitudes de compra obtenidas exitosamente","solicitudesCompra":[{"cantidad_solicitada":"10.00","empleado_id":{"apellidos":"Ramírez","cargo":"cajero","documento_identidad":"12345678","estado":"activo","fecha_contratacion":"2025-03-10","id":2,"nombres":"Carlos","telefono":"71234567"},"estado":"Aprobada","fecha_solicitud":"2025-11-10T00:55:17.318Z","id":1,"justificacion":"Ya se acabó todo","nombre_solicitud":"Solicitud de Fernet","producto_id":{"codigo_barras":"1234567890123","descripcion":"Bebida Argentina","estado":"activo","fecha_actualizacion":"2025-11-07T13:34:33.911Z","fecha_creacion":"2025-11-07T13:34:33.911Z","id":1,"nombre":"Fernet","precio_venta":"120.00","unidad_medida":"litro"},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"}},{"cantidad_solicitada":"3.00","empleado_id":{"apellidos":"Ramírez","cargo":"cajero","documento_identidad":"12345678","estado":"activo","fecha_contratacion":"2025-03-10","id":2,"nombres":"Carlos","telefono":"71234567"},"estado":"Pendiente","fecha_solicitud":"2025-11-19T19:15:25.905Z","id":2,"justificacion":"Ya no hay","nombre_solicitud":"Pedido de Ace","producto_id":{"codigo_barras":"158429845289","descripcion":"limpia","estado":"activo","fecha_actualizacion":"2025-11-07T14:28:18.508Z","fecha_creacion":"2025-11-07T14:28:18.508Z","id":3,"nombre":"Ace","precio_venta":"80.00","unidad_medida":"kg"},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"}}]}
+[00:27:52.670] Browser LOG     ⏳ Solicitudes pendientes: [{"cantidad_solicitada":"3.00","empleado_id":{"apellidos":"Ramírez","cargo":"cajero","documento_identidad":"12345678","estado":"activo","fecha_contratacion":"2025-03-10","id":2,"nombres":"Carlos","telefono":"71234567"},"estado":"Pendiente","fecha_solicitud":"2025-11-19T19:15:25.905Z","id":2,"justificacion":"Ya no hay","nombre_solicitud":"Pedido de Ace","producto_id":{"codigo_barras":"158429845289","descripcion":"limpia","estado":"activo","fecha_actualizacion":"2025-11-07T14:28:18.508Z","fecha_creacion":"2025-11-07T14:28:18.508Z","id":3,"nombre":"Ace","precio_venta":"80.00","unidad_medida":"kg"},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"}}]
+[00:27:58.409] Browser LOG     📋 Formulario abierto para solicitud: 2
+[00:27:58.409] Browser ERROR   In HTML, %s cannot be a child of <%s>.%s
+This will cause a hydration error.%s <h6> h2  
+
+  ...
+    <Fade appear={true} in={true} timeout={{enter:225,exit:195}} role="presentation" ref={function useForkRef.useMemo} ...>
+      <Transition appear={true} in={true} nodeRef={{current:null}} onEnter={function} onEntered={function} ...>
+        <MuiDialog-container onMouseDown={function handleMouseDown} className="MuiDialog-..." ...>
+          <Insertion>
+          <div onMouseDown={function handleMouseDown} className="MuiDialog-..." style={{opacity:0, ...}} ...>
+            <MuiDialog-paper as={{...}} elevation={24} role="dialog" aria-describedby={undefined} ...>
+              <Insertion>
+              <Paper elevation={24} role="dialog" aria-describedby={undefined} aria-labelledby="_r_5l_" aria-modal={true} ...>
+                <MuiPaper-root as="div" ownerState={{elevation:24, ...}} className="MuiPaper-r..." ref={null} ...>
+                  <Insertion>
+                  <div className="MuiPaper-r..." role="dialog" aria-describedby={undefined} aria-labelledby="_r_5l_" ...>
+                    <form onSubmit={function handleSubmit}>
+                      <DialogTitle>
+                        <MuiDialogTitle-root component="h2" className="MuiDialogT..." ownerState={{children:[...]}} ...>
+                          <Insertion>
+                          <Typography component="h2" className="MuiDialogT..." variant="h6" id="_r_5l_">
+                            <MuiTypography-root as="h2" ref={null} className="MuiTypogra..." id="_r_5l_" sx={{...}} ...>
+                              <Insertion>
+>                             <h2
+>                               className="MuiTypography-root MuiTypography-h6 MuiDialogTitle-root css-rvoa5x-MuiTypog..."
+>                               id="_r_5l_"
+>                               style={{}}
+>                             >
+                                <Typography variant="subtitle2" color="text.secon...">
+                                  <MuiTypography-root as="h6" ref={null} className="MuiTypogra..." sx={{color:"tex..."}} ...>
+                                    <Insertion>
+>                                   <h6
+>                                     className="MuiTypography-root MuiTypography-subtitle2 css-1x0mq5c-MuiTypography-..."
+>                                     style={{}}
+>                                   >
+                      ...
+
+[00:27:58.409] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. h2 <h6>
+[00:28:17.473] Browser LOG     🎯 handleSubmit EJECUTADO
+[00:28:17.473] Browser LOG     📤 Payload a enviar: {"cantidad_ordenada":3,"nombre_orden":"Orden para Ace","precio_unitario":50,"proveedor_id":1,"solicitud_id":2}
+[00:28:17.473] Browser LOG     🔍 Tipos de datos: {"cantidad_ordenada":"number","nombre_orden":"string","precio_unitario":"number","proveedor_id":"number","solicitud_id":"number"}
+[00:28:17.473] Browser LOG     📨 Recibiendo datos en crearOrdenCompra: {"cantidad_ordenada":3,"nombre_orden":"Orden para Ace","precio_unitario":50,"proveedor_id":1,"solicitud_id":2}
+[00:28:17.473] Browser LOG     ✅ Datos validados: {"cantidad_ordenada":3,"nombre_orden":"Orden para Ace","precio_unitario":50,"proveedor_id":1,"solicitud_id":2}
+[00:28:17.473] Browser LOG     🚀 Enviando request al servidor...
+[00:28:17.473] Browser LOG     ✅ Respuesta del servidor: {"datos":{"cantidad_ordenada":"3.00","estado":"Pendiente","fecha_orden":"2025-11-19T19:15:57.789Z","id":2,"nombre_orden":"Orden para Ace","precio_unitario":"50.00","proveedor_id":{"id":1},"solicitud_id":{"id":2},"total":"150.00"},"id_creado":2,"message":"Orden de compra creada exitosamente"}
+[00:28:21.457] Browser LOG     📦 Respuesta completa de la API: {"message":"Ordenes de compra obtenidas exitosamente","ordenesCompra":[{"cantidad_ordenada":"10.00","estado":"Completada","fecha_orden":"2025-11-10T00:55:50.942Z","id":1,"nombre_orden":"Orden para Fernet","precio_unitario":"500.00","proveedor_id":{"correo":"proveedor1@gmail.com","direccion":"Direccion 1","estado":"activo","id":1,"nombre":"Proveedor 1","telefono":"8574125"},"solicitud_id":{"cantidad_solicitada":"10.00","estado":"Aprobada","fecha_solicitud":"2025-11-10T00:55:17.318Z","id":1,"justificacion":"Ya se acabó todo","nombre_solicitud":"Solicitud de Fernet"},"total":"5000.00"},{"cantidad_ordenada":"3.00","estado":"Pendiente","fecha_orden":"2025-11-19T19:15:57.789Z","id":2,"nombre_orden":"Orden para Ace","precio_unitario":"50.00","proveedor_id":{"correo":"proveedor1@gmail.com","direccion":"Direccion 1","estado":"activo","id":1,"nombre":"Proveedor 1","telefono":"8574125"},"solicitud_id":{"cantidad_solicitada":"3.00","estado":"Aprobada","fecha_solicitud":"2025-11-19T19:15:25.905Z","id":2,"justificacion":"Ya no hay","nombre_solicitud":"Pedido de Ace"},"total":"150.00"}]}
+[00:28:21.457] Browser LOG     📋 Todas las solicitudes: {"message":"Solicitudes de compra obtenidas exitosamente","solicitudesCompra":[{"cantidad_solicitada":"10.00","empleado_id":{"apellidos":"Ramírez","cargo":"cajero","documento_identidad":"12345678","estado":"activo","fecha_contratacion":"2025-03-10","id":2,"nombres":"Carlos","telefono":"71234567"},"estado":"Aprobada","fecha_solicitud":"2025-11-10T00:55:17.318Z","id":1,"justificacion":"Ya se acabó todo","nombre_solicitud":"Solicitud de Fernet","producto_id":{"codigo_barras":"1234567890123","descripcion":"Bebida Argentina","estado":"activo","fecha_actualizacion":"2025-11-07T13:34:33.911Z","fecha_creacion":"2025-11-07T13:34:33.911Z","id":1,"nombre":"Fernet","precio_venta":"120.00","unidad_medida":"litro"},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"}},{"cantidad_solicitada":"3.00","empleado_id":{"apellidos":"Ramírez","cargo":"cajero","documento_identidad":"12345678","estado":"activo","fecha_contratacion":"2025-03-10","id":2,"nombres":"Carlos","telefono":"71234567"},"estado":"Aprobada","fecha_solicitud":"2025-11-19T19:15:25.905Z","id":2,"justificacion":"Ya no hay","nombre_solicitud":"Pedido de Ace","producto_id":{"codigo_barras":"158429845289","descripcion":"limpia","estado":"activo","fecha_actualizacion":"2025-11-07T14:28:18.508Z","fecha_creacion":"2025-11-07T14:28:18.508Z","id":3,"nombre":"Ace","precio_venta":"80.00","unidad_medida":"kg"},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"}}]}
+[00:28:21.457] Browser LOG     ⏳ Solicitudes pendientes: []
+[00:28:21.457] Browser LOG     📦 Respuesta completa de la API: {"message":"Ordenes de compra obtenidas exitosamente","ordenesCompra":[{"cantidad_ordenada":"10.00","estado":"Completada","fecha_orden":"2025-11-10T00:55:50.942Z","id":1,"nombre_orden":"Orden para Fernet","precio_unitario":"500.00","proveedor_id":{"correo":"proveedor1@gmail.com","direccion":"Direccion 1","estado":"activo","id":1,"nombre":"Proveedor 1","telefono":"8574125"},"solicitud_id":{"cantidad_solicitada":"10.00","estado":"Aprobada","fecha_solicitud":"2025-11-10T00:55:17.318Z","id":1,"justificacion":"Ya se acabó todo","nombre_solicitud":"Solicitud de Fernet"},"total":"5000.00"},{"cantidad_ordenada":"3.00","estado":"Pendiente","fecha_orden":"2025-11-19T19:15:57.789Z","id":2,"nombre_orden":"Orden para Ace","precio_unitario":"50.00","proveedor_id":{"correo":"proveedor1@gmail.com","direccion":"Direccion 1","estado":"activo","id":1,"nombre":"Proveedor 1","telefono":"8574125"},"solicitud_id":{"cantidad_solicitada":"3.00","estado":"Aprobada","fecha_solicitud":"2025-11-19T19:15:25.905Z","id":2,"justificacion":"Ya no hay","nombre_solicitud":"Pedido de Ace"},"total":"150.00"}]}
+[00:28:21.457] Browser LOG     📋 Todas las solicitudes: {"message":"Solicitudes de compra obtenidas exitosamente","solicitudesCompra":[{"cantidad_solicitada":"10.00","empleado_id":{"apellidos":"Ramírez","cargo":"cajero","documento_identidad":"12345678","estado":"activo","fecha_contratacion":"2025-03-10","id":2,"nombres":"Carlos","telefono":"71234567"},"estado":"Aprobada","fecha_solicitud":"2025-11-10T00:55:17.318Z","id":1,"justificacion":"Ya se acabó todo","nombre_solicitud":"Solicitud de Fernet","producto_id":{"codigo_barras":"1234567890123","descripcion":"Bebida Argentina","estado":"activo","fecha_actualizacion":"2025-11-07T13:34:33.911Z","fecha_creacion":"2025-11-07T13:34:33.911Z","id":1,"nombre":"Fernet","precio_venta":"120.00","unidad_medida":"litro"},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"}},{"cantidad_solicitada":"3.00","empleado_id":{"apellidos":"Ramírez","cargo":"cajero","documento_identidad":"12345678","estado":"activo","fecha_contratacion":"2025-03-10","id":2,"nombres":"Carlos","telefono":"71234567"},"estado":"Aprobada","fecha_solicitud":"2025-11-19T19:15:25.905Z","id":2,"justificacion":"Ya no hay","nombre_solicitud":"Pedido de Ace","producto_id":{"codigo_barras":"158429845289","descripcion":"limpia","estado":"activo","fecha_actualizacion":"2025-11-07T14:28:18.508Z","fecha_creacion":"2025-11-07T14:28:18.508Z","id":3,"nombre":"Ace","precio_venta":"80.00","unidad_medida":"kg"},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"}}]}
+[00:28:21.458] Browser LOG     ⏳ Solicitudes pendientes: []
+[00:28:29.345] Browser LOG     🔄 Actualizando lista de órdenes y solicitudes...
+[00:28:29.345] Browser LOG     📦 Respuesta completa de la API: {"message":"Ordenes de compra obtenidas exitosamente","ordenesCompra":[{"cantidad_ordenada":"10.00","estado":"Completada","fecha_orden":"2025-11-10T00:55:50.942Z","id":1,"nombre_orden":"Orden para Fernet","precio_unitario":"500.00","proveedor_id":{"correo":"proveedor1@gmail.com","direccion":"Direccion 1","estado":"activo","id":1,"nombre":"Proveedor 1","telefono":"8574125"},"solicitud_id":{"cantidad_solicitada":"10.00","estado":"Aprobada","fecha_solicitud":"2025-11-10T00:55:17.318Z","id":1,"justificacion":"Ya se acabó todo","nombre_solicitud":"Solicitud de Fernet"},"total":"5000.00"},{"cantidad_ordenada":"3.00","estado":"Completada","fecha_orden":"2025-11-19T19:15:57.789Z","id":2,"nombre_orden":"Orden para Ace","precio_unitario":"50.00","proveedor_id":{"correo":"proveedor1@gmail.com","direccion":"Direccion 1","estado":"activo","id":1,"nombre":"Proveedor 1","telefono":"8574125"},"solicitud_id":{"cantidad_solicitada":"3.00","estado":"Aprobada","fecha_solicitud":"2025-11-19T19:15:25.905Z","id":2,"justificacion":"Ya no hay","nombre_solicitud":"Pedido de Ace"},"total":"150.00"}]}
+[00:28:29.345] Browser LOG     📋 Todas las solicitudes: {"message":"Solicitudes de compra obtenidas exitosamente","solicitudesCompra":[{"cantidad_solicitada":"10.00","empleado_id":{"apellidos":"Ramírez","cargo":"cajero","documento_identidad":"12345678","estado":"activo","fecha_contratacion":"2025-03-10","id":2,"nombres":"Carlos","telefono":"71234567"},"estado":"Aprobada","fecha_solicitud":"2025-11-10T00:55:17.318Z","id":1,"justificacion":"Ya se acabó todo","nombre_solicitud":"Solicitud de Fernet","producto_id":{"codigo_barras":"1234567890123","descripcion":"Bebida Argentina","estado":"activo","fecha_actualizacion":"2025-11-07T13:34:33.911Z","fecha_creacion":"2025-11-07T13:34:33.911Z","id":1,"nombre":"Fernet","precio_venta":"120.00","unidad_medida":"litro"},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"}},{"cantidad_solicitada":"3.00","empleado_id":{"apellidos":"Ramírez","cargo":"cajero","documento_identidad":"12345678","estado":"activo","fecha_contratacion":"2025-03-10","id":2,"nombres":"Carlos","telefono":"71234567"},"estado":"Aprobada","fecha_solicitud":"2025-11-19T19:15:25.905Z","id":2,"justificacion":"Ya no hay","nombre_solicitud":"Pedido de Ace","producto_id":{"codigo_barras":"158429845289","descripcion":"limpia","estado":"activo","fecha_actualizacion":"2025-11-07T14:28:18.508Z","fecha_creacion":"2025-11-07T14:28:18.508Z","id":3,"nombre":"Ace","precio_venta":"80.00","unidad_medida":"kg"},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"}}]}
+[00:28:29.345] Browser LOG     ⏳ Solicitudes pendientes: []
+[00:28:31.627] Browser LOG     📦 Respuesta completa de la API: {"message":"Ordenes de compra obtenidas exitosamente","ordenesCompra":[{"cantidad_ordenada":"10.00","estado":"Completada","fecha_orden":"2025-11-10T00:55:50.942Z","id":1,"nombre_orden":"Orden para Fernet","precio_unitario":"500.00","proveedor_id":{"correo":"proveedor1@gmail.com","direccion":"Direccion 1","estado":"activo","id":1,"nombre":"Proveedor 1","telefono":"8574125"},"solicitud_id":{"cantidad_solicitada":"10.00","estado":"Aprobada","fecha_solicitud":"2025-11-10T00:55:17.318Z","id":1,"justificacion":"Ya se acabó todo","nombre_solicitud":"Solicitud de Fernet"},"total":"5000.00"},{"cantidad_ordenada":"3.00","estado":"Completada","fecha_orden":"2025-11-19T19:15:57.789Z","id":2,"nombre_orden":"Orden para Ace","precio_unitario":"50.00","proveedor_id":{"correo":"proveedor1@gmail.com","direccion":"Direccion 1","estado":"activo","id":1,"nombre":"Proveedor 1","telefono":"8574125"},"solicitud_id":{"cantidad_solicitada":"3.00","estado":"Aprobada","fecha_solicitud":"2025-11-19T19:15:25.905Z","id":2,"justificacion":"Ya no hay","nombre_solicitud":"Pedido de Ace"},"total":"150.00"}]}
+[00:28:31.627] Browser LOG     📋 Todas las solicitudes: {"message":"Solicitudes de compra obtenidas exitosamente","solicitudesCompra":[{"cantidad_solicitada":"10.00","empleado_id":{"apellidos":"Ramírez","cargo":"cajero","documento_identidad":"12345678","estado":"activo","fecha_contratacion":"2025-03-10","id":2,"nombres":"Carlos","telefono":"71234567"},"estado":"Aprobada","fecha_solicitud":"2025-11-10T00:55:17.318Z","id":1,"justificacion":"Ya se acabó todo","nombre_solicitud":"Solicitud de Fernet","producto_id":{"codigo_barras":"1234567890123","descripcion":"Bebida Argentina","estado":"activo","fecha_actualizacion":"2025-11-07T13:34:33.911Z","fecha_creacion":"2025-11-07T13:34:33.911Z","id":1,"nombre":"Fernet","precio_venta":"120.00","unidad_medida":"litro"},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"}},{"cantidad_solicitada":"3.00","empleado_id":{"apellidos":"Ramírez","cargo":"cajero","documento_identidad":"12345678","estado":"activo","fecha_contratacion":"2025-03-10","id":2,"nombres":"Carlos","telefono":"71234567"},"estado":"Aprobada","fecha_solicitud":"2025-11-19T19:15:25.905Z","id":2,"justificacion":"Ya no hay","nombre_solicitud":"Pedido de Ace","producto_id":{"codigo_barras":"158429845289","descripcion":"limpia","estado":"activo","fecha_actualizacion":"2025-11-07T14:28:18.508Z","fecha_creacion":"2025-11-07T14:28:18.508Z","id":3,"nombre":"Ace","precio_venta":"80.00","unidad_medida":"kg"},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"}}]}
+[00:28:31.627] Browser LOG     ⏳ Solicitudes pendientes: []
+[00:32:13.737] Server  LOG      ✓ Compiled in 461ms
+[00:32:30.818] Server  LOG      ✓ Compiled in 194ms
+[00:32:38.256] Browser ERROR   {"code":"ERR_BAD_REQUEST","config":{"adapter":["xhr","http","fetch"],"allowAbsoluteUrls":true,"baseURL":"http://localhost:3000","env":{},"headers":{"Accept":"application/json, text/plain, */*","Content-Type":"application/json"},"maxBodyLength":-1,"maxContentLength":-1,"method":"get","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"/lotes/utlimo","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 404","name":"AxiosError","stack":"AxiosError: Request failed with status code 404\n    at settle (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:1954:16)\n    at XMLHttpRequest.onloadend (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:2469:167)\n    at Axios.request (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:3273:49)\n    at async Promise.all (index 1)\n    at async cargarDatos (http://localhost:3001/_next/static/chunks/%5Broot-of-the-server%5D__8420e405._.js:727:47)","status":404}
+[00:33:11.779] Browser ERROR   {"code":"ERR_BAD_REQUEST","config":{"adapter":["xhr","http","fetch"],"allowAbsoluteUrls":true,"baseURL":"http://localhost:3000","env":{},"headers":{"Accept":"application/json, text/plain, */*","Content-Type":"application/json"},"maxBodyLength":-1,"maxContentLength":-1,"method":"get","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"/lotes/utlimo","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 404","name":"AxiosError","stack":"AxiosError: Request failed with status code 404\n    at settle (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:1954:16)\n    at XMLHttpRequest.onloadend (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:2469:167)\n    at Axios.request (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:3273:49)\n    at async Promise.all (index 1)\n    at async cargarDatos (http://localhost:3001/_next/static/chunks/%5Broot-of-the-server%5D__8420e405._.js:727:47)","status":404}
+[00:37:40.125] Browser ERROR   {"code":"ERR_BAD_REQUEST","config":{"adapter":["xhr","http","fetch"],"allowAbsoluteUrls":true,"baseURL":"http://localhost:3000","env":{},"headers":{"Accept":"application/json, text/plain, */*","Content-Type":"application/json"},"maxBodyLength":-1,"maxContentLength":-1,"method":"get","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"/lotes/utlimo","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 404","name":"AxiosError","stack":"AxiosError: Request failed with status code 404\n    at settle (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:1954:16)\n    at XMLHttpRequest.onloadend (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:2469:167)\n    at Axios.request (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:3273:49)\n    at async Promise.all (index 1)\n    at async cargarDatos (http://localhost:3001/_next/static/chunks/%5Broot-of-the-server%5D__8420e405._.js:727:47)","status":404}
+[00:38:35.271] Server  LOG      ✓ Compiled in 968ms
+[00:41:25.288] Server  LOG      ✓ Compiled in 260ms
+[00:41:35.295] Browser ERROR   {}
+[00:41:58.735] Server  LOG      ✓ Compiled in 221ms
+[00:43:21.652] Server  LOG      ✓ Compiled in 228ms
+[00:43:38.851] Server  LOG      ✓ Compiled in 261ms
+[00:44:21.285] Server  LOG      ✓ Compiled in 390ms
+[00:44:30.242] Browser LOG     Respuesta completa de stocks: {"data":[{"cantidad_disponible":"7.00","cantidad_minima":"3.00","fecha_actualizacion":"2025-11-10T14:36:14.250Z","fecha_creacion":"2025-11-10T00:57:57.055Z","id":1,"lote":{"cantidad_recibida":"10.00","costo_unitario":"120.00","estado":"activo","fecha_creacion":"2025-11-10T00:57:26.603Z","fecha_recepcion":"2025-11-10T00:57:26.000Z","fecha_vencimiento":"2025-11-18","id":1,"numero_lote":"1","producto":{"categoria":"[Object]","codigo_barras":"1234567890123","descripcion":"Bebida Argentina","estado":"activo","fecha_actualizacion":"2025-11-07T13:34:33.911Z","fecha_creacion":"2025-11-07T13:34:33.911Z","id":1,"nombre":"Fernet","precio_venta":"120.00","proveedor":"[Object]","unidad_medida":"litro"}},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"},"ubicacion":"Pasillo 1, Estante 1"},{"cantidad_disponible":"14.00","cantidad_minima":"3.00","fecha_actualizacion":"2025-11-10T15:13:05.472Z","fecha_creacion":"2025-11-10T14:53:52.224Z","id":2,"lote":{"cantidad_recibida":"20.00","costo_unitario":"1200.00","estado":"activo","fecha_creacion":"2025-11-10T14:53:19.919Z","fecha_recepcion":"2025-11-10T14:53:19.000Z","fecha_vencimiento":"2025-11-18","id":2,"numero_lote":"3","producto":{"categoria":"[Object]","codigo_barras":"1234568452","descripcion":"Singani Casa Real, ajco","estado":"activo","fecha_actualizacion":"2025-11-07T13:49:59.021Z","fecha_creacion":"2025-11-07T13:49:59.021Z","id":2,"nombre":"Singani","precio_venta":"40.00","proveedor":"[Object]","unidad_medida":"litro"}},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"},"ubicacion":"Pasillo 1, Estante 3"}],"total":2}
+[00:44:30.242] Browser LOG     Stocks con información de productos: [{"id":1,"lote":"1","productoNombre":"Fernet","tieneProducto":true},{"id":2,"lote":"3","productoNombre":"Singani","tieneProducto":true}]
+[00:44:30.242] Browser WARN    MUI Grid: The `item` prop has been removed and is no longer necessary. You can safely remove it.
+
+[00:44:30.242] Browser WARN    MUI Grid: The `xs` prop has been removed. See https://mui.com/material-ui/migration/upgrade-to-grid-v2/ for migration instructions.
+
+[00:44:30.242] Browser WARN    MUI Grid: The `md` prop has been removed. See https://mui.com/material-ui/migration/upgrade-to-grid-v2/ for migration instructions.
+
+[00:45:28.104] Server  LOG      ✓ Compiled in 468ms
+[00:47:49.321] Server  LOG      ✓ Compiled in 535ms
+[00:47:52.432] Server  LOG      ✓ Compiled in 412ms
+[00:47:56.991] Server  LOG      ✓ Compiled in 752ms
+[00:48:02.682] Browser LOG     Respuesta completa de stocks: {"data":[{"cantidad_disponible":"7.00","cantidad_minima":"3.00","fecha_actualizacion":"2025-11-10T14:36:14.250Z","fecha_creacion":"2025-11-10T00:57:57.055Z","id":1,"lote":{"cantidad_recibida":"10.00","costo_unitario":"120.00","estado":"activo","fecha_creacion":"2025-11-10T00:57:26.603Z","fecha_recepcion":"2025-11-10T00:57:26.000Z","fecha_vencimiento":"2025-11-18","id":1,"numero_lote":"1","producto":{"categoria":"[Object]","codigo_barras":"1234567890123","descripcion":"Bebida Argentina","estado":"activo","fecha_actualizacion":"2025-11-07T13:34:33.911Z","fecha_creacion":"2025-11-07T13:34:33.911Z","id":1,"nombre":"Fernet","precio_venta":"120.00","proveedor":"[Object]","unidad_medida":"litro"}},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"},"ubicacion":"Pasillo 1, Estante 1"},{"cantidad_disponible":"14.00","cantidad_minima":"3.00","fecha_actualizacion":"2025-11-10T15:13:05.472Z","fecha_creacion":"2025-11-10T14:53:52.224Z","id":2,"lote":{"cantidad_recibida":"20.00","costo_unitario":"1200.00","estado":"activo","fecha_creacion":"2025-11-10T14:53:19.919Z","fecha_recepcion":"2025-11-10T14:53:19.000Z","fecha_vencimiento":"2025-11-18","id":2,"numero_lote":"3","producto":{"categoria":"[Object]","codigo_barras":"1234568452","descripcion":"Singani Casa Real, ajco","estado":"activo","fecha_actualizacion":"2025-11-07T13:49:59.021Z","fecha_creacion":"2025-11-07T13:49:59.021Z","id":2,"nombre":"Singani","precio_venta":"40.00","proveedor":"[Object]","unidad_medida":"litro"}},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"},"ubicacion":"Pasillo 1, Estante 3"}],"total":2}
+[00:48:02.682] Browser LOG     Stocks con información de productos: [{"id":1,"lote":"1","productoNombre":"Fernet","tieneProducto":true},{"id":2,"lote":"3","productoNombre":"Singani","tieneProducto":true}]
+[00:48:02.682] Browser WARN    MUI Grid: The `item` prop has been removed and is no longer necessary. You can safely remove it.
+
+[00:48:02.682] Browser WARN    MUI Grid: The `xs` prop has been removed. See https://mui.com/material-ui/migration/upgrade-to-grid-v2/ for migration instructions.
+
+[00:48:02.683] Browser WARN    MUI Grid: The `md` prop has been removed. See https://mui.com/material-ui/migration/upgrade-to-grid-v2/ for migration instructions.
+
+[01:04:56.456] Server  LOG      ✓ Compiled in 2.2s
+[01:08:56.712] Server  LOG      ✓ Compiled in 851ms
+[01:09:03.729] Browser LOG     Respuesta completa de stocks: {"data":[{"cantidad_disponible":"7.00","cantidad_minima":"3.00","fecha_actualizacion":"2025-11-10T14:36:14.250Z","fecha_creacion":"2025-11-10T00:57:57.055Z","id":1,"lote":{"cantidad_recibida":"10.00","costo_unitario":"120.00","estado":"activo","fecha_creacion":"2025-11-10T00:57:26.603Z","fecha_recepcion":"2025-11-10T00:57:26.000Z","fecha_vencimiento":"2025-11-18","id":1,"numero_lote":"1","producto":{"categoria":"[Object]","codigo_barras":"1234567890123","descripcion":"Bebida Argentina","estado":"activo","fecha_actualizacion":"2025-11-07T13:34:33.911Z","fecha_creacion":"2025-11-07T13:34:33.911Z","id":1,"nombre":"Fernet","precio_venta":"120.00","proveedor":"[Object]","unidad_medida":"litro"}},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"},"ubicacion":"Pasillo 1, Estante 1"},{"cantidad_disponible":"14.00","cantidad_minima":"3.00","fecha_actualizacion":"2025-11-10T15:13:05.472Z","fecha_creacion":"2025-11-10T14:53:52.224Z","id":2,"lote":{"cantidad_recibida":"20.00","costo_unitario":"1200.00","estado":"activo","fecha_creacion":"2025-11-10T14:53:19.919Z","fecha_recepcion":"2025-11-10T14:53:19.000Z","fecha_vencimiento":"2025-11-18","id":2,"numero_lote":"3","producto":{"categoria":"[Object]","codigo_barras":"1234568452","descripcion":"Singani Casa Real, ajco","estado":"activo","fecha_actualizacion":"2025-11-07T13:49:59.021Z","fecha_creacion":"2025-11-07T13:49:59.021Z","id":2,"nombre":"Singani","precio_venta":"40.00","proveedor":"[Object]","unidad_medida":"litro"}},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"},"ubicacion":"Pasillo 1, Estante 3"}],"total":2}
+[01:09:03.732] Browser LOG     Stocks con información de productos: [{"id":1,"lote":"1","productoNombre":"Fernet","tieneProducto":true},{"id":2,"lote":"3","productoNombre":"Singani","tieneProducto":true}]
+[01:09:41.472] Server  LOG      ✓ Compiled in 5.4s
+[01:10:45.306] Server  LOG      ✓ Compiled in 728ms
+[01:12:57.413] Server  LOG      ✓ Compiled in 3s
+[01:12:58.507] Browser ERROR   ./src/components/ventas/ventaForm.tsx:726:2
+Parsing ecmascript source code failed
+  724 | ```
+  725 |
+> 726 | };
+      |  ^
+  727 |
+  728 | const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  729 | const { name, value } = e.target;
+
+Expected a semicolon
+
+Import traces:
+  Browser:
+    ./src/components/ventas/ventaForm.tsx
+    ./src/pages/ventas/index.tsx
+
+  SSR:
+    ./src/components/ventas/ventaForm.tsx
+    ./src/pages/ventas/index.tsx
+[01:12:58.507] Browser ERROR   ./src/components/ventas/ventaForm.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/src/components/ventas/ventaForm.tsx [ssr] (ecmascript)
+
+Caused by:
+- CJS module can't be async.
+
+Debug info:
+- An error occurred while generating the chunk item [project]/src/components/ventas/ventaForm.tsx [ssr] (ecmascript)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of EcmascriptChunkItemContent::new failed
+- CJS module can't be async.
+
+Import traces:
+  Browser:
+    ./src/components/ventas/ventaForm.tsx
+    ./src/pages/ventas/index.tsx
+
+  SSR:
+    ./src/components/ventas/ventaForm.tsx
+    ./src/pages/ventas/index.tsx
+[01:13:34.134] Server  LOG      ✓ Compiled in 268ms
+[01:13:34.563] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:13:34.563] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:13:34.563] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:13:34.563] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:13:34.563] Browser ERROR   %o
 
 %s
 
 %s
- {} The above error occurred in the <RegisterPage> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
-[00:16:19.972] Server  LOG      ✓ Compiled in 107ms
-[00:16:20.870] Browser ERROR   %o
+ {} The above error occurred in the <ForwardRef(SelectInput)> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[01:13:34.563] Browser ERROR   %o
 
 %s
 
 %s
- {} The above error occurred in the <RegisterPage> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
-[00:16:29.972] Server  LOG      ✓ Compiled in 111ms
-[00:16:30.864] Browser ERROR   %o
+ {} The above error occurred in the <ForwardRef(SelectInput)> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[01:13:42.404] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:13:42.404] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:13:42.404] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:13:42.404] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:13:42.404] Browser ERROR   %o
 
 %s
 
 %s
- {} The above error occurred in the <RegisterPage> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
-[00:16:38.374] Server  LOG      ✓ Compiled in 112ms
-[00:19:58.576] Server  LOG      ✓ Compiled in 125ms
-[00:19:58.877] Browser LOG     Refreshing page data due to server-side change
-[00:19:59.615] Server  LOG      ✓ Compiled in 108ms
-[00:20:41.860] Server  LOG      ✓ Compiled in 103ms
-[00:20:48.509] Server  LOG      ✓ Compiled in 109ms
-[00:21:00.811] Server  LOG      ✓ Compiled in 92ms
+ {} The above error occurred in the <ForwardRef(SelectInput)> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[01:13:42.404] Browser ERROR   %o
+
+%s
+
+%s
+ {} The above error occurred in the <ForwardRef(SelectInput)> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[01:14:25.869] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:14:25.870] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:14:25.870] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:14:25.870] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:14:25.870] Browser ERROR   %o
+
+%s
+
+%s
+ {} The above error occurred in the <ForwardRef(SelectInput)> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[01:14:25.870] Browser ERROR   %o
+
+%s
+
+%s
+ {} The above error occurred in the <ForwardRef(SelectInput)> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[01:15:56.619] Server  LOG      ✓ Compiled in 773ms
+[01:16:24.175] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `1`, `2`.
+[01:16:24.175] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:16:24.175] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:16:24.176] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `1`, `2`.
+[01:16:24.176] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:16:24.176] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:16:24.176] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `1`, `2`.
+[01:16:24.176] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:16:24.176] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:16:25.242] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `1`, `2`.
+[01:16:26.140] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `1`, `2`.
+[01:16:27.090] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `1`, `2`.
+[01:16:27.090] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:16:28.039] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:16:28.974] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:16:28.974] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:16:30.157] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:16:31.654] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:16:32.439] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:16:35.506] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:16:44.039] Server  LOG      ✓ Compiled in 463ms
+[01:16:44.298] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `1`, `2`.
+[01:16:44.298] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:16:44.298] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:16:44.298] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:16:49.120] Browser ERROR   {"code":"ERR_BAD_REQUEST","config":{"adapter":["xhr","http","fetch"],"allowAbsoluteUrls":true,"baseURL":"http://localhost:3000","env":{},"headers":{"Accept":"application/json, text/plain, */*","Content-Type":"application/json"},"maxBodyLength":-1,"maxContentLength":-1,"method":"get","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"/stock/ListarStock","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 404","name":"AxiosError","stack":"AxiosError: Request failed with status code 404\n    at settle (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:1954:16)\n    at XMLHttpRequest.onloadend (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:2469:167)\n    at Axios.request (http://localhost:3001/_next/static/chunks/node_modules_axios_lib_2c8bf6cb._.js:3273:49)\n    at async Promise.all (index 2)\n    at async cargarDatos (http://localhost:3001/_next/static/chunks/%5Broot-of-the-server%5D__06eca056._.js:1309:48)","status":404}
+[01:16:49.120] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:16:49.120] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:16:49.120] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:16:49.120] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:16:49.120] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:16:49.120] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:16:49.120] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:16:49.120] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:16:49.120] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:16:49.890] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:16:50.674] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:16:51.621] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:16:54.067] Server  LOG      ✓ Compiled in 182ms
+[01:16:54.503] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:16:54.503] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:16:54.503] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:17:02.958] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:17:27.340] Server  LOG      ✓ Compiled in 764ms
+[01:19:04.688] Server  LOG      ✓ Compiled in 696ms
+[01:22:48.451] Server  LOG      ✓ Compiled in 114ms
+[01:22:57.509] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:22:57.510] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:22:57.510] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:22:57.510] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:22:57.510] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:22:57.510] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:22:57.510] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:22:57.510] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:22:57.510] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:22:58.416] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:22:59.232] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:22:59.681] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:22:59.681] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:23:00.549] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:23:01.049] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:23:01.049] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:23:01.850] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:23:02.767] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:23:59.536] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:24:02.511] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:25:31.301] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:25:33.500] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:25:47.055] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:25:49.514] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:26:05.020] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:26:07.516] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:26:21.739] Server  LOG      ✓ Compiled in 582ms
+[01:26:22.556] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:26:22.556] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:26:22.556] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:27:09.387] Server  LOG      ✓ Compiled in 154ms
+[01:27:09.510] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:27:09.510] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:27:09.510] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:27:11.223] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:27:14.469] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:27:14.469] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:27:14.469] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:27:14.469] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:27:14.469] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:27:14.469] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:27:14.469] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:27:14.469] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:27:14.469] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:27:15.205] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:27:16.088] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:27:16.538] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:27:16.756] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:27:17.189] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:27:17.872] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:27:18.456] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:27:18.456] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:27:19.272] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:27:19.458] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:27:34.873] Server  LOG      ✓ Compiled in 148ms
+[01:27:35.503] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:27:35.503] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:27:35.503] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:27:35.503] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:27:35.503] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:27:35.503] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:27:35.503] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:27:35.503] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:27:35.503] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:29:11.757] Server  LOG      ✓ Compiled in 111ms
+[01:29:12.510] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:29:12.510] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:29:12.510] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:29:13.489] Server  LOG      ✓ Compiled in 530ms
+[01:29:14.508] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:29:14.508] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:29:14.508] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:29:53.927] Server  LOG      ✓ Compiled in 273ms
+[01:29:54.509] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:29:54.509] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:29:54.509] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:29:54.509] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:29:54.509] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:29:54.509] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:29:54.509] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:29:54.509] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:29:54.509] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:30:02.705] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:30:02.705] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:30:02.706] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:30:02.706] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:30:02.706] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:30:02.706] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:30:02.706] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:30:02.706] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:30:02.706] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:30:03.459] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:30:04.175] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:30:04.691] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="sucursal_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:30:04.691] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:30:05.424] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:30:05.944] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="empleado_cajero_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `2`.
+[01:30:05.944] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:30:06.807] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:30:07.710] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:30:10.193] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:30:10.744] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:30:12.724] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:30:14.502] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:30:54.007] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:30:55.501] Browser WARN    MUI: You have provided an out-of-range value `0` for the select (name="stock_id") component.
+Consider providing a value that matches one of the available options or ''.
+The available values are "".
+[01:32:12.909] Server  LOG      ✓ Compiled in 949ms
+[01:32:19.959] Server  LOG      ✓ Compiled in 494ms
+[01:33:47.932] Server  LOG      ✓ Compiled in 1714ms
+[01:36:57.419] Server  LOG      ✓ Compiled in 1119ms
+[01:36:58.160] Browser ERROR   %o
+
+%s
+
+%s
+ {} The above error occurred in the <VentaForm> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[01:37:00.482] Server  ERROR   ReferenceError: handleSucursalChange is not defined
+[01:37:00.507] Server  ERROR    ⨯ ReferenceError: handleSucursalChange is not defined
+[01:37:00.530] Server  ERROR    ⨯ ReferenceError: handleSucursalChange is not defined
+[01:37:01.219] Browser ERROR   uncaughtError: ReferenceError: handleSucursalChange is not defined
+[01:37:51.622] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:37:51.650] Server  LOG      ✓ Compiled in 771ms
+[01:39:31.116] Server  LOG      ✓ Compiled in 474ms
+[01:43:48.326] Server  LOG      ✓ Compiled in 307ms
+[01:43:48.514] Browser ERROR   ./src/components/ventas/ventaForm.tsx:765:3
+Parsing ecmascript source code failed
+  763 |         </DialogActions>
+  764 |     </Dialog>
+> 765 | );
+      |   ^
+  766 |
+
+Expected '}', got '<eof>'
+
+Import traces:
+  Browser:
+    ./src/components/ventas/ventaForm.tsx
+    ./src/pages/ventas/index.tsx
+
+  SSR:
+    ./src/components/ventas/ventaForm.tsx
+    ./src/pages/ventas/index.tsx
+[01:43:48.514] Browser ERROR   ./src/components/ventas/ventaForm.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/src/components/ventas/ventaForm.tsx [ssr] (ecmascript)
+
+Caused by:
+- CJS module can't be async.
+
+Debug info:
+- An error occurred while generating the chunk item [project]/src/components/ventas/ventaForm.tsx [ssr] (ecmascript)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of EcmascriptChunkItemContent::new failed
+- CJS module can't be async.
+
+Import traces:
+  Browser:
+    ./src/components/ventas/ventaForm.tsx
+    ./src/pages/ventas/index.tsx
+
+  SSR:
+    ./src/components/ventas/ventaForm.tsx
+    ./src/pages/ventas/index.tsx
+[01:43:52.078] Server  LOG      ✓ Compiled in 538ms
+[01:43:53.502] Browser LOG     Respuesta completa de stocks: {"data":[{"cantidad_disponible":"7.00","cantidad_minima":"3.00","fecha_actualizacion":"2025-11-10T14:36:14.250Z","fecha_creacion":"2025-11-10T00:57:57.055Z","id":1,"lote":{"cantidad_recibida":"10.00","costo_unitario":"120.00","estado":"activo","fecha_creacion":"2025-11-10T00:57:26.603Z","fecha_recepcion":"2025-11-10T00:57:26.000Z","fecha_vencimiento":"2025-11-18","id":1,"numero_lote":"1","producto":{"categoria":"[Object]","codigo_barras":"1234567890123","descripcion":"Bebida Argentina","estado":"activo","fecha_actualizacion":"2025-11-07T13:34:33.911Z","fecha_creacion":"2025-11-07T13:34:33.911Z","id":1,"nombre":"Fernet","precio_venta":"120.00","proveedor":"[Object]","unidad_medida":"litro"}},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"},"ubicacion":"Pasillo 1, Estante 1"},{"cantidad_disponible":"14.00","cantidad_minima":"3.00","fecha_actualizacion":"2025-11-10T15:13:05.472Z","fecha_creacion":"2025-11-10T14:53:52.224Z","id":2,"lote":{"cantidad_recibida":"20.00","costo_unitario":"1200.00","estado":"activo","fecha_creacion":"2025-11-10T14:53:19.919Z","fecha_recepcion":"2025-11-10T14:53:19.000Z","fecha_vencimiento":"2025-11-18","id":2,"numero_lote":"3","producto":{"categoria":"[Object]","codigo_barras":"1234568452","descripcion":"Singani Casa Real, ajco","estado":"activo","fecha_actualizacion":"2025-11-07T13:49:59.021Z","fecha_creacion":"2025-11-07T13:49:59.021Z","id":2,"nombre":"Singani","precio_venta":"40.00","proveedor":"[Object]","unidad_medida":"litro"}},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"},"ubicacion":"Pasillo 1, Estante 3"}],"total":2}
+[01:43:53.502] Browser LOG     Stocks con información de productos: [{"id":1,"lote":"1","productoNombre":"Fernet","tieneProducto":true},{"id":2,"lote":"3","productoNombre":"Singani","tieneProducto":true}]
+[01:43:58.408] Browser LOG     Respuesta completa de stocks: {"data":[{"cantidad_disponible":"7.00","cantidad_minima":"3.00","fecha_actualizacion":"2025-11-10T14:36:14.250Z","fecha_creacion":"2025-11-10T00:57:57.055Z","id":1,"lote":{"cantidad_recibida":"10.00","costo_unitario":"120.00","estado":"activo","fecha_creacion":"2025-11-10T00:57:26.603Z","fecha_recepcion":"2025-11-10T00:57:26.000Z","fecha_vencimiento":"2025-11-18","id":1,"numero_lote":"1","producto":{"categoria":"[Object]","codigo_barras":"1234567890123","descripcion":"Bebida Argentina","estado":"activo","fecha_actualizacion":"2025-11-07T13:34:33.911Z","fecha_creacion":"2025-11-07T13:34:33.911Z","id":1,"nombre":"Fernet","precio_venta":"120.00","proveedor":"[Object]","unidad_medida":"litro"}},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"},"ubicacion":"Pasillo 1, Estante 1"},{"cantidad_disponible":"14.00","cantidad_minima":"3.00","fecha_actualizacion":"2025-11-10T15:13:05.472Z","fecha_creacion":"2025-11-10T14:53:52.224Z","id":2,"lote":{"cantidad_recibida":"20.00","costo_unitario":"1200.00","estado":"activo","fecha_creacion":"2025-11-10T14:53:19.919Z","fecha_recepcion":"2025-11-10T14:53:19.000Z","fecha_vencimiento":"2025-11-18","id":2,"numero_lote":"3","producto":{"categoria":"[Object]","codigo_barras":"1234568452","descripcion":"Singani Casa Real, ajco","estado":"activo","fecha_actualizacion":"2025-11-07T13:49:59.021Z","fecha_creacion":"2025-11-07T13:49:59.021Z","id":2,"nombre":"Singani","precio_venta":"40.00","proveedor":"[Object]","unidad_medida":"litro"}},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"},"ubicacion":"Pasillo 1, Estante 3"}],"total":2}
+[01:43:58.408] Browser LOG     Stocks con información de productos: [{"id":1,"lote":"1","productoNombre":"Fernet","tieneProducto":true},{"id":2,"lote":"3","productoNombre":"Singani","tieneProducto":true}]
+[01:46:20.982] Server  LOG      ✓ Compiled in 116ms
+[01:46:26.076] Browser LOG     Respuesta completa de stocks: {"data":[{"cantidad_disponible":"7.00","cantidad_minima":"3.00","fecha_actualizacion":"2025-11-10T14:36:14.250Z","fecha_creacion":"2025-11-10T00:57:57.055Z","id":1,"lote":{"cantidad_recibida":"10.00","costo_unitario":"120.00","estado":"activo","fecha_creacion":"2025-11-10T00:57:26.603Z","fecha_recepcion":"2025-11-10T00:57:26.000Z","fecha_vencimiento":"2025-11-18","id":1,"numero_lote":"1","producto":{"categoria":"[Object]","codigo_barras":"1234567890123","descripcion":"Bebida Argentina","estado":"activo","fecha_actualizacion":"2025-11-07T13:34:33.911Z","fecha_creacion":"2025-11-07T13:34:33.911Z","id":1,"nombre":"Fernet","precio_venta":"120.00","proveedor":"[Object]","unidad_medida":"litro"}},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"},"ubicacion":"Pasillo 1, Estante 1"},{"cantidad_disponible":"14.00","cantidad_minima":"3.00","fecha_actualizacion":"2025-11-10T15:13:05.472Z","fecha_creacion":"2025-11-10T14:53:52.224Z","id":2,"lote":{"cantidad_recibida":"20.00","costo_unitario":"1200.00","estado":"activo","fecha_creacion":"2025-11-10T14:53:19.919Z","fecha_recepcion":"2025-11-10T14:53:19.000Z","fecha_vencimiento":"2025-11-18","id":2,"numero_lote":"3","producto":{"categoria":"[Object]","codigo_barras":"1234568452","descripcion":"Singani Casa Real, ajco","estado":"activo","fecha_actualizacion":"2025-11-07T13:49:59.021Z","fecha_creacion":"2025-11-07T13:49:59.021Z","id":2,"nombre":"Singani","precio_venta":"40.00","proveedor":"[Object]","unidad_medida":"litro"}},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"},"ubicacion":"Pasillo 1, Estante 3"}],"total":2}
+[01:46:26.076] Browser LOG     Stocks con información de productos: [{"id":1,"lote":"1","productoNombre":"Fernet","tieneProducto":true},{"id":2,"lote":"3","productoNombre":"Singani","tieneProducto":true}]
+[01:46:50.265] Browser LOG     Payload a enviar: {"cantidad":2,"empleado_cajero_id":2,"metodo_pago":"efectivo","precio_unitario":120,"stock_id":1,"sucursal_id":1}
+[01:46:53.917] Browser LOG     {"data":{"cantidad":2,"empleado_cajero":{"apellidos":"Ramírez","cargo":"cajero","documento_identidad":"12345678","estado":"activo","fecha_contratacion":"2025-03-10","id":2,"nombres":"Carlos","telefono":"71234567"},"estado":"completada","fecha_creacion":"2025-11-19T20:34:32.616Z","fecha_venta":"2025-11-19T20:34:33.000Z","id":5,"metodo_pago":"efectivo","precio_unitario":120,"stock":{"cantidad_disponible":"7.00","cantidad_minima":"3.00","fecha_actualizacion":"2025-11-10T14:36:14.250Z","fecha_creacion":"2025-11-10T00:57:57.055Z","id":1,"lote":{"cantidad_recibida":"10.00","costo_unitario":"120.00","estado":"activo","fecha_creacion":"2025-11-10T00:57:26.603Z","fecha_recepcion":"2025-11-10T00:57:26.000Z","fecha_vencimiento":"2025-11-18","id":1,"numero_lote":"1","producto":{"codigo_barras":"1234567890123","descripcion":"Bebida Argentina","estado":"activo","fecha_actualizacion":"2025-11-07T13:34:33.911Z","fecha_creacion":"2025-11-07T13:34:33.911Z","id":1,"nombre":"Fernet","precio_venta":"120.00","unidad_medida":"litro"}},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"},"ubicacion":"Pasillo 1, Estante 1"},"subtotal":240,"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"},"total":240},"message":"Venta creada exitosamente"}
+[01:47:21.683] Server  LOG      ✓ Compiled in 262ms
+[01:49:26.267] Server  LOG      ✓ Compiled in 221ms
+[01:49:47.299] Server  LOG      ✓ Compiled in 126ms
+[01:50:07.701] Browser LOG     Respuesta completa de stocks: {"data":[{"cantidad_disponible":"5.00","cantidad_minima":"3.00","fecha_actualizacion":"2025-11-19T20:34:32.503Z","fecha_creacion":"2025-11-10T00:57:57.055Z","id":1,"lote":{"cantidad_recibida":"10.00","costo_unitario":"120.00","estado":"activo","fecha_creacion":"2025-11-10T00:57:26.603Z","fecha_recepcion":"2025-11-10T00:57:26.000Z","fecha_vencimiento":"2025-11-18","id":1,"numero_lote":"1","producto":{"categoria":"[Object]","codigo_barras":"1234567890123","descripcion":"Bebida Argentina","estado":"activo","fecha_actualizacion":"2025-11-07T13:34:33.911Z","fecha_creacion":"2025-11-07T13:34:33.911Z","id":1,"nombre":"Fernet","precio_venta":"120.00","proveedor":"[Object]","unidad_medida":"litro"}},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"},"ubicacion":"Pasillo 1, Estante 1"},{"cantidad_disponible":"14.00","cantidad_minima":"3.00","fecha_actualizacion":"2025-11-10T15:13:05.472Z","fecha_creacion":"2025-11-10T14:53:52.224Z","id":2,"lote":{"cantidad_recibida":"20.00","costo_unitario":"1200.00","estado":"activo","fecha_creacion":"2025-11-10T14:53:19.919Z","fecha_recepcion":"2025-11-10T14:53:19.000Z","fecha_vencimiento":"2025-11-18","id":2,"numero_lote":"3","producto":{"categoria":"[Object]","codigo_barras":"1234568452","descripcion":"Singani Casa Real, ajco","estado":"activo","fecha_actualizacion":"2025-11-07T13:49:59.021Z","fecha_creacion":"2025-11-07T13:49:59.021Z","id":2,"nombre":"Singani","precio_venta":"40.00","proveedor":"[Object]","unidad_medida":"litro"}},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"},"ubicacion":"Pasillo 1, Estante 3"}],"total":2}
+[01:50:07.701] Browser LOG     Stocks con información de productos: [{"id":1,"lote":"1","productoNombre":"Fernet","tieneProducto":true},{"id":2,"lote":"3","productoNombre":"Singani","tieneProducto":true}]
+[01:50:23.720] Server  LOG      ✓ Compiled in 125ms
+[01:52:47.682] Server  LOG      ✓ Compiled in 628ms
+[01:52:49.782] Browser ERROR   ./src/components/ventas/ventaForm.tsx:482:66
+Parsing ecmascript source code failed
+  480 | const stockDisponible = selectedStock ? parseFloat(selectedStock.cantidad_disponible) : 0;
+  481 | const hayStockSuficiente = form.cantidad <= stockDisponible;
+> 482 | const productoNombre = selectedStock?.lote?.producto?.nombre || `Producto Lote ${selectedStock?.lote?.numero_lote || 'N/A'}`;
+      |                                                                  ^^^^^^^^
+  483 | const numeroLote = selectedStock?.lote?.numero_lote || "N/A";
+  484 | 
+  485 | return (
+
+Expected ';', '}' or <eof>
+
+Import traces:
+  Browser:
+    ./src/components/ventas/ventaForm.tsx
+    ./src/pages/ventas/index.tsx
+
+  SSR:
+    ./src/components/ventas/ventaForm.tsx
+    ./src/pages/ventas/index.tsx
+[01:52:49.782] Browser ERROR   ./src/components/ventas/ventaForm.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/src/components/ventas/ventaForm.tsx [ssr] (ecmascript)
+
+Caused by:
+- CJS module can't be async.
+
+Debug info:
+- An error occurred while generating the chunk item [project]/src/components/ventas/ventaForm.tsx [ssr] (ecmascript)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of EcmascriptChunkItemContent::new failed
+- CJS module can't be async.
+
+Import traces:
+  Browser:
+    ./src/components/ventas/ventaForm.tsx
+    ./src/pages/ventas/index.tsx
+
+  SSR:
+    ./src/components/ventas/ventaForm.tsx
+    ./src/pages/ventas/index.tsx
+[01:53:01.215] Server  LOG      ✓ Compiled in 147ms
+[01:55:59.253] Server  LOG      ✓ Compiled in 121ms
+[01:56:35.216] Server  LOG      ✓ Compiled in 214ms
+[01:56:35.506] Browser LOG     Respuesta completa de stocks: {"data":[{"cantidad_disponible":"5.00","cantidad_minima":"3.00","fecha_actualizacion":"2025-11-19T20:34:32.503Z","fecha_creacion":"2025-11-10T00:57:57.055Z","id":1,"lote":{"cantidad_recibida":"10.00","costo_unitario":"120.00","estado":"activo","fecha_creacion":"2025-11-10T00:57:26.603Z","fecha_recepcion":"2025-11-10T00:57:26.000Z","fecha_vencimiento":"2025-11-18","id":1,"numero_lote":"1","producto":{"categoria":"[Object]","codigo_barras":"1234567890123","descripcion":"Bebida Argentina","estado":"activo","fecha_actualizacion":"2025-11-07T13:34:33.911Z","fecha_creacion":"2025-11-07T13:34:33.911Z","id":1,"nombre":"Fernet","precio_venta":"120.00","proveedor":"[Object]","unidad_medida":"litro"}},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"},"ubicacion":"Pasillo 1, Estante 1"},{"cantidad_disponible":"14.00","cantidad_minima":"3.00","fecha_actualizacion":"2025-11-10T15:13:05.472Z","fecha_creacion":"2025-11-10T14:53:52.224Z","id":2,"lote":{"cantidad_recibida":"20.00","costo_unitario":"1200.00","estado":"activo","fecha_creacion":"2025-11-10T14:53:19.919Z","fecha_recepcion":"2025-11-10T14:53:19.000Z","fecha_vencimiento":"2025-11-18","id":2,"numero_lote":"3","producto":{"categoria":"[Object]","codigo_barras":"1234568452","descripcion":"Singani Casa Real, ajco","estado":"activo","fecha_actualizacion":"2025-11-07T13:49:59.021Z","fecha_creacion":"2025-11-07T13:49:59.021Z","id":2,"nombre":"Singani","precio_venta":"40.00","proveedor":"[Object]","unidad_medida":"litro"}},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"},"ubicacion":"Pasillo 1, Estante 3"}],"total":2}
+[01:56:35.506] Browser LOG     Stocks con información de productos: [{"id":1,"lote":"1","productoNombre":"Fernet","tieneProducto":true},{"id":2,"lote":"3","productoNombre":"Singani","tieneProducto":true}]
+[02:01:42.435] Server  LOG      ✓ Compiled in 178ms
+[02:01:48.407] Server  LOG      ✓ Compiled in 471ms
+[02:02:02.862] Browser LOG     Respuesta completa de stocks: {"data":[{"cantidad_disponible":"5.00","cantidad_minima":"3.00","fecha_actualizacion":"2025-11-19T20:34:32.503Z","fecha_creacion":"2025-11-10T00:57:57.055Z","id":1,"lote":{"cantidad_recibida":"10.00","costo_unitario":"120.00","estado":"activo","fecha_creacion":"2025-11-10T00:57:26.603Z","fecha_recepcion":"2025-11-10T00:57:26.000Z","fecha_vencimiento":"2025-11-18","id":1,"numero_lote":"1","producto":{"categoria":"[Object]","codigo_barras":"1234567890123","descripcion":"Bebida Argentina","estado":"activo","fecha_actualizacion":"2025-11-07T13:34:33.911Z","fecha_creacion":"2025-11-07T13:34:33.911Z","id":1,"nombre":"Fernet","precio_venta":"120.00","proveedor":"[Object]","unidad_medida":"litro"}},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"},"ubicacion":"Pasillo 1, Estante 1"},{"cantidad_disponible":"14.00","cantidad_minima":"3.00","fecha_actualizacion":"2025-11-10T15:13:05.472Z","fecha_creacion":"2025-11-10T14:53:52.224Z","id":2,"lote":{"cantidad_recibida":"20.00","costo_unitario":"1200.00","estado":"activo","fecha_creacion":"2025-11-10T14:53:19.919Z","fecha_recepcion":"2025-11-10T14:53:19.000Z","fecha_vencimiento":"2025-11-18","id":2,"numero_lote":"3","producto":{"categoria":"[Object]","codigo_barras":"1234568452","descripcion":"Singani Casa Real, ajco","estado":"activo","fecha_actualizacion":"2025-11-07T13:49:59.021Z","fecha_creacion":"2025-11-07T13:49:59.021Z","id":2,"nombre":"Singani","precio_venta":"40.00","proveedor":"[Object]","unidad_medida":"litro"}},"sucursal":{"direccion":"Direccion fictcia 1","estado":"activo","fecha_creacion":"2025-11-04T13:36:25.128Z","id":1,"nombre":"Sucursal 1","telefono":"73025654"},"ubicacion":"Pasillo 1, Estante 3"}],"total":2}
+[02:02:02.862] Browser LOG     Stocks con información de productos: [{"id":1,"lote":"1","productoNombre":"Fernet","tieneProducto":true},{"id":2,"lote":"3","productoNombre":"Singani","tieneProducto":true}]
+[02:02:18.749] Browser LOG     Payload interno a enviar: {"cantidad":4,"empleado_cajero_id":2,"metodo_pago":"efectivo","precio_unitario":40,"stock_id":2,"sucursal_id":1}
+[02:02:18.749] Browser LOG     No se puede realizar la venta, contabilidad no responde: {"message":"Failed to construct 'URL': Invalid URL"}

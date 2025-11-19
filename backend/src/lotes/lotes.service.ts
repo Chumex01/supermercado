@@ -27,4 +27,16 @@ export class LotesService {
       relations: ['orden_compra', 'producto'],
     });
   }
+
+async getUltimoLote() {
+  const lotes = await this.loteRepository.find({
+    order: { id: 'DESC' },
+    take: 1,
+    relations: ['orden_compra', 'producto'],
+  });
+
+  return lotes[0] ?? null;
+}
+
+
 }

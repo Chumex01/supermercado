@@ -60,7 +60,7 @@ export default function StockForm({ open, onClose, onCreate }: Props) {
     try {
       const [sucursalesRes, lotesRes] = await Promise.all([
         api.get("/sucursales/ListarSucursal"),
-        api.get("/lotes/ListarLotes"),
+        api.get("/lotes/ultimo"),
       ]);
 
       // ✅ Estructura CORRECTA basada en tus APIs
@@ -70,11 +70,8 @@ export default function StockForm({ open, onClose, onCreate }: Props) {
         []
       );
 
-      setLotes(
-        lotesRes.data.data || 
-        lotesRes.data || 
-        []
-      );
+      setLotes([lotesRes.data.data]);
+
 
     } catch (err) {
       console.error(err);

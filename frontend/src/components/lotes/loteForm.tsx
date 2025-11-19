@@ -63,31 +63,26 @@ const cargarDatos = async () => {
   setLoading(true);
   try {
     const [ordenesRes, productosRes] = await Promise.all([
-      api.get("/ordenes-compra/ListarOrdenesCompra"),
+      api.get("/ordenes-compra/ultimo"),
       api.get("/productos/ListarProductos"),
     ]);
 
-    // ✅ Estructura CORRECTA basada en tu API
     setOrdenesCompra(
-      ordenesRes.data.ordenesCompra || // ← Esta es la clave
-      ordenesRes.data.data || 
-      ordenesRes.data || 
-      []
+      ordenesRes.data.data ? [ordenesRes.data.data] : []
     );
-    
+
     setProductos(
-      productosRes.data.data || // ← Los productos probablemente vienen en .data
-      productosRes.data || 
-      []
+      productosRes.data.data || productosRes.data || []
     );
 
   } catch (err) {
     console.error(err);
-    alert("Error al cargar órdenes de compra o productos");
+    alert("Error al cargar órdenes o productos");
   } finally {
     setLoading(false);
   }
 };
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;

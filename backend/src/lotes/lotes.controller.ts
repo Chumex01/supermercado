@@ -7,7 +7,7 @@ import { LotesService } from './lotes.service';
 @ApiTags('Lotes')
 @Controller('lotes')
 export class LotesController {
-  constructor(private readonly loteService: LotesService) {}
+  constructor(private readonly loteService: LotesService) { }
 
   @Post('CrearLote')
   @ApiOperation({ summary: 'Crear un nuevo lote' })
@@ -29,4 +29,15 @@ export class LotesController {
       data: lotes,
     };
   }
+
+  @Get('ultimo')
+  @ApiOperation({ summary: 'Obtener el último lote registrado' })
+  async obtenerUltimoLote() {
+    const lote = await this.loteService.getUltimoLote();
+    return {
+      message: 'Último lote obtenido correctamente',
+      data: lote,
+    };
+  }
+
 }

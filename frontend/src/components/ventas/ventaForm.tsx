@@ -18,6 +18,7 @@ import {
     Grid,
 } from "@mui/material";
 import { api } from "@/lib/api";
+import axios from "axios";
 
 interface Props {
     open: boolean;
@@ -82,6 +83,8 @@ export default function VentaForm({ open, onClose, onCreate }: Props) {
     const [selectedSucursal, setSelectedSucursal] = useState<number | "">("");
     const [errorStock, setErrorStock] = useState("");
 
+
+
     const [form, setForm] = useState({
         sucursal_id: "",
         empleado_cajero_id: "",
@@ -124,7 +127,7 @@ export default function VentaForm({ open, onClose, onCreate }: Props) {
 
             // Empleados
             const empleadosData = empleadosRes.data?.data || empleadosRes.data || [];
-            const cajeros = empleadosData.filter((emp: Empleado) => 
+            const cajeros = empleadosData.filter((emp: Empleado) =>
                 emp.cargo === 'cajero' || emp.cargo?.toLowerCase().includes('cajero')
             );
             setEmpleados(cajeros);
@@ -151,13 +154,13 @@ export default function VentaForm({ open, onClose, onCreate }: Props) {
 
     const filtrarStocksPorSucursal = (sucursalId: number) => {
         setErrorStock("");
-        
+
         if (sucursalId) {
-            const filtrados = todosLosStocks.filter((stock: Stock) => 
-                stock.sucursal.id === sucursalId && 
+            const filtrados = todosLosStocks.filter((stock: Stock) =>
+                stock.sucursal.id === sucursalId &&
                 parseFloat(stock.cantidad_disponible) > 0
             );
-            
+
             setStocksFiltrados(filtrados);
 
             if (filtrados.length === 0) {
@@ -190,12 +193,12 @@ export default function VentaForm({ open, onClose, onCreate }: Props) {
     const handleStockChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const stockId = e.target.value;
         const selectedStock = stocksFiltrados.find(stock => stock.id === Number(stockId));
-        
+
         // Verificación segura del precio_venta
-        const precioSugerido = selectedStock?.lote?.producto?.precio_venta 
-            ? parseFloat(selectedStock.lote.producto.precio_venta) 
+        const precioSugerido = selectedStock?.lote?.producto?.precio_venta
+            ? parseFloat(selectedStock.lote.producto.precio_venta)
             : 0;
-        
+
         setForm({
             ...form,
             stock_id: stockId,
@@ -208,30 +211,55 @@ export default function VentaForm({ open, onClose, onCreate }: Props) {
         const { name, value } = e.target;
         setForm({
             ...form,
-            [name]: name.includes("cantidad") || name.includes("precio_unitario") 
-                ? Number(value) 
+            [name]: name.includes("cantidad") || name.includes("precio_unitario")
+                ? Number(value)
                 : value,
         });
     };
 
-    const handleSubmit = () => {
-        const payload = {
-            sucursal_id: Number(form.sucursal_id),
-            empleado_cajero_id: Number(form.empleado_cajero_id),
-            stock_id: Number(form.stock_id),
-            cantidad: Number(form.cantidad),
-            precio_unitario: Number(form.precio_unitario),
-            metodo_pago: form.metodo_pago,
-        };
-
-        console.log("Payload a enviar:", payload);
-        onCreate(payload);
+const handleSubmit = async () => {
+    const payloadLocal = {
+        sucursal_id: Number(form.sucursal_id),
+        empleado_cajero_id: Number(form.empleado_cajero_id),
+        stock_id: Number(form.stock_id),
+        cantidad: Number(form.cantidad),
+        precio_unitario: Number(form.precio_unitario),
+        metodo_pago: form.metodo_pago,
     };
+
+    console.log("Payload interno a enviar:", payloadLocal);
+
+    // calcular monto total
+    const montoTotal = Number(form.cantidad) * Number(form.precio_unitario);
+    const fechaVenta = new Date().toISOString(); // puedes ajustar formato si lo requiere la API
+
+    const payloadExterno = {
+        CodigoEmpresa: 7,
+        Fecha: fechaVenta,
+        Monto: montoTotal
+    };
+
+    try {
+        const respuestaExterna = await axios.post("http://<IP>:3000/api/cuenta", payloadExterno);
+        if (respuestaExterna?.data) {
+            console.log("Venta enviada a contabilidad:", respuestaExterna.data);
+        } else {
+            console.log("No se puede realizar la venta, contabilidad no responde");
+        }
+
+        // Llamar a tu callback local igual, siempre que quieras registrar la venta local
+        onCreate(payloadLocal);
+
+    } catch (err) {
+        console.log("No se puede realizar la venta, contabilidad no responde:", err);
+    }
+};
+
 
     const selectedStock = stocksFiltrados.find(stock => stock.id === Number(form.stock_id));
     const stockDisponible = selectedStock ? parseFloat(selectedStock.cantidad_disponible) : 0;
     const hayStockSuficiente = form.cantidad <= stockDisponible;
-    
+
     // Información del producto seleccionado - CON VERIFICACIONES SEGURAS
     const producto = selectedStock?.lote?.producto;
     const productoNombre = producto?.nombre || `Producto Lote ${selectedStock?.lote?.numero_lote || 'N/A'}`;
@@ -239,401 +267,122 @@ export default function VentaForm({ open, onClose, onCreate }: Props) {
     const fechaVencimiento = selectedStock?.lote?.fecha_vencimiento;
     const ubicacion = selectedStock?.ubicacion;
     const precioSugerido = producto?.precio_venta ? parseFloat(producto.precio_venta) : 0;
-
-    return (
-        <Dialog open={open} onClose={onClose} fullWidth maxWidth="md">
-            <DialogTitle>Crear Nueva Venta</DialogTitle>
-
-            <DialogContent sx={{ display: "flex", flexDirection: "column", gap: 2, mt: 1 }}>
-                {loading ? (
-                    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', py: 3 }}>
-                        <CircularProgress />
-                        <Typography sx={{ ml: 2 }}>Cargando datos...</Typography>
-                    </Box>
-                ) : (
-                    <>
-                        <Grid container spacing={2}>
-                            {/* Columna izquierda - Formulario */}
-                            <Grid item xs={12} md={6}>
-                                <TextField
-                                    select
-                                    label="Sucursal"
-                                    name="sucursal_id"
-                                    value={form.sucursal_id}
-                                    onChange={handleSucursalChange}
-                                    fullWidth
-                                    required
-                                    disabled={sucursales.length === 0}
-                                >
-                                    {sucursales.length === 0 ? (
-                                        <MenuItem disabled value="">
-                                            No hay sucursales disponibles
-                                        </MenuItem>
-                                    ) : (
-                                        sucursales.map((sucursal) => (
-                                            <MenuItem key={sucursal.id} value={sucursal.id}>
-                                                {sucursal.nombre}
-                                            </MenuItem>
-                                        ))
-                                    )}
-                                </TextField>
-
-                                <TextField
-                                    select
-                                    label="Empleado Cajero"
-                                    name="empleado_cajero_id"
-                                    value={form.empleado_cajero_id}
-                                    onChange={handleChange}
-                                    fullWidth
-                                    required
-                                    disabled={!form.sucursal_id || empleados.length === 0}
-                                    sx={{ mt: 2 }}
-                                >
-                                    {empleados.length === 0 ? (
-                                        <MenuItem disabled value="">
-                                            No hay empleados cajeros disponibles
-                                        </MenuItem>
-                                    ) : (
-                                        empleados.map((empleado) => (
-                                            <MenuItem key={empleado.id} value={empleado.id}>
-                                                {empleado.nombres} {empleado.apellidos}
-                                            </MenuItem>
-                                        ))
-                                    )}
-                                </TextField>
-
-                                <TextField
-                                    select
-                                    label="Seleccionar Producto en Stock"
-                                    name="stock_id"
-                                    value={form.stock_id}
-                                    onChange={handleStockChange}
-                                    fullWidth
-                                    required
-                                    disabled={!form.sucursal_id}
-                                    helperText={errorStock || "Selecciona un producto del stock disponible"}
-                                    error={!!errorStock}
-                                    sx={{ mt: 2 }}
-                                >
-                                    {stocksFiltrados.length === 0 ? (
-                                        <MenuItem disabled value="">
-                                            {form.sucursal_id ? "No hay stock disponible" : "Selecciona una sucursal primero"}
-                                        </MenuItem>
-                                    ) : (
-                                        stocksFiltrados.map((stock) => {
-                                            // VERIFICACIÓN SEGURA DEL PRODUCTO
-                                            const producto = stock.lote?.producto;
-                                            const productoNombre = producto?.nombre || `Producto Lote ${stock.lote?.numero_lote || 'N/A'}`;
-                                            const precioVenta = producto?.precio_venta ? parseFloat(producto.precio_venta) : 0;
-                                            
-                                            return (
-                                                <MenuItem key={stock.id} value={stock.id}>
-                                                    <Box sx={{ width: '100%', py: 1 }}>
-                                                        {/* NOMBRE DEL PRODUCTO PRINCIPAL */}
-                                                        <Typography variant="body1" fontWeight="bold" color="primary">
-                                                            🏷️ {productoNombre}
-                                                        </Typography>
-                                                        
-                                                        {/* INFORMACIÓN SECUNDARIA */}
-                                                        <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 0.5 }}>
-                                                            <Typography variant="caption" color="text.secondary">
-                                                                📦 Lote: {stock.lote?.numero_lote || 'N/A'}
-                                                            </Typography>
-                                                            <Typography variant="caption" color="text.secondary">
-                                                                📊 Stock: {stock.cantidad_disponible}
-                                                            </Typography>
-                                                        </Box>
-                                                        
-                                                        {/* PRECIO Y CATEGORÍA */}
-                                                        <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 0.5 }}>
-                                                            {precioVenta > 0 && (
-                                                                <Typography variant="caption" fontWeight="medium" color="success.main">
-                                                                    💰 ${precioVenta}
-                                                                </Typography>
-                                                            )}
-                                                            {producto?.categoria && (
-                                                                <Typography variant="caption" color="text.secondary">
-                                                                    🗂️ {producto.categoria.nombre}
-                                                                </Typography>
-                                                            )}
-                                                        </Box>
-
-                                                        {/* DESCRIPCIÓN Y UBICACIÓN */}
-                                                        {producto?.descripcion && (
-                                                            <Typography variant="caption" color="text.secondary" display="block">
-                                                                📝 {producto.descripcion}
-                                                            </Typography>
-                                                        )}
-                                                        {stock.ubicacion && (
-                                                            <Typography variant="caption" color="text.secondary" display="block">
-                                                                📍 {stock.ubicacion}
-                                                            </Typography>
-                                                        )}
-
-                                                        {/* ALERTA SI NO HAY PRODUCTO ASOCIADO */}
-                                                        {!producto && (
-                                                            <Typography variant="caption" color="warning.main" display="block">
-                                                                ⚠️ Producto no disponible en sistema
-                                                            </Typography>
-                                                        )}
-                                                    </Box>
-                                                </MenuItem>
-                                            );
-                                        })
-                                    )}
-                                </TextField>
-
-                                {selectedStock && (
-                                    <Alert severity="success" sx={{ mt: 2 }}>
-                                        <Typography variant="body2" fontWeight="bold">
-                                            ✅ Producto seleccionado: {productoNombre}
-                                        </Typography>
-                                        <Typography variant="body2">
-                                            Stock disponible: <strong>{stockDisponible} unidades</strong>
-                                            {precioSugerido > 0 && (
-                                                <> | Precio sugerido: <strong>${precioSugerido}</strong></>
-                                            )}
-                                        </Typography>
-                                    </Alert>
-                                )}
-
-                                <TextField
-                                    label="Cantidad a Vender"
-                                    name="cantidad"
-                                    type="number"
-                                    value={form.cantidad}
-                                    onChange={handleChange}
-                                    fullWidth
-                                    required
-                                    inputProps={{ 
-                                        min: 1, 
-                                        max: stockDisponible,
-                                        step: "1"
-                                    }}
-                                    error={!hayStockSuficiente && form.cantidad > 0}
-                                    helperText={
-                                        !hayStockSuficiente 
-                                            ? `❌ Stock insuficiente. Disponible: ${stockDisponible}`
-                                            : `✅ Máximo disponible: ${stockDisponible} unidades`
-                                    }
-                                    sx={{ mt: 2 }}
-                                />
-
-                                <TextField
-                                    label="Precio Unitario de Venta"
-                                    name="precio_unitario"
-                                    type="number"
-                                    value={form.precio_unitario}
-                                    onChange={handleChange}
-                                    fullWidth
-                                    required
-                                    inputProps={{ min: 0, step: "0.01" }}
-                                    helperText="Precio de venta por unidad"
-                                    sx={{ mt: 2 }}
-                                />
-
-                                <TextField
-                                    select
-                                    label="Método de Pago"
-                                    name="metodo_pago"
-                                    value={form.metodo_pago}
-                                    onChange={handleChange}
-                                    fullWidth
-                                    required
-                                    sx={{ mt: 2 }}
-                                >
-                                    <MenuItem value="efectivo">💵 Efectivo</MenuItem>
-                                    <MenuItem value="tarjeta">💳 Tarjeta</MenuItem>
-                                    <MenuItem value="transferencia">📲 Transferencia</MenuItem>
-                                    <MenuItem value="mixto">🔀 Mixto</MenuItem>
-                                </TextField>
-                            </Grid>
-
-                            {/* Columna derecha - Información del producto seleccionado */}
-                            <Grid item xs={12} md={6}>
-                                {selectedStock ? (
-                                    <Card variant="outlined" sx={{ height: '100%' }}>
-                                        <CardContent>
-                                            <Typography variant="h6" gutterBottom color="primary">
-                                                📦 Información del Producto Seleccionado
-                                            </Typography>
-                                            
-                                            <Box sx={{ mb: 2, p: 2, bgcolor: 'primary.light', borderRadius: 1 }}>
-                                                <Typography variant="h6" fontWeight="bold" color="primary.dark">
-                                                    {productoNombre}
-                                                </Typography>
-                                                {producto?.descripcion && (
-                                                    <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-                                                        {producto.descripcion}
-                                                    </Typography>
-                                                )}
-                                            </Box>
-
-                                            <Grid container spacing={2}>
-                                                <Grid item xs={6}>
-                                                    <Typography variant="subtitle2" color="text.secondary">
-                                                        🔢 Número de Lote:
-                                                    </Typography>
-                                                    <Typography variant="body1" fontWeight="medium">
-                                                        {numeroLote}
-                                                    </Typography>
-                                                </Grid>
-                                                <Grid item xs={6}>
-                                                    <Typography variant="subtitle2" color="text.secondary">
-                                                        📊 Stock Disponible:
-                                                    </Typography>
-                                                    <Typography variant="body1" fontWeight="medium" color={stockDisponible < 10 ? "error" : "success"}>
-                                                        {stockDisponible} unidades
-                                                    </Typography>
-                                                </Grid>
-                                                
-                                                {fechaVencimiento && (
-                                                    <Grid item xs={6}>
-                                                        <Typography variant="subtitle2" color="text.secondary">
-                                                            📅 Fecha Vencimiento:
-                                                        </Typography>
-                                                        <Typography variant="body1">
-                                                            {new Date(fechaVencimiento).toLocaleDateString()}
-                                                        </Typography>
-                                                    </Grid>
-                                                )}
-                                                
-                                                {ubicacion && (
-                                                    <Grid item xs={6}>
-                                                        <Typography variant="subtitle2" color="text.secondary">
-                                                            📍 Ubicación:
-                                                        </Typography>
-                                                        <Typography variant="body1">
-                                                            {ubicacion}
-                                                        </Typography>
-                                                    </Grid>
-                                                )}
-
-                                                {producto?.categoria && (
-                                                    <Grid item xs={6}>
-                                                        <Typography variant="subtitle2" color="text.secondary">
-                                                            🗂️ Categoría:
-                                                        </Typography>
-                                                        <Typography variant="body1">
-                                                            {producto.categoria.nombre}
-                                                        </Typography>
-                                                    </Grid>
-                                                )}
-
-                                                {producto?.proveedor && (
-                                                    <Grid item xs={6}>
-                                                        <Typography variant="subtitle2" color="text.secondary">
-                                                            🏢 Proveedor:
-                                                        </Typography>
-                                                        <Typography variant="body1">
-                                                            {producto.proveedor.nombre}
-                                                        </Typography>
-                                                    </Grid>
-                                                )}
-
-                                                {precioSugerido > 0 && (
-                                                    <Grid item xs={6}>
-                                                        <Typography variant="subtitle2" color="text.secondary">
-                                                            💰 Precio Sugerido:
-                                                        </Typography>
-                                                        <Typography variant="body1" fontWeight="bold" color="primary">
-                                                            ${precioSugerido}
-                                                        </Typography>
-                                                    </Grid>
-                                                )}
-
-                                                {selectedStock.lote?.costo_unitario && (
-                                                    <Grid item xs={6}>
-                                                        <Typography variant="subtitle2" color="text.secondary">
-                                                            💸 Costo Unitario:
-                                                        </Typography>
-                                                        <Typography variant="body1">
-                                                            ${selectedStock.lote.costo_unitario}
-                                                        </Typography>
-                                                    </Grid>
-                                                )}
-
-                                                {producto?.unidad_medida && (
-                                                    <Grid item xs={6}>
-                                                        <Typography variant="subtitle2" color="text.secondary">
-                                                            ⚖️ Unidad de Medida:
-                                                        </Typography>
-                                                        <Typography variant="body1">
-                                                            {producto.unidad_medida}
-                                                        </Typography>
-                                                    </Grid>
-                                                )}
-
-                                                {producto?.codigo_barras && (
-                                                    <Grid item xs={6}>
-                                                        <Typography variant="subtitle2" color="text.secondary">
-                                                            📟 Código Barras:
-                                                        </Typography>
-                                                        <Typography variant="body1">
-                                                            {producto.codigo_barras}
-                                                        </Typography>
-                                                    </Grid>
-                                                )}
-                                            </Grid>
-
-                                            {/* Resumen de la venta */}
-                                            {form.cantidad > 0 && form.precio_unitario > 0 && (
-                                                <Box sx={{ mt: 3, p: 2, bgcolor: 'success.light', borderRadius: 1 }}>
-                                                    <Typography variant="subtitle2" fontWeight="bold" gutterBottom>
-                                                        💰 Resumen de Venta
-                                                    </Typography>
-                                                    <Typography variant="body2">
-                                                        Cantidad: <strong>{form.cantidad} {producto?.unidad_medida || 'unidades'}</strong>
-                                                    </Typography>
-                                                    <Typography variant="body2">
-                                                        Precio unitario: <strong>${form.precio_unitario}</strong>
-                                                    </Typography>
-                                                    <Typography variant="h6" fontWeight="bold" color="success.dark" sx={{ mt: 1 }}>
-                                                        Total: ${(form.cantidad * form.precio_unitario).toFixed(2)}
-                                                    </Typography>
-                                                    {selectedStock.lote?.costo_unitario && (
-                                                        <Typography variant="body2" sx={{ mt: 1 }}>
-                                                            Ganancia estimada: <strong>${(form.cantidad * (form.precio_unitario - parseFloat(selectedStock.lote.costo_unitario))).toFixed(2)}</strong>
-                                                        </Typography>
-                                                    )}
-                                                </Box>
-                                            )}
-                                        </CardContent>
-                                    </Card>
-                                ) : (
-                                    <Card variant="outlined" sx={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: 200 }}>
-                                        <CardContent>
-                                            <Typography variant="body1" color="text.secondary" textAlign="center">
-                                                👈 Selecciona un producto del stock para ver la información detallada
-                                            </Typography>
-                                        </CardContent>
-                                    </Card>
-                                )}
-                            </Grid>
-                        </Grid>
-                    </>
-                )}
-            </DialogContent>
-
-            <DialogActions>
-                <Button onClick={onClose}>Cancelar</Button>
-                <Button
-                    onClick={handleSubmit}
-                    variant="contained"
-                    disabled={
-                        !form.sucursal_id || 
-                        !form.empleado_cajero_id || 
-                        !form.stock_id || 
-                        form.cantidad <= 0 || 
-                        form.precio_unitario <= 0 ||
-                        !form.metodo_pago ||
-                        !hayStockSuficiente
-                    }
-                    size="large"
+    return (<Dialog open={open} onClose={onClose} fullWidth maxWidth="sm">
+        <DialogTitle sx={{ py: 1.5, fontSize: "1rem" }}>Crear Nueva Venta</DialogTitle>
+        <DialogContent sx={{ display: "flex", flexDirection: "column", gap: 0.75, mt: 0.5 }}>
+            {loading ? (
+                <Box sx={{ display: 'flex', justifyContent: 'center', py: 1.5 }}> <CircularProgress size={20} />
+                    <Typography sx={{ ml: 1, fontSize: "0.875rem" }}>Cargando datos...</Typography> </Box>
+            ) : (
+                <> <TextField
+                    select
+                    label="Sucursal"
+                    name="sucursal_id"
+                    value={form.sucursal_id}
+                    onChange={handleSucursalChange}
+                    fullWidth
+                    size="small"
                 >
-                    🧾 Crear Venta
-                </Button>
-            </DialogActions>
-        </Dialog>
+                    {sucursales.map(s => <MenuItem key={s.id} value={s.id}>{s.nombre}</MenuItem>)} </TextField>
+
+                    <TextField
+                        select
+                        label="Empleado Cajero"
+                        name="empleado_cajero_id"
+                        value={form.empleado_cajero_id}
+                        onChange={handleChange}
+                        fullWidth
+                        size="small"
+                    >
+                        {empleados.map(e => <MenuItem key={e.id} value={e.id}>{e.nombres} {e.apellidos}</MenuItem>)}
+                    </TextField>
+
+                    <TextField
+                        select
+                        label="Producto en Stock"
+                        name="stock_id"
+                        value={form.stock_id}
+                        onChange={handleStockChange}
+                        fullWidth
+                        size="small"
+                        disabled={!form.sucursal_id}
+                        helperText={errorStock || "Selecciona un producto disponible"}
+                        error={!!errorStock}
+                    >
+                        {stocksFiltrados.length === 0 ? (
+                            <MenuItem disabled value="">
+                                {form.sucursal_id ? "No hay stock disponible" : "Selecciona una sucursal primero"}
+                            </MenuItem>
+                        ) : (
+                            stocksFiltrados.map(stock => {
+                                const producto = stock.lote?.producto;
+                                const nombre = producto?.nombre || `Producto Lote ${stock.lote?.numero_lote || 'N/A'}`;
+                                const lote = stock.lote?.numero_lote || 'N/A';
+                                const disponible = stock.cantidad_disponible;
+                                return <MenuItem key={stock.id} value={stock.id}>{`${nombre} | Lote: ${lote} | Stock: ${disponible}`}</MenuItem>;
+                            })
+                        )}
+                    </TextField>
+
+                    {selectedStock && (
+                        <Alert severity="info" sx={{ py: 0.5, fontSize: "0.75rem" }}>
+                            {productoNombre} | Stock: {stockDisponible} | Lote: {numeroLote}
+                        </Alert>
+                    )}
+
+                    <TextField
+                        label="Cantidad a Vender"
+                        name="cantidad"
+                        type="number"
+                        value={form.cantidad}
+                        onChange={handleChange}
+                        fullWidth
+                        size="small"
+                        inputProps={{ min: 1, max: stockDisponible }}
+                        helperText={!hayStockSuficiente && "Stock insuficiente"}
+                        error={!hayStockSuficiente}
+                    />
+
+                    <TextField
+                        label="Precio Unitario"
+                        name="precio_unitario"
+                        type="number"
+                        value={form.precio_unitario}
+                        onChange={handleChange}
+                        fullWidth
+                        size="small"
+                        inputProps={{ min: 0, step: "0.01" }}
+                    />
+
+                    <TextField
+                        select
+                        label="Método de Pago"
+                        name="metodo_pago"
+                        value={form.metodo_pago}
+                        onChange={handleChange}
+                        fullWidth
+                        size="small"
+                    >
+                        <MenuItem value="efectivo">Efectivo</MenuItem>
+                        <MenuItem value="tarjeta">Tarjeta</MenuItem>
+                        <MenuItem value="transferencia">Transferencia</MenuItem>
+                        <MenuItem value="mixto">Mixto</MenuItem>
+                    </TextField>
+                </>
+            )}
+        </DialogContent>
+
+        <DialogActions sx={{ py: 1 }}>
+            <Button onClick={onClose} size="small">Cancelar</Button>
+            <Button
+                onClick={handleSubmit}
+                variant="contained"
+                size="small"
+                disabled={!form.sucursal_id || !form.empleado_cajero_id || !form.stock_id || form.cantidad <= 0 || !hayStockSuficiente}
+            >
+                Crear Venta
+            </Button>
+        </DialogActions>
+    </Dialog>
     );
-}
+};
