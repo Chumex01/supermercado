@@ -70,7 +70,7 @@ export default function StockTable({ stocks }: Props) {
             <TableCell>Estado Stock</TableCell>
             <TableCell>Ubicación</TableCell>
             <TableCell>Costo Unitario</TableCell>
-            <TableCell>Acciones</TableCell>
+            {/* <TableCell>Acciones</TableCell> */}
           </TableRow>
         </TableHead>
         <TableBody>
@@ -146,7 +146,7 @@ export default function StockTable({ stocks }: Props) {
                 ${parseFloat(stock.lote.costo_unitario.toString()).toFixed(2)}
               </TableCell>
 
-              {/* Acciones */}
+              {/* Acciones
               <TableCell>
                 <Button size="small" variant="outlined" sx={{ mr: 1 }}>
                   Editar
@@ -154,7 +154,7 @@ export default function StockTable({ stocks }: Props) {
                 <Button size="small" variant="outlined" color="error">
                   Eliminar
                 </Button>
-              </TableCell>
+              </TableCell> */}
             </TableRow>
           ))}
         </TableBody>

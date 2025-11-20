@@ -10,7 +10,8 @@
   "static/chunks/node_modules_@mui_system_esm_856e1ff8._.js",
   "static/chunks/node_modules_@mui_material_esm_5d82a62f._.js",
   "static/chunks/node_modules_b0d52b2f._.js",
-  "static/chunks/[root-of-the-server]__37896d85._.js"
+  "static/chunks/[root-of-the-server]__b6ea972b._.js",
+  "static/chunks/src_components_botones_boton_module_008ed011.css"
 ],
     source: "entry"
 });

@@ -116,7 +116,7 @@ export default function VentaTable({ ventas, onVentaUpdate }: Props) {
             <TableCell>Fecha Venta</TableCell>
             <TableCell>Estado</TableCell>
             <TableCell>Método Pago</TableCell>
-            <TableCell>Acciones</TableCell>
+            {/* <TableCell>Acciones</TableCell> */}
           </TableRow>
         </TableHead>
         <TableBody>

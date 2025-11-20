@@ -29,14 +29,14 @@ self.__BUILD_MANIFEST = {
   "/register": [
     "static/chunks/pages/register.js"
   ],
-  "/reportes": [
-    "static/chunks/pages/reportes.js"
-  ],
   "/solicitudes": [
     "static/chunks/pages/solicitudes.js"
   ],
   "/stock": [
     "static/chunks/pages/stock.js"
+  ],
+  "/sucursales": [
+    "static/chunks/pages/sucursales.js"
   ],
   "/usuarios": [
     "static/chunks/pages/usuarios.js"

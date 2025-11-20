@@ -505,7 +505,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$mat
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$esm$2f$TableHead$2f$TableHead$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableHead$3e$__ = __turbopack_context__.i("[project]/node_modules/@mui/material/esm/TableHead/TableHead.js [client] (ecmascript) <export default as TableHead>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$esm$2f$TableRow$2f$TableRow$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableRow$3e$__ = __turbopack_context__.i("[project]/node_modules/@mui/material/esm/TableRow/TableRow.js [client] (ecmascript) <export default as TableRow>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$esm$2f$Paper$2f$Paper$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Paper$3e$__ = __turbopack_context__.i("[project]/node_modules/@mui/material/esm/Paper/Paper.js [client] (ecmascript) <export default as Paper>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$esm$2f$Button$2f$Button$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Button$3e$__ = __turbopack_context__.i("[project]/node_modules/@mui/material/esm/Button/Button.js [client] (ecmascript) <export default as Button>");
 "use client";
 ;
 ;
@@ -536,13 +535,6 @@ function UsuariosTable({ usuarios }) {
                             }, void 0, false, {
                                 fileName: "[project]/src/components/usuarios/UsuarioTable.tsx",
                                 lineNumber: 24,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$esm$2f$TableCell$2f$TableCell$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableCell$3e$__["TableCell"], {
-                                children: "Acciones"
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/usuarios/UsuarioTable.tsx",
-                                lineNumber: 25,
                                 columnNumber: 13
                             }, this)
                         ]
@@ -578,28 +570,6 @@ function UsuariosTable({ usuarios }) {
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/usuarios/UsuarioTable.tsx",
                                     lineNumber: 33,
-                                    columnNumber: 15
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$esm$2f$TableCell$2f$TableCell$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableCell$3e$__["TableCell"], {
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$esm$2f$Button$2f$Button$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Button$3e$__["Button"], {
-                                            children: "Editar"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/usuarios/UsuarioTable.tsx",
-                                            lineNumber: 34,
-                                            columnNumber: 26
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$esm$2f$Button$2f$Button$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Button$3e$__["Button"], {
-                                            children: "Eliminar"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/usuarios/UsuarioTable.tsx",
-                                            lineNumber: 35,
-                                            columnNumber: 15
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/src/components/usuarios/UsuarioTable.tsx",
-                                    lineNumber: 34,
                                     columnNumber: 15
                                 }, this)
                             ]
@@ -796,7 +766,7 @@ function Navbar() {
                         cursor: "pointer"
                     },
                     onClick: ()=>router.push("/home"),
-                    children: "SuperMercado"
+                    children: "Supermarket"
                 }, void 0, false, {
                     fileName: "[project]/src/components/forms/Navbar.tsx",
                     lineNumber: 21,
@@ -888,18 +858,16 @@ function Navbar() {
                             lineNumber: 42,
                             columnNumber: 11
                         }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$esm$2f$Button$2f$Button$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Button$3e$__["Button"], {
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Boton, {
+                            label: "Cerrar sesión",
                             size: "small",
-                            sx: {
-                                mr: 2
-                            },
                             color: "error",
                             variant: "contained",
-                            onClick: handleLogout,
-                            children: "Cerrar sesión"
+                            className: "mr-2",
+                            onClick: handleLogout
                         }, void 0, false, {
                             fileName: "[project]/src/components/forms/Navbar.tsx",
-                            lineNumber: 45,
+                            lineNumber: 48,
                             columnNumber: 11
                         }, this)
                     ]

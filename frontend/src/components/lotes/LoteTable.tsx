@@ -61,7 +61,7 @@ export default function LoteTable({ lotes }: Props) {
             <TableCell>Costo Unitario</TableCell>
             <TableCell>Fecha Recepción</TableCell>
             <TableCell>Estado</TableCell>
-            <TableCell>Acciones</TableCell>
+            {/* <TableCell>Acciones</TableCell> */}
           </TableRow>
         </TableHead>
         <TableBody>
@@ -81,14 +81,14 @@ export default function LoteTable({ lotes }: Props) {
                   size="small"
                 />
               </TableCell>
-              <TableCell>
+              {/* <TableCell>
                 <Button size="small" sx={{ mr: 1 }}>
                   Editar
                 </Button>
                 <Button size="small" >
                   Eliminar
                 </Button>
-              </TableCell>
+              </TableCell> */}
             </TableRow>
           ))}
         </TableBody>

@@ -151,7 +151,7 @@ const crearOrdenCompra = async (datosOrden: any) => {
               <TableCell>Justificación</TableCell>
               <TableCell>Estado</TableCell>
               <TableCell>Fecha</TableCell>
-              <TableCell>Acciones</TableCell>
+              {/* <TableCell>Acciones</TableCell>  */}
             </TableRow>
           </TableHead>
           <TableBody>

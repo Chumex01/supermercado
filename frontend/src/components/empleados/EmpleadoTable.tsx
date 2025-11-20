@@ -42,7 +42,7 @@ export default function EmpleadoTable({ empleados }: Props) {
             <TableCell>Estado</TableCell>
             <TableCell>Usuario (Correo)</TableCell>
             <TableCell>Sucursal</TableCell>
-            <TableCell>Acciones</TableCell>
+            {/* <TableCell>Acciones</TableCell> */}
           </TableRow>
         </TableHead>
         <TableBody>
@@ -58,8 +58,8 @@ export default function EmpleadoTable({ empleados }: Props) {
               <TableCell>{e.estado}</TableCell>
               <TableCell>{e.usuario?.correo || "—"}</TableCell>
               <TableCell>{e.sucursal?.nombre || "—"}</TableCell>
-              <TableCell><Button>Editar</Button>
-              <Button>Eliminar</Button></TableCell>
+              {/* <TableCell><Button>Editar</Button>
+              <Button>Eliminar</Button></TableCell> */}
             </TableRow>
           ))}
         </TableBody>

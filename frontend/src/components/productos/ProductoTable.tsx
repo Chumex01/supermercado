@@ -36,7 +36,7 @@ const getCategoryColor = (categoriaNombre: string): string => {
     'Electrónicos': '#2196f3',
     'Ropa': '#ff9800',
     'Alimentos': '#4caf50',
-    'Hogar': '#9c27b0',
+    'Limpieza': '#9c27b0',
     'Deportes': '#f44336',
     'Bebidas Alcoholicas': '#ffeb3b',
     'Libros': '#795548',
@@ -135,9 +135,9 @@ export default function ProductoTable({ productos }: Props) {
               </Box>
             </CardContent>
             <CardActions>
-              <Button size="small">Ver Detalles</Button>
-              <Button size="small">Eliminar</Button>
-              <Button size="small">Editar</Button>
+              {/* <Button size="small">Ver Detalles</Button> */}
+              {/* <Button size="small">Eliminar</Button>
+              <Button size="small">Editar</Button> */}
             </CardActions>
           </Card>
         );

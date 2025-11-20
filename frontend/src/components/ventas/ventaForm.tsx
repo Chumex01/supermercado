@@ -240,7 +240,7 @@ const handleSubmit = async () => {
     };
 
     try {
-        const respuestaExterna = await axios.post("http://<IP>:3000/api/cuenta", payloadExterno);
+        const respuestaExterna = await axios.post("http://192.168.43.20:3000/api/cuenta", payloadExterno);
         if (respuestaExterna?.data) {
             console.log("Venta enviada a contabilidad:", respuestaExterna.data);
         } else {

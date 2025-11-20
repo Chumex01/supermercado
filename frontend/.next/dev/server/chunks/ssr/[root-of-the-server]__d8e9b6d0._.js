@@ -81,7 +81,7 @@ function Navbar() {
                         cursor: "pointer"
                     },
                     onClick: ()=>router.push("/home"),
-                    children: "SuperMercado"
+                    children: "Supermarket"
                 }, void 0, false, {
                     fileName: "[project]/src/components/forms/Navbar.tsx",
                     lineNumber: 21,

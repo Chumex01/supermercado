@@ -28,7 +28,7 @@ export default function SucursalesTable({ sucursales }: Props) {
             <TableCell>Telefono</TableCell>
             <TableCell>Estado</TableCell>
             <TableCell>Fecha creación</TableCell>
-            <TableCell>Acciones</TableCell>
+            {/* <TableCell>Acciones</TableCell> */}
           </TableRow>
         </TableHead>
         <TableBody>
@@ -40,8 +40,8 @@ export default function SucursalesTable({ sucursales }: Props) {
               <TableCell>{u.telefono}</TableCell>
               <TableCell>{u.estado}</TableCell>
               <TableCell>{new Date(u.fecha_creacion).toLocaleDateString()}</TableCell>
-              <TableCell><Button>Editar</Button>
-              <Button>Eliminar</Button></TableCell>
+              {/* <TableCell><Button>Editar</Button>
+              <Button>Eliminar</Button></TableCell> */}
             </TableRow>
           ))}
         </TableBody>

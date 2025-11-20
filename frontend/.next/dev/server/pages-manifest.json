@@ -11,9 +11,9 @@
   "/productos": "pages/productos.js",
   "/proveedores": "pages/proveedores.js",
   "/register": "pages/register.js",
-  "/reportes": "pages/reportes.js",
   "/solicitudes": "pages/solicitudes.js",
   "/stock": "pages/stock.js",
+  "/sucursales": "pages/sucursales.js",
   "/usuarios": "pages/usuarios.js",
   "/ventas": "pages/ventas.js"
 }

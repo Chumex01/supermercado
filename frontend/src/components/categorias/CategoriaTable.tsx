@@ -22,7 +22,7 @@ export default function CategoriaTable({ categorias }: Props) {
             <TableCell>Nombre</TableCell>
             <TableCell>Descripción</TableCell>
             <TableCell>Estado</TableCell>
-            <TableCell>Acciones</TableCell>
+            {/* <TableCell>Acciones</TableCell> */}
           </TableRow>
         </TableHead>
         <TableBody>
@@ -32,8 +32,8 @@ export default function CategoriaTable({ categorias }: Props) {
               <TableCell>{u.nombre}</TableCell>
               <TableCell>{u.descripcion}</TableCell>
               <TableCell>{u.estado}</TableCell>
-              <TableCell><Button>Editar</Button>
-              <Button>Eliminar</Button></TableCell>
+              {/* <TableCell><Button>Editar</Button>
+              <Button>Eliminar</Button></TableCell> */}
             </TableRow>
           ))}
         </TableBody>

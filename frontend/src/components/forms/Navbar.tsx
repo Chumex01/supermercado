@@ -4,6 +4,7 @@
 import { AppBar, Toolbar, Typography, Button, Box } from "@mui/material";
 import { useRouter } from "next/router";
 import Cookies from "js-cookie";
+import { Boton } from "../botones/botonNav";
 
 export default function Navbar() {
   const router = useRouter();
@@ -19,7 +20,7 @@ export default function Navbar() {
       <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
         {/* Logo o título */}
         <Typography variant="h6" sx={{ cursor: "pointer" }} onClick={() => router.push("/home")}>
-          SuperMercado
+          Supermarket
         </Typography>
 
         {/* Botones de navegación */}
@@ -36,15 +37,34 @@ export default function Navbar() {
           <Button size="small" sx={{ mr: 2 }} color="inherit" variant="outlined" onClick={() => router.push("/solicitudes")}>
             Módulo de Compras
           </Button>
-          <Button size="small" sx={{ mr: 2 }} color="inherit" variant="outlined" onClick={() => router.push("/stock")}>
-            Inventario
-          </Button>
-          <Button size="small" sx={{ mr: 2 }} color="inherit" variant="outlined" onClick={() => router.push("/ventas")}>
-            Módulo de Ventas
-          </Button>
-          <Button size="small" sx={{ mr: 2 }} color="error" variant="contained" onClick={handleLogout}>
-            Cerrar sesión
-          </Button>
+
+          <Boton
+            label="Inventario"
+            size="small"
+            color="default"
+            variant="contained"
+            onClick={() => router.push("/stock")}
+            className="mr-2"
+          />
+
+          <Boton
+            label="Vender"
+            size="small"
+            color="default"
+            variant="contained"
+            onClick={() => router.push("/ventas")}
+            className="mr-2"
+          />
+
+          <Boton
+            label="Cerrar sesión"
+            size="small"
+            color="error"
+            variant="contained"
+            // className="mr-2"
+            onClick={handleLogout}
+          />
+
         </Box>
       </Toolbar>
     </AppBar>

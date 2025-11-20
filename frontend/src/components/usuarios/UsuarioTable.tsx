@@ -22,7 +22,7 @@ export default function UsuariosTable({ usuarios }: Props) {
             <TableCell>ID</TableCell>
             <TableCell>Correo</TableCell>
             <TableCell>Fecha creación</TableCell>
-            <TableCell>Acciones</TableCell>
+            {/* <TableCell>Acciones</TableCell> */}
           </TableRow>
         </TableHead>
         <TableBody>
@@ -31,8 +31,8 @@ export default function UsuariosTable({ usuarios }: Props) {
               <TableCell>{u.id}</TableCell>
               <TableCell>{u.correo}</TableCell>
               <TableCell>{new Date(u.fecha_creacion).toLocaleDateString()}</TableCell>
-              <TableCell><Button>Editar</Button>
-              <Button>Eliminar</Button></TableCell>
+              {/* <TableCell><Button>Editar</Button>
+              <Button>Eliminar</Button></TableCell> */}
             </TableRow>
           ))}
         </TableBody>

@@ -26,7 +26,7 @@ export default function ProveedorTable({ proveedores }: Props) {
             <TableCell>Correo</TableCell>
             <TableCell>Dirección</TableCell>
             <TableCell>Estado</TableCell>
-            <TableCell>Acciones</TableCell>
+            {/* <TableCell>Acciones</TableCell> */}
           </TableRow>
         </TableHead>
         <TableBody>
@@ -38,8 +38,8 @@ export default function ProveedorTable({ proveedores }: Props) {
               <TableCell>{u.correo}</TableCell>
               <TableCell>{u.direccion}</TableCell>
               <TableCell>{u.estado}</TableCell>
-              <TableCell><Button>Editar</Button>
-              <Button>Eliminar</Button></TableCell>
+              {/* <TableCell><Button>Editar</Button>
+              <Button>Eliminar</Button></TableCell> */}
             </TableRow>
           ))}
         </TableBody>
