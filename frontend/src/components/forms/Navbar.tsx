@@ -19,24 +19,50 @@ export default function Navbar() {
     <AppBar position="static">
       <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
         {/* Logo o título */}
-        <Typography variant="h6" sx={{ cursor: "pointer" }} onClick={() => router.push("/home")}>
+        <Typography
+          variant="h6"
+          sx={{ cursor: "pointer" }}
+          onClick={() => router.push("/home")}
+        >
           Supermarket
         </Typography>
 
         {/* Botones de navegación */}
         <Box>
-          <Button size="small" sx={{ mr: 2 }} color="inherit" variant="outlined" onClick={() => router.push("/home")}>
-            Home
-          </Button>
-          <Button size="small" sx={{ mr: 2 }} color="inherit" variant="outlined" onClick={() => router.push("/usuarios")}>
-            Seguridad y Acceso
-          </Button>
-          <Button size="small" sx={{ mr: 2 }} color="inherit" variant="outlined" onClick={() => router.push("/categorias")}>
-            Catálogo
-          </Button>
-          <Button size="small" sx={{ mr: 2 }} color="inherit" variant="outlined" onClick={() => router.push("/solicitudes")}>
-            Módulo de Compras
-          </Button>
+          <Boton
+            label="Home"
+            size="small"
+            color="default"
+            variant="contained"
+            onClick={() => router.push("/home")}
+            className="mr-2"
+          />
+
+          <Boton
+            label="Seguridad y Acceso"
+            size="small"
+            color="default"
+            variant="contained"
+            onClick={() => router.push("/usuarios")}
+            className="mr-2"
+          />
+          <Boton
+            label="Catálogo"
+            size="small"
+            color="default"
+            variant="contained"
+            onClick={() => router.push("/stock")}
+            className="mr-2"
+          />
+
+          <Boton
+            label="Comprar"
+            size="small"
+            color="default"
+            variant="contained"
+            onClick={() => router.push("/solicitudes")}
+            className="mr-2"
+          />
 
           <Boton
             label="Inventario"
@@ -64,7 +90,6 @@ export default function Navbar() {
             // className="mr-2"
             onClick={handleLogout}
           />
-
         </Box>
       </Toolbar>
     </AppBar>

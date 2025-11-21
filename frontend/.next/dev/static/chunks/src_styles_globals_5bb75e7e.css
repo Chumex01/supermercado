@@ -284,6 +284,10 @@
     position: static;
   }
 
+  .m-3 {
+    margin: calc(var(--spacing) * 3);
+  }
+
   .mr-2 {
     margin-right: calc(var(--spacing) * 2);
   }
@@ -329,8 +333,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #fff;
+    --foreground: #171717;
   }
 }
 

@@ -9,7 +9,8 @@ __turbopack_load_page_chunks__("/sucursales", [
   "static/chunks/node_modules_@mui_material_esm_3cf83048._.js",
   "static/chunks/node_modules_@mui_system_esm_04c8177a._.js",
   "static/chunks/node_modules_8e52962a._.js",
-  "static/chunks/[root-of-the-server]__990a54bf._.js",
+  "static/chunks/[root-of-the-server]__9eb25778._.js",
+  "static/chunks/src_components_botones_boton_module_008ed011.css",
   "static/chunks/src_pages_sucursales_index_tsx_2da965e7._.js",
-  "static/chunks/turbopack-src_pages_sucursales_index_tsx_d9a495a0._.js"
+  "static/chunks/turbopack-src_pages_sucursales_index_tsx_e00adee2._.js"
 ])

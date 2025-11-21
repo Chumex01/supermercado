@@ -16,6 +16,7 @@ import {
 import Navbar from "@/components/forms/Navbar";
 import router, { useRouter } from "next/router";
 import Cookies from "js-cookie";
+import { Boton } from "@/components/botones/botonNav";
 
 interface Usuario {
   id: number;
@@ -98,13 +99,22 @@ export default function UsuariosPage() {
           Usuarios
         </Typography>
 
-        <Button variant="contained" onClick={handleOpenModal} sx={{ mb: 2, mr: 2 }}>
-          Otros apartados
-        </Button>
+        <Boton
+          label="Otros apartados"
+          size="medium"
+          color="default2"
+          variant="contained"
+          onClick={handleOpenModal}
+          className="m-3"
+        />
 
-        <Button variant="contained" onClick={handleCreateUser} sx={{ mb: 2 }} >
-          Crear Nuevo Usuario
-        </Button>
+        <Boton
+          label="Crear Nuevo Usuario"
+          size="small"
+          color="default"
+          variant="contained"
+          onClick={() => setShowForm(true)}
+        />
 
         {/* Formulario de usuario (fuera del modal) */}
         <UsuarioForm

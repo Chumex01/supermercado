@@ -15,6 +15,9 @@
   --color-default: #159cc5;
   --color-default-dark: #0a5066;
 
+  --color-default2: #6e58ec;
+  --color-default2-dark: #41348b;
+
   --radius: 6px;
   --transition: 0.2s ease-in-out;
   --font: 0.9rem;
@@ -83,6 +86,13 @@
 }
 .default:hover {
   background: var(--color-default-dark);
+}
+
+.default2 {
+  background: var(--color-default2);
+}
+.default2:hover {
+  background: var(--color-default2-dark);
 }
 
 .outline {

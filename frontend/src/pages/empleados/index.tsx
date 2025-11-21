@@ -15,6 +15,7 @@ import Navbar from "@/components/forms/Navbar";
 import router from "next/router";
 import EmpleadoTable from "@/components/empleados/EmpleadoTable";
 import EmpleadoForm from "@/components/empleados/empleadoForm";
+import { Boton } from "@/components/botones/botonNav";
 
 interface Empleado {
   id: number;
@@ -104,13 +105,22 @@ const crearEmpleado = async (data: unknown) => {
           Empleados
         </Typography>
 
-        <Button variant="contained" onClick={handleOpenModal} sx={{ mb: 2, mr: 2 }}>
-          Otros apartados
-        </Button>
+        <Boton
+          label="Otros apartados"
+          size="medium"
+          color="default2"
+          variant="contained"
+          onClick={handleOpenModal}
+          className="m-3"
+        />
 
-        <Button variant="contained" onClick={handleCreateUser} sx={{ mb: 2 }} >
-          Crear Nuevo Empleado
-        </Button>
+        <Boton
+          label="Crear Nuevo Empleado"
+          size="small"
+          color="default"
+          variant="contained"
+          onClick={handleCreateUser}
+        />
 
         {/* Formulario de usuario (fuera del modal) */}
         <EmpleadoForm

@@ -6,7 +6,7 @@ interface BotonProps {
   label: string;
   onClick?: () => void;
   size?: "small" | "medium" | "large";
-  color?: "primary" | "error" | "success" | "warning" | "default";
+  color?: "primary" | "error" | "success" | "warning" | "default" | "default2";
   variant?: "contained" | "outline" | "text";
   className?: string;
 }

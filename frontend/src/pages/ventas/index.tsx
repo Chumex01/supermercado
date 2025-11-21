@@ -2,11 +2,19 @@ import Navbar from "@/components/forms/Navbar"; // Asegúrate de importar el for
 import VentaForm from "@/components/ventas/ventaForm";
 import VentaTable from "@/components/ventas/VentaTable";
 import { api } from "@/lib/api";
-import { Box, Typography, Button, Modal, Stack, CircularProgress } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Button,
+  Modal,
+  Stack,
+  CircularProgress,
+} from "@mui/material";
 // import router from "next/router";
 import { useEffect, useState } from "react";
 import router, { useRouter } from "next/router";
 import Cookies from "js-cookie";
+import { Boton } from "@/components/botones/botonNav";
 
 interface Venta {
   id: number;
@@ -44,130 +52,140 @@ interface Venta {
 }
 
 const modalStyle = {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: 400,
-    bgcolor: "background.paper",
-    border: "2px solid #000",
-    boxShadow: 24,
-    p: 4,
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  boxShadow: 24,
+  p: 4,
 };
 
 export default function VentasPage() {
-    const [ventas, setVentas] = useState<Venta[]>([]);
-    const [loading, setLoading] = useState(true);
-    const [modalOpen, setModalOpen] = useState(false);
-    const [showForm, setShowForm] = useState(false);
-        const router = useRouter();
-      
-        useEffect(() => {
-          const id = Cookies.get("usuario_id");
-          if (!id) router.push("/login"); // redirige si no está logueado
-        }, [router]);
+  const [ventas, setVentas] = useState<Venta[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [showForm, setShowForm] = useState(false);
+  const router = useRouter();
 
-    useEffect(() => {
-        cargarVentas();
-    }, []);
+  useEffect(() => {
+    const id = Cookies.get("usuario_id");
+    if (!id) router.push("/login"); // redirige si no está logueado
+  }, [router]);
 
-    const cargarVentas = async () => {
-        setLoading(true);
-        try {
-            const res = await api.get("/ventas/ListarVentas");
-            // Ajusta según la estructura real de tu API
-            setVentas(res.data.data || res.data);
-        } catch (err) {
-            console.error(err);
-            alert("Error al cargar ventas");
-        } finally {
-            setLoading(false);
-        }
-    };
+  useEffect(() => {
+    cargarVentas();
+  }, []);
 
-    const crearVentas = async (data: unknown) => {
-        try {
-            const res = await api.post("/ventas/CrearVentas", data);
-            alert("Venta creada exitosamente");
-            console.log(res.data);
-            cargarVentas(); // refresca la tabla
-            setShowForm(false); // cierra el formulario
-        } catch (err: unknown) {
-            console.error(err);
-            alert("Error al crear venta");
-        }
-    };
+  const cargarVentas = async () => {
+    setLoading(true);
+    try {
+      const res = await api.get("/ventas/ListarVentas");
+      // Ajusta según la estructura real de tu API
+      setVentas(res.data.data || res.data);
+    } catch (err) {
+      console.error(err);
+      alert("Error al cargar ventas");
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    const handleOpenModal = () => {
-        setModalOpen(true);
-    };
+  const crearVentas = async (data: unknown) => {
+    try {
+      const res = await api.post("/ventas/CrearVentas", data);
+      alert("Venta creada exitosamente");
+      console.log(res.data);
+      cargarVentas(); // refresca la tabla
+      setShowForm(false); // cierra el formulario
+    } catch (err: unknown) {
+      console.error(err);
+      alert("Error al crear venta");
+    }
+  };
 
-    const handleModalClose = () => {
-        setModalOpen(false);
-    };
+  const handleOpenModal = () => {
+    setModalOpen(true);
+  };
 
-    const handleCreateLote = () => {
-        setModalOpen(false); // Cierra el modal
-        setShowForm(true); // Abre el formulario
-    };
+  const handleModalClose = () => {
+    setModalOpen(false);
+  };
 
-    return (
-        <>
-            <Navbar />
+  const handleCreateLote = () => {
+    setModalOpen(false); // Cierra el modal
+    setShowForm(true); // Abre el formulario
+  };
 
-            <Box sx={{ p: 3 }}>
-                <Typography variant="h4" gutterBottom>
-                    Ventas
-                </Typography>
+  return (
+    <>
+      <Navbar />
 
-                <Button variant="contained" onClick={handleOpenModal} sx={{ mb: 2, mr: 2 }}>
-                    Otros apartados
-                </Button>
+      <Box sx={{ p: 3 }}>
+        <Typography variant="h4" gutterBottom>
+          Ventas
+        </Typography>
 
-                <Button variant="contained" onClick={handleCreateLote} sx={{ mb: 2 }} >
-                    Crear Nuevo registro de Venta
-                </Button>
+        <Boton
+          label="Otros apartados"
+          size="medium"
+          color="default2"
+          variant="contained"
+          onClick={handleOpenModal}
+          className="m-3"
+        />
 
-                {/* Formulario de lote */}
-                <VentaForm
-                    open={showForm}
-                    onClose={() => setShowForm(false)}
-                    onCreate={crearVentas}
-                />
+        <Boton
+          label="Crear Nueva Venta"
+          size="small"
+          color="default"
+          variant="contained"
+          onClick={handleCreateLote}
+          className="mr-2"
+        />
 
-                {/* Modal principal con botones */}
-                <Modal
-                    open={modalOpen}
-                    onClose={handleModalClose}
-                    aria-labelledby="modal-modal-title"
-                    aria-describedby="modal-modal-description"
-                >
-                    <Box sx={modalStyle}>
-                        <Typography
-                            id="modal-modal-title"
-                            variant="h6"
-                            component="h2"
-                            gutterBottom
-                        >
-                            Opciones de Venta
-                        </Typography>
-                        <Stack spacing={2} sx={{ mt: 2 }}>
-                            <Button
-                                variant="contained"
-                                onClick={() => router.push("/reportes")}
-                                fullWidth
-                            >
-                                Reportes
-                            </Button>
-                        </Stack>
-                        <Button onClick={handleModalClose} sx={{ mt: 2 }} fullWidth>
-                            Cerrar
-                        </Button>
-                    </Box>
-                </Modal>
+        {/* Formulario de lote */}
+        <VentaForm
+          open={showForm}
+          onClose={() => setShowForm(false)}
+          onCreate={crearVentas}
+        />
 
-                {loading ? <CircularProgress /> : <VentaTable ventas={ventas} />}
-            </Box>
-        </>
-    );
+        {/* Modal principal con botones */}
+        <Modal
+          open={modalOpen}
+          onClose={handleModalClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={modalStyle}>
+            <Typography
+              id="modal-modal-title"
+              variant="h6"
+              component="h2"
+              gutterBottom
+            >
+              Opciones de Venta
+            </Typography>
+            <Stack spacing={2} sx={{ mt: 2 }}>
+              <Button
+                variant="contained"
+                onClick={() => router.push("/reportes")}
+                fullWidth
+              >
+                Reportes
+              </Button>
+            </Stack>
+            <Button onClick={handleModalClose} sx={{ mt: 2 }} fullWidth>
+              Cerrar
+            </Button>
+          </Box>
+        </Modal>
+
+        {loading ? <CircularProgress /> : <VentaTable ventas={ventas} />}
+      </Box>
+    </>
+  );
 }

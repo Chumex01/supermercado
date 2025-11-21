@@ -2,9 +2,6 @@ self.__BUILD_MANIFEST = {
   "/": [
     "static/chunks/pages/index.js"
   ],
-  "/_error": [
-    "static/chunks/pages/_error.js"
-  ],
   "/categorias": [
     "static/chunks/pages/categorias.js"
   ],
@@ -28,6 +25,9 @@ self.__BUILD_MANIFEST = {
   ],
   "/register": [
     "static/chunks/pages/register.js"
+  ],
+  "/reportes": [
+    "static/chunks/pages/reportes.js"
   ],
   "/solicitudes": [
     "static/chunks/pages/solicitudes.js"

@@ -106,7 +106,7 @@ export default function VentaTable({ ventas, onVentaUpdate }: Props) {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>ID</TableCell>
+            <TableCell >ID</TableCell>
             <TableCell>Producto</TableCell>
             <TableCell>Sucursal</TableCell>
             <TableCell>Empleado</TableCell>
@@ -216,32 +216,6 @@ export default function VentaTable({ ventas, onVentaUpdate }: Props) {
               {/* Acciones */}
               <TableCell>
                 <Box sx={{ display: "flex", gap: 1, flexDirection: "column" }}>
-                  <Button 
-                    size="small" 
-                    variant="outlined" 
-                    color="error"
-                    disabled={venta.estado === "cancelada"}
-                    onClick={() => {
-                      // Aquí iría la lógica para cancelar la venta
-                      if (confirm(`¿Estás seguro de cancelar la venta #${venta.id}?`)) {
-                        console.log("Cancelar venta:", venta.id);
-                        // Llamar a la API para cancelar
-                        // onVentaUpdate?.(); // Actualizar lista después
-                      }
-                    }}
-                  >
-                    Cancelar
-                  </Button>
-                  <Button 
-                    size="small" 
-                    variant="outlined"
-                    onClick={() => {
-                      // Aquí iría la lógica para ver detalles
-                      console.log("Ver detalles venta:", venta.id);
-                    }}
-                  >
-                    Detalles
-                  </Button>
                 </Box>
               </TableCell>
             </TableRow>

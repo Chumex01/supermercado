@@ -7,6 +7,7 @@ import { Box, Typography, Button, Modal, Stack, CircularProgress } from "@mui/ma
 import { useEffect, useState } from "react";
 import router, { useRouter } from "next/router";
 import Cookies from "js-cookie";
+import { Boton } from "@/components/botones/botonNav";
 
 interface Stock {
   id: number;
@@ -106,13 +107,22 @@ export default function StockPage() {
           Stock
         </Typography>
 
-        <Button variant="contained" onClick={handleOpenModal} sx={{ mb: 2, mr: 2 }}>
-          Otros apartados
-        </Button>
+        <Boton
+          label="Otros apartados"
+          size="medium"
+          color="default2"
+          variant="contained"
+          onClick={handleOpenModal}
+          className="m-3"
+        />
 
-        <Button variant="contained" onClick={handleCreateLote} sx={{ mb: 2 }} >
-          Crear Nuevo registro de Stock
-        </Button>
+        <Boton
+          label="Crear Stock"
+          size="small"
+          color="default"
+          variant="contained"
+          onClick={handleCreateLote}
+        />
 
         {/* Formulario de lote */}
         <StockForm

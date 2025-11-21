@@ -1,3 +1,4 @@
+import { Boton } from "@/components/botones/botonNav";
 import Navbar from "@/components/forms/Navbar";
 import LoteTable from "@/components/lotes/LoteTable";
 import LoteForm from "@/components/lotes/loteForm"; // Asegúrate de importar el formulario
@@ -94,13 +95,23 @@ export default function LotesPage() {
           Lotes
         </Typography>
 
-        <Button variant="contained" onClick={handleOpenModal} sx={{ mb: 2, mr: 2 }}>
-          Otros apartados
-        </Button>
+        <Boton
+          label="Otros apartados"
+          size="medium"
+          color="default2"
+          variant="contained"
+          onClick={handleOpenModal}
+          className="m-3"
+        />
 
-        <Button variant="contained" onClick={handleCreateLote} sx={{ mb: 2 }} >
-          Crear Nuevo Lote
-        </Button>
+        <Boton
+          label="Crear Nuevo Lote"
+          size="small"
+          color="default"
+          variant="contained"
+          onClick={handleCreateLote}
+          className="mr-2"
+        />
 
         {/* Formulario de lote */}
         <LoteForm

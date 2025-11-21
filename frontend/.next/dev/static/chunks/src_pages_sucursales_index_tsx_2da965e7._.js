@@ -11,7 +11,8 @@
   "static/chunks/node_modules_@mui_material_esm_3cf83048._.js",
   "static/chunks/node_modules_@mui_system_esm_04c8177a._.js",
   "static/chunks/node_modules_8e52962a._.js",
-  "static/chunks/[root-of-the-server]__990a54bf._.js"
+  "static/chunks/[root-of-the-server]__9eb25778._.js",
+  "static/chunks/src_components_botones_boton_module_008ed011.css"
 ],
     source: "entry"
 });

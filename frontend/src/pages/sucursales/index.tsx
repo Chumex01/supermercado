@@ -14,6 +14,7 @@ import {
 import Navbar from "@/components/forms/Navbar";
 import router from "next/router";
 import SucursalesTable from "@/components/sucursales/SucursalTable";
+import { Boton } from "@/components/botones/botonNav";
 
 interface Sucursal {
   id: number;
@@ -93,13 +94,22 @@ export default function SucursalesPage() {
           Sucursales
         </Typography>
 
-        <Button variant="contained" onClick={handleOpenModal} sx={{ mb: 2, mr: 2 }}>
-          Otros apartados
-        </Button>
+        <Boton
+          label="Otros apartados"
+          size="medium"
+          color="default2"
+          variant="contained"
+          onClick={handleOpenModal}
+          className="m-3"
+        />
 
-        <Button variant="contained" onClick={handleCreateUser} sx={{ mb: 2 }} >
-          Crear Nueva Sucursal
-        </Button>
+        <Boton
+          label="Crear Nueva Sucursal"
+          size="small"
+          color="default"
+          variant="contained"
+          onClick={handleCreateUser}
+        />
 
         {/* Formulario de sucursal (fuera del modal) */}
         <SucursalForm

@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 import SolicitudTable from "@/components/solicitudes/SolicitudTable";
 import router, { useRouter } from "next/router";
 import Cookies from "js-cookie";
+import { Boton } from "@/components/botones/botonNav";
 
 interface Solicitud {
   id: number;
@@ -114,17 +115,23 @@ export default function SolicitudesPage() {
           Solicitudes
         </Typography>
 
-        <Button
+        <Boton
+          label="Otros apartados"
+          size="medium"
+          color="default2"
           variant="contained"
           onClick={handleOpenModal}
-          sx={{ mb: 2, mr: 2 }}
-        >
-          Otros apartados
-        </Button>
+          className="m-3"
+        />
 
-        <Button variant="contained" onClick={handleCreateLote} sx={{ mb: 2 }}>
-          Crear Nueva Solicitud
-        </Button>
+        <Boton
+          label="Crear Nueva Solicitud"
+          size="small"
+          color="default"
+          variant="contained"
+          onClick={handleCreateLote}
+          className="mr-2"
+        />
 
         {/* Formulario de lote */}
         <SolicitudForm

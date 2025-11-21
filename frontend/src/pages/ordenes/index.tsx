@@ -1,3 +1,4 @@
+import { Boton } from "@/components/botones/botonNav";
 import Navbar from "@/components/forms/Navbar";
 import OrdenTable from "@/components/ordenes/ordenTable";
 import { api } from "@/lib/api";
@@ -178,6 +179,13 @@ export default function OrdenesPage() {
                 `Solicitudes Pendientes`
               )}
             </Button>
+            
+        <Boton
+          label="Actualizar lista"
+          size="small"
+          onClick={() => setRefreshKey(prev => prev + 1)}
+          className="m-3"
+        />
           </Badge>
         </Box>
 
@@ -191,21 +199,14 @@ export default function OrdenesPage() {
         )}
 
         <Box sx={{ mb: 3 }}>
-          <Button 
-            variant="contained" 
-            onClick={handleOpenModal} 
-            sx={{ mb: 2, mr: 2 }}
-          >
-            Otros apartados
-          </Button>
-          <Button 
-            variant="outlined" 
-            onClick={() => setRefreshKey(prev => prev + 1)}
-            sx={{ mb: 2 }}
-            startIcon={<Box component="span">🔄</Box>}
-          >
-            Actualizar Lista
-          </Button>
+        <Boton
+          label="Otros apartados"
+          size="medium"
+          color="default2"
+          variant="contained"
+          onClick={handleOpenModal}
+          className="m-3"
+        />
         </Box>
 
         {/* Modal principal con botones */}
