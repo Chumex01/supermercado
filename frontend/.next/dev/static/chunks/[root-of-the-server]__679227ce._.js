@@ -465,6 +465,20 @@ function triggerUpdate(msg) {
 "[project]/src/lib/api.ts [client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
+// // src/lib/api.ts
+// import axios from "axios";
+// const API_BASE = "http://localhost:3000"; // tu backend NestJS
+// export const api = axios.create({
+//   baseURL: API_BASE,
+//   headers: {
+//     "Content-Type": "application/json",
+//   },
+// });
+// // ---- Endpoints de autenticación ----
+// export const login = (data: { correo: string; contrasena: string }) =>
+//   api.post("/auth/login", data);
+// export const register = (data: { correo: string; contrasena: string }) =>
+//   api.post("/usuarios", data);
 // src/lib/api.ts
 __turbopack_context__.s([
     "api",
@@ -474,14 +488,18 @@ __turbopack_context__.s([
     "register",
     ()=>register
 ]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/node_modules/next/dist/build/polyfills/process.js [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/axios/lib/axios.js [client] (ecmascript)");
 ;
-const API_BASE = "http://localhost:3000"; // tu backend NestJS
+// Usa la variable de entorno o fallback a localhost para desarrollo
+const API_BASE = ("TURBOPACK compile-time value", "http://192.168.0.4:3000") || "http://localhost:3000";
+console.log('API Base URL:', API_BASE); // Para debug
 const api = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"].create({
     baseURL: API_BASE,
     headers: {
         "Content-Type": "application/json"
-    }
+    },
+    withCredentials: true
 });
 const login = (data)=>api.post("/auth/login", data);
 const register = (data)=>api.post("/usuarios", data);

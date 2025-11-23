@@ -1,4 +1,3 @@
-// src/pages/usuarios/index.tsx
 "use client";
 
 import { useEffect, useState } from "react";
@@ -15,6 +14,7 @@ import Navbar from "@/components/forms/Navbar";
 import router from "next/router";
 import EmpleadoTable from "@/components/empleados/EmpleadoTable";
 import EmpleadoForm from "@/components/empleados/empleadoForm";
+import EmpleadoForm2 from "@/components/empleados/EmpleadoForm2"; // 👈 Importamos
 import { Boton } from "@/components/botones/botonNav";
 
 interface Empleado {
@@ -52,7 +52,8 @@ export default function EmpleadosPage() {
   const [empleados, setEmpleados] = useState<Empleado[]>([]);
   const [loading, setLoading] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
-  const [showForm, setShowForm] = useState(false);
+  const [showFormManual, setShowFormManual] = useState(false);
+  const [showFormAuto, setShowFormAuto] = useState(false);
 
   useEffect(() => {
     cargarEmpleados();
@@ -71,35 +72,33 @@ export default function EmpleadosPage() {
     }
   };
 
-const crearEmpleado = async (data: unknown) => {
-  try {
-    const res = await api.post("/empleados/CrearEmpleado", data);
-    alert("Empleado creado exitosamente");
-    console.log(res.data);
-    cargarEmpleados(); // refresca la tabla
-  } catch (err: unknown) {
-    console.error(err);
-    alert("Error al crear empleado");
-  }
-};
-
-  const handleOpenModal = () => {
-    setModalOpen(true);
+  const crearEmpleado = async (data: unknown) => {
+    try {
+      const res = await api.post("/empleados/CrearEmpleado", data);
+      alert("Empleado creado exitosamente");
+      cargarEmpleados();
+    } catch (err) {
+      console.error(err);
+      alert("Error al crear empleado");
+    }
   };
 
-  const handleModalClose = () => {
-    setModalOpen(false);
-  };
-
-  const handleCreateUser = () => {
-    setModalOpen(false); // Cierra el modal
-    setShowForm(true); // Abre el formulario
+  const crearEmpleadoFull = async (data: unknown) => {
+    try {
+      const res = await api.post("/empleados/CrearEmpleadoAutomatico", data);
+      alert("Empleado creado automáticamente exitosamente");
+      cargarEmpleados();
+    } catch (err) {
+      console.error(err);
+      alert("Error al crear empleado automáticamente");
+    }
   };
 
   return (
     <>
+      {" "}
       <Navbar />
-
+      ```
       <Box sx={{ p: 3 }}>
         <Typography variant="h4" gutterBottom>
           Empleados
@@ -110,29 +109,43 @@ const crearEmpleado = async (data: unknown) => {
           size="medium"
           color="default2"
           variant="contained"
-          onClick={handleOpenModal}
+          onClick={() => setModalOpen(true)}
           className="m-3"
         />
 
         <Boton
-          label="Crear Nuevo Empleado"
+          label="Crear Empleado Manualmente"
           size="small"
           color="default"
           variant="contained"
-          onClick={handleCreateUser}
+          onClick={() => setShowFormManual(true)}
         />
 
-        {/* Formulario de usuario (fuera del modal) */}
+        <Boton
+          label="Crear Empleado Automáticamente"
+          size="small"
+          color="default"
+          variant="contained"
+          onClick={() => setShowFormAuto(true)}
+          className="ml-3"
+        />
+
+        {/* Formularios */}
         <EmpleadoForm
-          open={showForm}
-          onClose={() => setShowForm(false)}
+          open={showFormManual}
+          onClose={() => setShowFormManual(false)}
           onCreate={crearEmpleado}
         />
+        <EmpleadoForm2
+          open={showFormAuto}
+          onClose={() => setShowFormAuto(false)}
+          onCreate={crearEmpleadoFull}
+        />
 
-        {/* Modal principal con botones */}
+        {/* Modal principal */}
         <Modal
           open={modalOpen}
-          onClose={handleModalClose}
+          onClose={() => setModalOpen(false)}
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"
         >
@@ -161,15 +174,22 @@ const crearEmpleado = async (data: unknown) => {
                 Sucursales
               </Button>
             </Stack>
-            <Button onClick={handleModalClose} sx={{ mt: 2 }} fullWidth>
+            <Button
+              onClick={() => setModalOpen(false)}
+              sx={{ mt: 2 }}
+              fullWidth
+            >
               Cerrar
             </Button>
           </Box>
         </Modal>
 
-        {loading ? <CircularProgress /> : <EmpleadoTable empleados={empleados} />}
+        {loading ? (
+          <CircularProgress />
+        ) : (
+          <EmpleadoTable empleados={empleados} />
+        )}
       </Box>
     </>
   );
 }
-

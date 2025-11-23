@@ -14,7 +14,6 @@ export class UsuariosService {
 
   // INSERT con contraseña hasheada
   async createUsuario(dtoUsuario: CreateUsuarioDto) {
-
     // 🔐 Generamos el hash
     const salt = await bcrypt.genSalt(10);
     const hashedPass = await bcrypt.hash(dtoUsuario.contrasena, salt);
@@ -33,37 +32,34 @@ export class UsuariosService {
     return this.usuarioRepository.find();
   }
 
-async getUltimoUsuario() {
-  const usuarios = await this.usuarioRepository.find({
-    order: { id: 'DESC' },
-    take: 1,
-  });
+  async getUltimoUsuario() {
+    const usuarios = await this.usuarioRepository.find({
+      order: { id: 'DESC' },
+      take: 1,
+    });
 
-  return usuarios[0] ?? null;
-}
-
-
-
-async login(correo: string, contrasena: string) {
-  // Buscamos al usuario incluyendo la contraseña (por si tuvieras select: false)
-  const usuario = await this.usuarioRepository.findOne({
-    where: { correo },
-  });
-
-  if (!usuario) {
-    throw new UnauthorizedException('Credenciales inválidas');
+    return usuarios[0] ?? null;
   }
 
-  // 🔐 Comparamos contraseña ingresada vs hash guardado
-  const passwordValida = await bcrypt.compare(contrasena, usuario.contrasena);
+  async login(correo: string, contrasena: string) {
+    // Buscamos al usuario incluyendo la contraseña (por si tuvieras select: false)
+    const usuario = await this.usuarioRepository.findOne({
+      where: { correo },
+    });
 
-  if (!passwordValida) {
-    throw new UnauthorizedException('Credenciales inválidas');
+    if (!usuario) {
+      throw new UnauthorizedException('Credenciales inválidas');
+    }
+
+    // 🔐 Comparamos contraseña ingresada vs hash guardado
+    const passwordValida = await bcrypt.compare(contrasena, usuario.contrasena);
+
+    if (!passwordValida) {
+      throw new UnauthorizedException('Credenciales inválidas');
+    }
+
+    return {
+      usuario: { id: usuario.id, correo: usuario.correo },
+    };
   }
-
-  return {
-    usuario: { id: usuario.id, correo: usuario.correo },
-  };
-}
-
 }

@@ -29,13 +29,18 @@ async function bootstrap() {
 
   // 🔧 Habilitar CORS
   app.enableCors({
-    origin: 'http://localhost:3001', // tu frontend Next.js
+    origin: [
+      'http://localhost:3001',
+      'http://192.168.0.4:3001', // ← Reemplaza con la IP de tu PC
+      // Agrega aquí otras IPs que necesites
+    ],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials: true,
   });
 
   await app.listen(3000);
   console.log(`🚀 La aplicación está corriendo en: http://localhost:3000`);
+  console.log(`📡 También accesible desde: http://192.168.0.4:3000`);
   console.log(`📄 Swagger disponible en: http://localhost:3000/api-docs`);
 }
 

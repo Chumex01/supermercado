@@ -1,6 +1,12 @@
 // src/ventas/dto/create-venta.dto.ts
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNotEmpty, IsNumber, IsEnum, IsPositive } from 'class-validator';
+import {
+  IsNotEmpty,
+  IsNumber,
+  IsEnum,
+  IsPositive,
+  IsString,
+} from 'class-validator';
 import { MetodoPago } from '../venta.entity';
 
 export class CreateVentaDto {
@@ -42,4 +48,14 @@ export class CreateVentaDto {
   @IsNotEmpty()
   @IsEnum(MetodoPago)
   metodo_pago: MetodoPago;
+
+  @ApiProperty({ example: '12345645678', description: 'Cuenta Contable' })
+  @IsNotEmpty()
+  @IsString()
+  cuenta_contable: string;
+
+  @ApiProperty({ example: '12345645678', description: 'Código Transacción' })
+  @IsNotEmpty()
+  @IsString()
+  codigo_transaccion: string;
 }

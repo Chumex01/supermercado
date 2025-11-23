@@ -2,6 +2,7 @@ import { Body, Controller, Get, Post } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { EmpleadoService } from './empleado.service';
 import { CreateEmpleadoDto } from './dto/create-empleado.dto';
+import { CreateEmpleadoAutoDto } from './dto/create-empleado-full.dto';
 
 @ApiTags('Empleados')
 @Controller('empleados')
@@ -29,5 +30,11 @@ export class EmpleadoController {
       total: empleados.length,
       data: empleados,
     };
+  }
+
+  @Post('CrearEmpleadoAutomatico')
+  @ApiOperation({ summary: 'Crear Usuario + Empleado automáticamente' })
+  async crearEmpleadoAutomatico(@Body() dto: CreateEmpleadoAutoDto) {
+    return this.empleadoService.crearEmpleadoAutomatico(dto);
   }
 }

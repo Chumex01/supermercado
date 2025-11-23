@@ -72,6 +72,11 @@ export class Venta {
   @CreateDateColumn({ type: 'timestamp' })
   fecha_creacion: Date;
 
+  @Column({ nullable: true })
+  cuenta_contable: string;
+
+  @Column({ nullable: true })
+  codigo_transaccion: string;
   // Cálculos automáticos
   @BeforeInsert()
   @BeforeUpdate()
