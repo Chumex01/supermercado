@@ -13,12 +13,10 @@ import {
     Box,
     Typography,
     Alert,
-    Card,
-    CardContent,
-    Grid,
 } from "@mui/material";
 import { api } from "@/lib/api";
 import axios from "axios";
+import { on } from "events";
 
 interface Props {
     open: boolean;
@@ -82,8 +80,6 @@ export default function VentaForm({ open, onClose, onCreate }: Props) {
     const [loading, setLoading] = useState(false);
     const [selectedSucursal, setSelectedSucursal] = useState<number | "">("");
     const [errorStock, setErrorStock] = useState("");
-
-
 
     const [form, setForm] = useState({
         sucursal_id: "",
@@ -218,42 +214,75 @@ export default function VentaForm({ open, onClose, onCreate }: Props) {
     };
 
 const handleSubmit = async () => {
-    const payloadLocal = {
-        sucursal_id: Number(form.sucursal_id),
-        empleado_cajero_id: Number(form.empleado_cajero_id),
-        stock_id: Number(form.stock_id),
-        cantidad: Number(form.cantidad),
-        precio_unitario: Number(form.precio_unitario),
-        metodo_pago: form.metodo_pago,
-    };
+// Validaciones básicas
+if (!form.sucursal_id || !form.empleado_cajero_id || !form.stock_id) {
+alert("Por favor selecciona sucursal, empleado y producto");
+return;
+}
 
-    console.log("Payload interno a enviar:", payloadLocal);
+const selectedStock = stocksFiltrados.find(s => s.id === Number(form.stock_id));
+const stockDisponible = selectedStock ? parseFloat(selectedStock.cantidad_disponible) : 0;
+if (form.cantidad > stockDisponible) {
+    alert("Cantidad supera el stock disponible");
+    return;
+}
 
-    // calcular monto total
-    const montoTotal = Number(form.cantidad) * Number(form.precio_unitario);
-    const fechaVenta = new Date().toISOString(); // puedes ajustar formato si lo requiere la API
-
-    const payloadExterno = {
-        CodigoEmpresa: 7,
-        Fecha: fechaVenta,
-        Monto: montoTotal
-    };
-
-    try {
-        const respuestaExterna = await axios.post("http://192.168.43.20:3000/api/cuenta", payloadExterno);
-        if (respuestaExterna?.data) {
-            console.log("Venta enviada a contabilidad:", respuestaExterna.data);
-        } else {
-            console.log("No se puede realizar la venta, contabilidad no responde");
-        }
-
-        // Llamar a tu callback local igual, siempre que quieras registrar la venta local
-        onCreate(payloadLocal);
-
-    } catch (err) {
-        console.log("No se puede realizar la venta, contabilidad no responde:", err);
-    }
+// Preparar payload local inicial con valores por defecto
+const payloadLocal: any = {
+    sucursal_id: Number(form.sucursal_id),
+    empleado_cajero_id: Number(form.empleado_cajero_id),
+    stock_id: Number(form.stock_id),
+    cantidad: Number(form.cantidad),
+    precio_unitario: Number(form.precio_unitario),
+    metodo_pago: form.metodo_pago,
+    cuenta_contable: "000000",       // valor por defecto
+    codigo_transaccion: "000000",    // valor por defecto
 };
+
+// Calcular monto total
+const montoTotal = Number(form.cantidad) * Number(form.precio_unitario);
+const fechaVenta = new Date().toISOString();
+
+const payloadConta = { CodigoEmpresa: 7, Fecha: fechaVenta, Monto: montoTotal };
+const payloadTransaccion = {
+    codigo: 7,
+    codoperacion: Math.floor(Math.random() * 1000) + 1,
+    fecha: fechaVenta,
+    montototal: montoTotal,
+    detalle: {
+        codproducto: Number(form.stock_id),
+        cantidad: Number(form.cantidad),
+        description: "Venta de producto",
+        monto: Number(form.precio_unitario),
+    },
+};
+
+try {
+    const respuestaConta = await axios.post("http://192.168.43.20:3000/api/cuenta", payloadConta);
+    if (respuestaConta?.data?.success && respuestaConta.data.data?.cuenta_contable) {
+        payloadLocal.cuenta_contable = respuestaConta.data.data.cuenta_contable;
+    }
+    console.log("Venta enviada a contabilidad:", respuestaConta.data);
+} catch (err) {
+    console.log("No se puede realizar la venta, contabilidad no responde. Se asigna 000000:", err);
+}
+
+try {
+    const respuestaTransaccion = await axios.post("http://192.168.43.20:3000/api/transaccion", payloadTransaccion);
+    if (respuestaTransaccion?.data?.success && respuestaTransaccion.data.data?.codigo_transaccion) {
+        payloadLocal.codigo_transaccion = respuestaTransaccion.data.data.codigo_transaccion;
+    }
+    console.log("Venta enviada a transacciones:", respuestaTransaccion.data);
+} catch (err) {
+    console.log("No se puede realizar la venta, transacciones no responde. Se asigna 000000:", err);
+}
+
+// Guardar localmente con los valores ya asignados (reales o por defecto)
+onCreate(payloadLocal);
+
+};
+
+
 
 
     const selectedStock = stocksFiltrados.find(stock => stock.id === Number(form.stock_id));
@@ -264,9 +293,6 @@ const handleSubmit = async () => {
     const producto = selectedStock?.lote?.producto;
     const productoNombre = producto?.nombre || `Producto Lote ${selectedStock?.lote?.numero_lote || 'N/A'}`;
     const numeroLote = selectedStock?.lote?.numero_lote || "N/A";
-    const fechaVencimiento = selectedStock?.lote?.fecha_vencimiento;
-    const ubicacion = selectedStock?.ubicacion;
-    const precioSugerido = producto?.precio_venta ? parseFloat(producto.precio_venta) : 0;
     return (<Dialog open={open} onClose={onClose} fullWidth maxWidth="sm">
         <DialogTitle sx={{ py: 1.5, fontSize: "1rem" }}>Crear Nueva Venta</DialogTitle>
         <DialogContent sx={{ display: "flex", flexDirection: "column", gap: 0.75, mt: 0.5 }}>
