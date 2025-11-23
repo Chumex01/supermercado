@@ -20,6 +20,20 @@ __turbopack_async_result__();
 
 return __turbopack_context__.a(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
 
+// // src/lib/api.ts
+// import axios from "axios";
+// const API_BASE = "http://localhost:3000"; // tu backend NestJS
+// export const api = axios.create({
+//   baseURL: API_BASE,
+//   headers: {
+//     "Content-Type": "application/json",
+//   },
+// });
+// // ---- Endpoints de autenticación ----
+// export const login = (data: { correo: string; contrasena: string }) =>
+//   api.post("/auth/login", data);
+// export const register = (data: { correo: string; contrasena: string }) =>
+//   api.post("/usuarios", data);
 // src/lib/api.ts
 __turbopack_context__.s([
     "api",
@@ -35,12 +49,15 @@ var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
 ]);
 [__TURBOPACK__imported__module__$5b$externals$5d2f$axios__$5b$external$5d$__$28$axios$2c$__esm_import$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__;
 ;
-const API_BASE = "http://localhost:3000"; // tu backend NestJS
+// Usa la variable de entorno o fallback a localhost para desarrollo
+const API_BASE = ("TURBOPACK compile-time value", "http://192.168.0.4:3000") || "http://localhost:3000";
+console.log('API Base URL:', API_BASE); // Para debug
 const api = __TURBOPACK__imported__module__$5b$externals$5d2f$axios__$5b$external$5d$__$28$axios$2c$__esm_import$29$__["default"].create({
     baseURL: API_BASE,
     headers: {
         "Content-Type": "application/json"
-    }
+    },
+    withCredentials: true
 });
 const login = (data)=>api.post("/auth/login", data);
 const register = (data)=>api.post("/usuarios", data);

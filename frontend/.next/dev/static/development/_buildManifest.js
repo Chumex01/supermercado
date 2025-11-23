@@ -1,45 +1,9 @@
 self.__BUILD_MANIFEST = {
-  "/": [
-    "static/chunks/pages/index.js"
-  ],
-  "/categorias": [
-    "static/chunks/pages/categorias.js"
-  ],
-  "/empleados": [
-    "static/chunks/pages/empleados.js"
-  ],
-  "/home": [
-    "static/chunks/pages/home.js"
-  ],
-  "/lotes": [
-    "static/chunks/pages/lotes.js"
-  ],
-  "/ordenes": [
-    "static/chunks/pages/ordenes.js"
-  ],
-  "/productos": [
-    "static/chunks/pages/productos.js"
-  ],
-  "/proveedores": [
-    "static/chunks/pages/proveedores.js"
-  ],
-  "/register": [
-    "static/chunks/pages/register.js"
+  "/_error": [
+    "static/chunks/pages/_error.js"
   ],
   "/reportes": [
     "static/chunks/pages/reportes.js"
-  ],
-  "/solicitudes": [
-    "static/chunks/pages/solicitudes.js"
-  ],
-  "/stock": [
-    "static/chunks/pages/stock.js"
-  ],
-  "/sucursales": [
-    "static/chunks/pages/sucursales.js"
-  ],
-  "/usuarios": [
-    "static/chunks/pages/usuarios.js"
   ],
   "/ventas": [
     "static/chunks/pages/ventas.js"

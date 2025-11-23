@@ -163,14 +163,13 @@ export class VentasController {
       total: ventas.length,
     };
   }
-
-  @Get('stock/disponible')
+  @Get('stock/disponible/:sucursalId')
   @ApiOperation({
     summary: 'Obtener stock disponible por sucursal',
     description:
       'Retorna el stock disponible para ventas en una sucursal específica',
   })
-  @ApiQuery({
+  @ApiParam({
     name: 'sucursalId',
     required: true,
     type: Number,
@@ -186,7 +185,7 @@ export class VentasController {
     description: 'Sucursal no encontrada',
   })
   async obtenerStockDisponible(
-    @Query('sucursalId', ParseIntPipe) sucursalId: number,
+    @Param('sucursalId', ParseIntPipe) sucursalId: number,
   ) {
     const stock = await this.ventasService.obtenerStockDisponible(sucursalId);
     return {

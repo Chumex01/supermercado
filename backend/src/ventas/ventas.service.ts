@@ -75,6 +75,8 @@ export class VentasService {
       cantidad: createVentaDto.cantidad,
       precio_unitario: createVentaDto.precio_unitario,
       metodo_pago: createVentaDto.metodo_pago,
+      cuenta_contable: createVentaDto.cuenta_contable,
+      codigo_transaccion: createVentaDto.codigo_transaccion,
     });
 
     venta.completarVenta();

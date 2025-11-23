@@ -11,7 +11,7 @@ import { Usuario } from '../usuarios/usuario.entity';
 import { Sucursal } from '../sucursales/sucursal.entity';
 
 export enum Cargo {
-  GERENTE = 'gerente',
+  GERENTE = 'gerente general',
   CAJERO = 'cajero',
   ALMACEN = 'almacen',
   COMPRAS = 'compras',

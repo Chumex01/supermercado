@@ -51,7 +51,7 @@ export default function Navbar() {
             size="small"
             color="default"
             variant="contained"
-            onClick={() => router.push("/stock")}
+            onClick={() => router.push("/productos")}
             className="mr-2"
           />
 
